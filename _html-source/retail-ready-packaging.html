@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Getting Your Packaging Retail-Ready — Logic Agency Inc.</title>
+<meta name="description" content="Everything brands need to know before their first retail PO: case pack specs, pallet configurations, retailer compliance, labeling requirements, and the timeline nobody talks about.">
+<meta name="keywords" content="retail packaging requirements, retail-ready packaging, case pack requirements, pallet configuration, Target packaging requirements, Walmart packaging compliance, retail packaging compliance, DTC to retail packaging">
+<link rel="canonical" href="https://logicagencyinc.com/guides/retail-ready-packaging">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- JSON-LD Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Getting Your Packaging Retail-Ready: What Brands Need to Know Before Their First PO",
+  "description": "A comprehensive guide to retail packaging requirements including case packs, pallet configurations, retailer compliance specs, and the real timeline for getting shelf-ready.",
+  "author": {
+    "@type": "Organization",
+    "name": "Logic Agency Inc.",
+    "url": "https://logicagencyinc.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Logic Agency Inc."
+  },
+  "mainEntityOfPage": "https://logicagencyinc.com/guides/retail-ready-packaging",
+  "datePublished": "2025-02-01",
+  "dateModified": "2025-02-01"
+}
+</script>
+
+<!-- FAQ Schema for LLM discoverability -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does retail-ready packaging mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Retail-ready packaging is packaging that meets a specific retailer's compliance requirements for sale in their stores. This includes correct case pack configurations, pallet specifications, UPC/barcode placement, labeling requirements, and structural durability for retail supply chain handling. Requirements vary by retailer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to get packaging retail-ready?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The full timeline from design to delivery is typically 14-22 weeks: 3-4 weeks for structural design and prototyping, 2-3 weeks for supplier sourcing, 4-8 weeks for production, and 4-6 weeks for ocean freight if sourcing internationally. Brands should start packaging development before receiving a PO, not after."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are common retailer packaging chargebacks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common chargebacks include incorrect case pack quantities, wrong pallet configurations, missing or incorrect UPC barcodes, non-compliant labeling, late shipments due to packaging delays, and packaging that doesn't survive retail distribution. Chargebacks typically range from $200 to $10,000+ per violation depending on the retailer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between DTC packaging and retail packaging?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DTC packaging ships one unit directly to a consumer and prioritizes unboxing experience. Retail packaging must survive a multi-stage supply chain (warehouse to distribution center to store shelf), fit into standardized case packs and pallet configurations, include retail-compliant barcodes and labeling, and compete visually on shelf alongside competitors. Most DTC packaging fails retail requirements on structural durability, case pack fit, and barcode compliance."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--o:#FF600A;--od:#E55509;--bl:#0055FF;--bk:#212121;--gr:#3E3E3E;--dk:#2A2A2A;--lt:#DFDFDF;--ow:#F3F3F3;--w:#FFF}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--bk);background:var(--ow);overflow-x:hidden}
+.gl{background-color:var(--ow);background-image:linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px);background-size:28px 28px}
+.gd{background-color:var(--dk);background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(42,42,42,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.lo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.lo svg{width:36px;height:36px}
+.lo span{font-weight:700;font-size:17px;color:var(--o);letter-spacing:-.3px}
+.nr{display:flex;gap:32px;align-items:center}
+.nr a{color:rgba(255,255,255,.85);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nr a:hover{color:#fff}
+.nc{background:var(--o)!important;color:#fff!important;padding:10px 24px!important;border-radius:50px!important;font-weight:600!important;font-size:13px!important}
+.nc:hover{background:var(--od)!important}
+
+/* BUTTONS */
+.bt{padding:16px 36px;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;font-family:'Poppins',sans-serif}
+.bo{background:var(--o);color:#fff}
+.bo:hover{background:var(--od);transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,96,10,.3)}
+.bw{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}
+.bw:hover{border-color:rgba(255,255,255,.6);transform:translateY(-2px)}
+
+/* ARTICLE HERO */
+.a-hero{padding:140px 60px 80px;background-color:var(--ow)}
+.a-hero-inner{max-width:800px;margin:0 auto}
+.breadcrumb{font-size:13px;color:var(--gr);margin-bottom:32px}
+.breadcrumb a{color:var(--o);text-decoration:none;font-weight:600}
+.breadcrumb a:hover{text-decoration:underline}
+.a-hero h1{font-size:clamp(36px,4.5vw,56px);font-weight:800;line-height:1.08;letter-spacing:-2px;margin-bottom:24px}
+.a-hero h1 .o{color:var(--o)}
+.a-lede{font-size:19px;line-height:1.75;color:var(--gr);margin-bottom:32px}
+.a-meta{display:flex;gap:24px;align-items:center;padding-top:24px;border-top:1px solid var(--lt);font-size:13px;color:var(--gr)}
+.a-meta strong{color:var(--bk)}
+
+/* ARTICLE BODY */
+.article{padding:0 60px 100px}
+.article-inner{max-width:800px;margin:0 auto}
+.article h2{font-size:clamp(24px,3vw,32px);font-weight:800;line-height:1.15;letter-spacing:-1px;margin:64px 0 20px;color:var(--bk)}
+.article h2:first-child{margin-top:0}
+.article h3{font-size:20px;font-weight:700;line-height:1.3;margin:40px 0 14px;color:var(--bk)}
+.article p{font-size:16.5px;line-height:1.8;color:var(--gr);margin-bottom:20px}
+.article p strong{color:var(--bk);font-weight:700}
+
+/* CALLOUT BOX */
+.callout{background:#fff;border-left:4px solid var(--o);border-radius:0 12px 12px 0;padding:28px 32px;margin:36px 0}
+.callout p{margin-bottom:0;font-size:15px;line-height:1.7}
+.callout p:not(:last-child){margin-bottom:12px}
+.callout strong{color:var(--bk)}
+
+/* NUMBERED SECTIONS */
+.num-section{background:#fff;border-radius:16px;padding:32px 36px;margin:20px 0;border:1px solid rgba(0,0,0,.04);position:relative}
+.num-section::before{content:attr(data-num);position:absolute;top:32px;left:36px;width:32px;height:32px;border-radius:50%;background:rgba(255,96,10,.08);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--o);text-align:center;line-height:32px}
+.num-section .ns-content{padding-left:48px}
+.num-section h3{margin-top:0;font-size:17px;font-weight:700;line-height:1.4;margin-bottom:10px}
+.num-section p{font-size:15px;margin-bottom:0}
+
+/* TIMELINE */
+.timeline{margin:36px 0}
+.tl-item{display:flex;gap:24px;padding:24px 0;border-bottom:1px solid var(--lt)}
+.tl-item:last-child{border-bottom:none}
+.tl-dur{flex-shrink:0;width:120px;font-size:24px;font-weight:800;color:var(--o);letter-spacing:-1px}
+.tl-detail h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.tl-detail p{font-size:14px;line-height:1.6;color:var(--gr);margin-bottom:0}
+
+/* CHECKLIST TABLE */
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:36px 0}
+.check-item{background:#fff;border-radius:12px;padding:24px;border:1px solid rgba(0,0,0,.04)}
+.check-item h4{font-size:15px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.check-item h4::before{content:'';width:20px;height:20px;border-radius:4px;border:2px solid var(--o);flex-shrink:0}
+.check-item p{font-size:13px;line-height:1.6;color:var(--gr);margin-bottom:0}
+
+/* CTA BAND */
+.cta-band{background-color:var(--dk);padding:80px 60px;text-align:center}
+.cta-inner{max-width:720px;margin:0 auto}
+.cta-inner h2{font-size:clamp(28px,3.5vw,40px);font-weight:800;color:#fff;line-height:1.15;letter-spacing:-1.5px;margin-bottom:16px}
+.cta-inner h2 .o{color:var(--o)}
+.cta-inner>p{font-size:17px;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:32px}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta-sub{display:block;margin-top:16px;font-size:13px;color:rgba(255,255,255,.5)}
+
+/* RELATED */
+.related{padding:80px 60px;background-color:var(--ow)}
+.related-inner{max-width:800px;margin:0 auto}
+.related h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--o);margin-bottom:24px}
+.related-links{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.related-link{background:#fff;border-radius:12px;padding:24px;border:1px solid rgba(0,0,0,.04);text-decoration:none;color:var(--bk);transition:all .3s}
+.related-link:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.related-link h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.related-link p{font-size:13px;color:var(--gr);line-height:1.5;margin:0}
+
+/* FOOTER */
+footer{background-color:var(--dk);color:rgba(255,255,255,.7);padding:48px 60px 32px;border-top:1px solid rgba(255,255,255,.06)}
+.fti{max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.fti .lo span{font-size:15px}
+.fti p{font-size:13px;color:rgba(255,255,255,.5)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .a-hero,.article,.cta-band,.related,footer{padding-left:24px!important;padding-right:24px!important}
+  .a-hero{padding-top:110px!important}
+  .a-meta{flex-direction:column;align-items:flex-start;gap:8px}
+  .check-grid{grid-template-columns:1fr}
+  .related-links{grid-template-columns:1fr}
+  .tl-item{flex-direction:column;gap:8px}
+  .tl-dur{width:auto}
+  .nr{display:none}
+  nav{padding:0 24px}
+  .fti{flex-direction:column;gap:16px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<a href="/" class="lo"><svg viewBox="0 0 40 40" fill="none"><circle cx="15" cy="20" r="12" stroke="#FF600A" stroke-width="2.5" fill="none"/><circle cx="25" cy="20" r="12" stroke="#FF600A" stroke-width="2.5" fill="none"/></svg><span>Logic Agency Inc.</span></a>
+<div class="nr"><a href="/">Home</a><a href="/#pricing">Pricing</a><a href="/#results">Results</a><a href="/#faq">FAQ</a><a href="/#cta" class="nc">Let's Talk</a></div>
+</nav>
+
+<!-- HERO -->
+<section class="a-hero gl">
+<div class="a-hero-inner">
+<div class="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; Guides</div>
+<h1>Getting Your Packaging <span class="o">Retail-Ready</span></h1>
+<p class="a-lede">You just landed a retail opportunity. Maybe it's a regional chain, maybe it's Target. Either way, you have 60&ndash;90 days to figure out packaging specs you've never dealt with before. Your DTC packaging won't work. Here's what you actually need to know.</p>
+<div class="a-meta">
+<span><strong>Logic Agency Inc.</strong></span>
+<span>15 min read</span>
+<span>Guides</span>
+</div>
+</div>
+</section>
+
+<!-- ARTICLE -->
+<div class="article gl">
+<div class="article-inner">
+
+<!-- SECTION 1 -->
+<h2>What "Retail-Ready" Actually Means</h2>
+
+<p>In DTC, your packaging has one job: survive a single shipment from your warehouse (or 3PL) to a customer's doorstep. You control the box, the inserts, the experience. The consumer opens it at home, probably over a kitchen counter.</p>
+
+<p>Retail is a completely different supply chain. Your product ships from a manufacturer to a distribution center, gets palletized and loaded onto a truck, rides to a regional warehouse, gets broken down and re-palletized, ships again to a store, gets unloaded by a stock clerk, and lands on a shelf where it sits next to ten competitors. Your packaging has to survive every one of those handoffs without damage, deformation, or degradation.</p>
+
+<p>"Retail-ready" means your packaging meets a specific retailer's compliance requirements across three dimensions:</p>
+
+<div class="num-section" data-num="1">
+<div class="ns-content">
+<h3>Primary packaging that sells on shelf</h3>
+<p>This is what the consumer sees. It needs a scannable UPC, compliant labeling, shelf presence that competes, and structural integrity to survive handling. If your DTC box is flimsy or oversized, it won't face correctly on a retail shelf.</p>
+</div>
+</div>
+
+<div class="num-section" data-num="2">
+<div class="ns-content">
+<h3>Secondary packaging that ships in cases</h3>
+<p>Retail doesn't receive individual units. Your product ships in standardized case packs — typically 6, 12, or 24 units per case depending on your product size and the retailer's requirements. The case needs to be sized, labeled, and barcoded to the retailer's spec.</p>
+</div>
+</div>
+
+<div class="num-section" data-num="3">
+<div class="ns-content">
+<h3>Tertiary packaging that palletizes correctly</h3>
+<p>Cases go on pallets. Pallets have a maximum height, weight, and a specific stacking pattern called a Ti x Hi configuration. If your cases don't fit the pallet math, you're shipping air, wasting freight, or getting rejected at the DC.</p>
+</div>
+</div>
+
+<p>Most DTC brands have only thought about the first dimension. Retail requires all three, and they have to work as a system.</p>
+
+<!-- SECTION 2 -->
+<h2>The Compliance Checklist Most Brands Miss</h2>
+
+<p>Every major retailer publishes a vendor compliance guide. Walmart's is over 200 pages. Target's is dense and updates regularly. These aren't suggestions — they're requirements, and violations come with chargebacks that range from a few hundred dollars to five figures per incident.</p>
+
+<p>Here's what most brands don't know they need until it's too late:</p>
+
+<div class="check-grid">
+<div class="check-item">
+<h4>UPC / Barcode Placement</h4>
+<p>Specific size, placement zone, quiet zone spacing, and scan angle requirements. A barcode that scans fine on your phone may fail a retailer's automated system.</p>
+</div>
+<div class="check-item">
+<h4>Case Pack Configuration</h4>
+<p>Inner pack count, outer case count, case dimensions, case weight limits. The math between your unit size and case size determines pallet efficiency.</p>
+</div>
+<div class="check-item">
+<h4>Pallet Specifications</h4>
+<p>Standard GMA pallet (48" x 40"), maximum height (typically 48-60"), Ti x Hi stacking pattern, stretch wrap requirements, and corner board specs.</p>
+</div>
+<div class="check-item">
+<h4>Labeling Requirements</h4>
+<p>Country of origin, net weight/volume, ingredient lists, nutritional panels (if food/supplement), lot codes, and retailer-specific label formats.</p>
+</div>
+<div class="check-item">
+<h4>EDI &amp; ASN Compliance</h4>
+<p>Electronic data interchange for purchase orders and advance ship notices. Most major retailers require EDI. Without it, your shipment may not be received.</p>
+</div>
+<div class="check-item">
+<h4>Shelf-Ready Packaging (SRP)</h4>
+<p>Some retailers require packaging that converts directly to a shelf display without individual stocking. This changes your secondary packaging design entirely.</p>
+</div>
+</div>
+
+<div class="callout">
+<p><strong>What do chargebacks actually cost?</strong></p>
+<p>It depends on the retailer and the violation. Incorrect case quantities can run $200-500 per incident. Wrong pallet configurations can mean $500-2,000. Late shipments caused by packaging delays can trigger penalties of $5,000-10,000+. One brand we spoke with absorbed $40,000 in chargebacks in their first quarter at a major retailer because their case packs didn't match the PO specs.</p>
+</div>
+
+<!-- SECTION 3 -->
+<h2>Retailer-Specific Nuances</h2>
+
+<p>There is no universal "retail packaging standard." Each retailer has its own compliance guide, its own tolerances, and its own expectations. What passes at one chain may get rejected at another.</p>
+
+<p><strong>Target</strong> has specific requirements for case pack labeling, carton marking, and routing. They're particular about on-time shipping windows and ASN accuracy. Their vendor onboarding process includes packaging compliance review before your first PO ships.</p>
+
+<p><strong>Walmart</strong> publishes one of the most detailed compliance guides in retail. Their requirements cover everything from pallet pattern to RFID tagging for certain categories. The chargeback structure is aggressive and automated.</p>
+
+<p><strong>Whole Foods</strong> has its own layer of requirements around sustainability, ingredient transparency, and category-specific packaging standards. If you're in beauty or supplements, expect scrutiny on claims and certifications.</p>
+
+<p><strong>Costco</strong> operates on a club pack model. Your standard retail unit won't work — you need a club-size configuration or multipack. The packaging also needs to function as its own display since Costco merchandises on pallets, not shelves.</p>
+
+<p>The point isn't to memorize every retailer's specs. The point is to understand that your packaging system needs to be adaptable, and that someone on your team needs to own the compliance relationship with each retailer you sell into.</p>
+
+<!-- SECTION 4 -->
+<h2>The Timeline Nobody Talks About</h2>
+
+<p>Here's the conversation that happens at almost every brand entering retail for the first time: the buyer says yes, the PO comes in, and suddenly there's a deadline. The brand assumes they have time to figure out packaging. They don't.</p>
+
+<p>This is the real timeline for getting packaging retail-ready from scratch:</p>
+
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-dur">3-4 wks</div>
+<div class="tl-detail">
+<h4>Structural Design &amp; Prototyping</h4>
+<p>Dieline development, material specification, structural testing, prototype production, and retailer spec alignment. If you need shelf-ready packaging or custom inserts, add another 1-2 weeks.</p>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-dur">2-3 wks</div>
+<div class="tl-detail">
+<h4>Supplier Sourcing &amp; Quoting</h4>
+<p>Getting production quotes, comparing suppliers, negotiating MOQs, and securing production slots. If you're working with a new supplier, add time for factory vetting and sample approval.</p>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-dur">4-8 wks</div>
+<div class="tl-detail">
+<h4>Production</h4>
+<p>Tooling (if custom dies are needed), print proofing, production run, quality control inspection, and packaging. Complexity and volume determine whether you're at 4 weeks or 8.</p>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-dur">4-6 wks</div>
+<div class="tl-detail">
+<h4>Ocean Freight (if international)</h4>
+<p>Container booking, port handling, ocean transit, customs clearance, and drayage to your warehouse. Domestic sourcing eliminates this but typically costs 20-40% more.</p>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-dur">1-2 wks</div>
+<div class="tl-detail">
+<h4>Receiving &amp; Distribution Prep</h4>
+<p>Warehouse receiving, quality check, palletization to retailer specs, ASN generation, and shipment scheduling within the retailer's delivery window.</p>
+</div>
+</div>
+</div>
+
+<div class="callout">
+<p><strong>Total: 14-22 weeks.</strong> That's 3.5 to 5.5 months. If your retailer gives you 60-90 days from PO to delivery, the math doesn't work unless you've already started. The brands that enter retail smoothly are the ones that develop retail-ready packaging before they have a PO — not after.</p>
+</div>
+
+<!-- SECTION 5 -->
+<h2>The Real Decision: Fix It Once or Patch It Forever</h2>
+
+<p>Most brands entering retail try to adapt their existing DTC packaging. They resize the box, slap on a new barcode, and hope it passes. Sometimes it does — for the first order. Then chargebacks start. Cases arrive damaged because the structure wasn't designed for pallet stacking. Labels get flagged because the nutritional panel is 2mm too small. The case pack count doesn't optimize for the pallet, so you're paying freight on 30% air.</p>
+
+<p>The alternative is to treat retail entry as a packaging system redesign. Not a tweak — a rethink from unit to pallet. Primary packaging that sells on shelf. Secondary packaging engineered for the retailer's case and pallet specs. Documentation that any manufacturer can produce from. Specs that scale from your first PO to your twentieth.</p>
+
+<p>It costs more upfront. It saves dramatically over time. Every brand we've worked with that invested in the system approach avoided the chargeback spiral and the expensive mid-stream redesigns that the patch-it approach inevitably creates.</p>
+
+</div>
+</div>
+
+<!-- CTA -->
+<section class="cta-band gd">
+<div class="cta-inner">
+<h2>Staring at a retail deadline and your packaging <span class="o">isn't ready?</span></h2>
+<p>This is exactly what our Growth and Enterprise tiers are built for. We've taken brands from DTC-only to retail shelf in under 90 days. Tell us what you're dealing with and we'll be honest about whether we can help.</p>
+<div class="cta-btns">
+<a href="/cdn-cgi/l/email-protection#660c0914020708260a09010f0507010308051f0f08054805090b591513040c0305125b340312070f0a4354563607050d07010f08014354562e030a16" class="bt bo">Start a Conversation &rarr;</a>
+<a href="/#pricing" class="bt bw">See Plans &amp; Pricing</a>
+</div>
+<span class="cta-sub">Logic Agency Inc. &middot; Packaging &amp; Supply Chain Ops on a Monthly Retainer</span>
+</div>
+</section>
+
+<!-- RELATED GUIDES -->
+<section class="related gl">
+<div class="related-inner">
+<h3>More Guides</h3>
+<div class="related-links">
+<a href="/guides/packaging-cost-reduction" class="related-link">
+<h4>Packaging Cost Reduction Without Sacrificing Brand</h4>
+<p>The five hidden cost drivers most brands don't track, and where we typically find 15-30% savings.</p>
+</a>
+<a href="/guides/packaging-system-that-scales" class="related-link">
+<h4>Building a Packaging System That Scales</h4>
+<p>The difference between ordering packaging and building a packaging system — and when it matters.</p>
+</a>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="fti">
+<a href="/" class="lo"><svg viewBox="0 0 40 40" fill="none" width="28" height="28"><circle cx="15" cy="20" r="12" stroke="#FF600A" stroke-width="2.5" fill="none"/><circle cx="25" cy="20" r="12" stroke="#FF600A" stroke-width="2.5" fill="none"/></svg><span>Logic Agency Inc.<

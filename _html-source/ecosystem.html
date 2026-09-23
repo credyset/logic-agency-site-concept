@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retail Compliance Ecosystem</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background: #0a0e17;
+    color: #e8e6e1;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .header h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .header p {
+    font-size: 15px;
+    color: #7a8599;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Timeline flow */
+  .flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .flow::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #1a2235, #2a3a55, #1a2235);
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+
+  .step-group {
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    min-height: 120px;
+  }
+
+  .step-left, .step-right {
+    flex: 1;
+    padding: 16px 24px;
+  }
+
+  .step-left {
+    text-align: right;
+    padding-right: 48px;
+  }
+
+  .step-right {
+    padding-left: 48px;
+  }
+
+  .step-number {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: #4a5568;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+
+  .step-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .step-desc {
+    font-size: 13px;
+    color: #7a8599;
+    line-height: 1.5;
+  }
+
+  /* Center dot */
+  .dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #1a2235;
+    border: 2px solid #3a4a65;
+    z-index: 2;
+  }
+
+  /* Software tags */
+  .software-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 8px;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .tag-exists {
+    background: rgba(74, 144, 226, 0.12);
+    color: #4a90e2;
+    border: 1px solid rgba(74, 144, 226, 0.25);
+  }
+
+  .tag-nobody {
+    background: rgba(255, 87, 87, 0.1);
+    color: #ff5757;
+    border: 1px solid rgba(255, 87, 87, 0.25);
+  }
+
+  .tag-reactive {
+    background: rgba(255, 170, 51, 0.1);
+    color: #ffaa33;
+    border: 1px solid rgba(255, 170, 51, 0.2);
+  }
+
+  .tag-people {
+    background: rgba(160, 120, 200, 0.1);
+    color: #a078c8;
+    border: 1px solid rgba(160, 120, 200, 0.2);
+  }
+
+  /* The gap highlight */
+  .gap-zone {
+    position: relative;
+    margin: 8px 0;
+  }
+
+  .gap-zone::before {
+    content: '';
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: -8px;
+    bottom: -8px;
+    background: linear-gradient(135deg, rgba(255, 87, 87, 0.04), rgba(255, 87, 87, 0.08));
+    border: 1px dashed rgba(255, 87, 87, 0.2);
+    border-radius: 12px;
+    z-index: -1;
+  }
+
+  .gap-label {
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ff5757;
+    opacity: 0.6;
+    white-space: nowrap;
+  }
+
+  /* EasyOps callout */
+  .easyops-zone {
+    position: relative;
+    margin: 8px 0;
+  }
+
+  .easyops-zone::before {
+    content: '';
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: -12px;
+    bottom: -12px;
+    background: linear-gradient(135deg, rgba(0, 230, 160, 0.03), rgba(0, 230, 160, 0.07));
+    border: 2px solid rgba(0, 230, 160, 0.2);
+    border-radius: 12px;
+    z-index: -1;
+  }
+
+  .easyops-badge {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -24px;
+    background: linear-gradient(135deg, #00e6a0, #00c488);
+    color: #0a0e17;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 5;
+    white-space: nowrap;
+  }
+
+  .dot.dot-easyops {
+    background: #00e6a0;
+    border-color: #00e6a0;
+    box-shadow: 0 0 12px rgba(0, 230, 160, 0.4);
+  }
+
+  .dot.dot-exists {
+    background: #4a90e2;
+    border-color: #4a90e2;
+  }
+
+  .dot.dot-nobody {
+    background: #ff5757;
+    border-color: #ff5757;
+    box-shadow: 0 0 8px rgba(255, 87, 87, 0.3);
+  }
+
+  .dot.dot-reactive {
+    background: #ffaa33;
+    border-color: #ffaa33;
+  }
+
+  .dot.dot-people {
+    background: #a078c8;
+    border-color: #a078c8;
+  }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #7a8599;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  /* Bottom callout */
+  .bottom-callout {
+    text-align: center;
+    margin-top: 48px;
+    padding: 32px;
+    background: linear-gradient(135deg, rgba(0, 230, 160, 0.05), rgba(0, 230, 160, 0.02));
+    border: 1px solid rgba(0, 230, 160, 0.15);
+    border-radius: 12px;
+  }
+
+  .bottom-callout h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    color: #00e6a0;
+    margin-bottom: 12px;
+  }
+
+  .bottom-callout p {
+    font-size: 14px;
+    color: #7a8599;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .arrow-down {
+    text-align: center;
+    color: #2a3a55;
+    font-size: 18px;
+    margin: 4px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    .step-left { padding-right: 32px; }
+    .step-right { padding-left: 32px; }
+    .step-title { font-size: 15px; }
+    .header h1 { font-size: 22px; }
+    .gap-label { display: none; }
+    .easyops-badge { font-size: 9px; padding: 3px 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  
+  <div class="header">
+    <h1>The Retail Compliance Ecosystem</h1>
+    <p>Every step from PO to DC delivery, who owns each step today, and where the gap lives</p>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#4a90e2"></div>
+      Software exists
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#a078c8"></div>
+      People/services only
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#ff5757"></div>
+      No software exists
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#ffaa33"></div>
+      Reactive tools only
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#00e6a0"></div>
+      EasyOps opportunity
+    </div>
+  </div>
+
+  <div class="flow">
+
+    <!-- Step 1: Vendor Onboarding -->
+    <div class="step-group">
+      <div class="step-left">
+        <div class="step-number">Step 01</div>
+        <div class="step-title">Vendor Onboarding</div>
+        <div class="step-desc">Brand sets up as a vendor: forms, vendor number, payment terms, portal access</div>
+      </div>
+      <div class="dot dot-exists"></div>
+      <div class="step-right">
+        <span class="software-tag tag-exists">Retailer Portals</span>
+        <div class="step-desc" style="margin-top:8px">Handled by retailer systems (RetailLink, Partners Online, etc.)</div>
+      </div>
+    </div>
+
+    <div class="arrow-down">▾</div>
+
+    <!-- Step 2: Routing Guide -->
+    <div class="step-group">
+      <div class="step-left">
+        <div class="step-number">Step 02</div>
+        <div class="step-title">Routing Guide Received</div>
+        <div class="step-desc">100-200+ page PDF covering labels, cartons, pallets, ASNs, carriers, DC exceptions</div>
+      </div>
+      <div class="dot dot-nobody"></div>
+      <div class="step-right">
+        <span class="software-tag tag-nobody">No software</span>
+        <div class="step-desc" style="margin-top:8px">Saved in a folder. Skimmed once. Revisited when something breaks.</div>
+      </div>
+    </div>
+
+    <div class="arrow-down">▾</div>
+
+    <!-- Step 3: EDI Setup -->
+    <div class="step-group">
+      <div class="step-left">
+        <div class="step-number">Step 03</div>
+        <div class="step-title">EDI / Portal Setup</div>
+        <div class="step-desc">Electronic communication for POs, ASNs, invoices. $5-15K+ and weeks to configure.</div>
+      </div>
+      <div class="dot dot-exists"></div>
+      <div class="step-right">
+        <span class="software-tag tag-exists">SPS Commerce</span>
+        <span class="software-tag tag-exists">TrueCommerce</span>
+        <div class="step-desc" style="margin-top:8px">Messaging layer. Moves data. Doesn't interpret requirements.</div>
+      </div>
+    </div>
+
+    <div class="arrow-down">▾</div>
+
+    <!-- Step 4: PO Received -->
+    <div class="step-group">
+      <div class="step-left">
+        <div class="step-number">Step 04</div>
+        <div class="step-title">Purchase Order Received</div>
+        <div class="step-desc">PO arrives via EDI/portal with items, quantities, ship-to DCs, delivery dates</div>
+      </div>
+      <div class="dot dot-exists"></div>
+      <div class="step-right">
+        <span class="software-tag tag-exists">SPS Commerce / EDI</span>
+        <div class="step-desc" style="margin-top:8px">PO arrives electronically. The clock starts ticking.</div>
+      </div>
+    </div>
+
+    <div class="arrow-down" style="color:#ff5757; font-size:14px; letter-spacing:4px;">▾ ▾ ▾</div>
+
+    <!-- THE GAP - EasyOps Zone -->
+    <div class="easyops-zone">
+      <div class="easyops-badge">◆ EasyOps Lives Here ◆</div>
+
+      <!-- Step 5 -->
+      <div class="step-group" style="margin-top: 16px;">
+        <div class="step-left">
+          <div class="step-number">Step 05</div>
+          <div class="step-title">Compliance Interpretation</div>
+          <div class="step-desc">Cross-reference PO against routing guide: which DC, what labels, what cartons, what pallets, which carrier, ASN timing</div>
+        </div>
+        <div class="dot dot-easyops"></div>
+        <div class="step-right">
+          <span class="software-tag tag-nobody">No software exists</span>
+          <div class="step-desc" style="margin-top:8px">Human flipping between PO, PDF routing guide, old emails, and tribal knowledge</div>
+        </div>
+      </div>
+
+      <div class="arrow-down" style="color:#00e6a0">▾</div>
+
+      <!-- Step 6 -->
+      <div class="step-group">
+        <div class="step-left">
+          <div class="step-number">Step 06</div>
+          <div class="step-title">Labels & Packaging Setup</div>
+          <div class="step-desc">Create GS1-128 labels, retailer-specific formats, content, placement. Different for every retailer.</div>
+        </div>
+        <div class="dot dot-easyops"></div>
+        <div class="step-right">
+          <span class="software-tag tag-nobody">No software exists</span>
+          <div class="step-desc" style="margin-top:8px">Manual label creation. What works for Sprouts fails at Target.</div>
+        </div>
+      </div>
+
+      <div class="arrow-down" style="color:#00e6a0">▾</div>
+
+      <!-- Step 7 -->
+      <div class="step-group">
+        <div class="step-left">
+          <div class="step-number">Step 07</div>
+          <div class="step-title">3PL / Warehouse Instructions</div>
+          <div class="step-desc">Communicate all compliance requirements to warehouse: labels, pallets, carrier, timing</div>
+        </div>
+        <div class="dot dot-easyops"></div>
+        <div class="step-right">
+          <span class="software-tag tag-nobody">Email, calls, shared docs</span>
+          <div class="step-desc" style="margin-top:8px">Compliance knowledge transferred via email and phone. Lost when people change.</div>
+        </div>
+      </div>
+
+      <div class="arrow-down" style="color:#00e6a0">▾</div>
+
+      <!-- Step 9 -->
+      <div class="step-group">
+        <div class="step-left">
+          <div class="step-number">Step 09</div>
+          <div class="step-title">ASN Creation & Validation</div>
+          <div class="step-desc">Advance Ship Notice must match physical shipment exactly. Tight timing window.</div>
+        </div>
+        <div class="dot dot-easyops"></div>
+        <div class="step-right">
+          <span class="software-tag tag-exists">SPS transmits</span>
+          <span class="software-tag tag-nobody">Nobody validates</span>
+          <div class="step-desc" style="margin-top:8px">SPS sends the ASN. Nobody checks if it's actually correct first.</div>
+        </div>
+      </div>
+    </div>
+    <!-- End EasyOps Zone -->
+
+    <div class="arrow-down" style="color:#ff5757; font-size:14px; letter-spacing:4px;">▾ ▾ ▾</div>
+
+    <!-- Step 8: Physical Execution -->
+    <div class="step-group">
+      <div class="step-left">
+        <div class="step-number">Step 08</div>
+        <div class="step-title">Pick, Pack, Palletize</div>
+        <div class="step-desc">Warehouse executes: correct cartons, labels applied, pallets built to spec</div>
+      </div>
+      <div class="dot dot-people"></div>
+      <div class="step-right">
+        <span class="software-tag tag-people">WMS / 3PL teams</span>
+        <div class="step-desc" style="margin-top:8px">ShipHero, Deposco, Logiwa manage workflow. Compliance knowledge is in people's heads.</div>
+      </div>
+    </div>
+
+    <div class="arrow-down">▾</div>
+
+    <!-- Step 10 -->
+    <div class="step-group">
+      <div class="step-left">
+        <div class="step-number">Step 10</div>
+        <div class="step-title">Appointment Booking</div>
+        <div class="step-desc">Book DC delivery window. Separate portal. Miss it and shipment is rejected.</div>
+      </div>
+      <div class="dot dot-people"></div>
+      <div class="step-right">
+        <span class="software-tag tag-people">Retailer portals (manual)</span>
+        <div class="step-desc" style="margin-top:8px">Separate system, manual entry. Not connected to anything upstream.</div>
+      </div>
+    </div>
+
+    <div class="arrow-down">▾</div>
+
+    <!-- Step 11 -->
+    <div class="step-group">
+      <div class="step-left">
+        <div class="step-number">Step 11</div>
+        <div class="step-title">Carrier Pickup & Delivery</div>
+        <div class="step-desc">Must use approved carrier per routing guide. Wrong carrier = truck turned away.</div>
+      </div>
+      <div class="dot dot-people"></div>
+      <div class="step-right">
+        <span class="software-tag tag-people">TMS / manual selection</span>
+        <div class="step-desc" style="margin-top:8px">Carrier choice is often manual. Routing guide rules not enforced by software.</div>
+      </div>
+    </div>
+
+    <div class="arrow-down">▾</div>
+
+    <!-- Step 12 -->
+    <div class="step-group">
+      <div class="step-left">
+        <div class="step-number">Step 12</div>
+        <div class="step-title">DC Receives & Audits</div>
+        <div class="step-desc">Retailer checks shipment against ASN, inspects labels, verifies specs, scans in</div>
+      </div>
+      <div class="dot dot-exists"></div>
+      <div class="step-right">
+        <span class="software-tag tag-exists">Retailer systems</span>
+        <div class="step-desc" style="margin-top:8px">Retailer's own receiving systems. Brand has no visibility here.</div>
+      </div>
+    </div>
+
+    <div class="arrow-down">▾</div>
+
+    <!-- Step 13 -->
+    <div class="step-group">
+      <div class="step-left">
+        <div class="step-number">Step 13</div>
+        <div class="step-title">Chargebacks Hit</div>
+        <div class="step-desc">Deductions show up on invoice days/weeks later. Minimal explanation. Damage done.</div>
+      </div>
+      <div class="dot dot-reactive"></div>
+      <div class="step-right">
+        <span class="software-tag tag-reactive">SupplyPike (SPS)</span>
+        <span class="software-tag tag-reactive">iNymbus</span>
+        <div class="step-desc" style="margin-top:8px">Reactive only. Helps dispute after the fact. Doesn't prevent anything.</div>
+      </div>
+    </div>
+
+    <div class="arrow-down">▾</div>
+
+    <!-- Step 14 -->
+    <div class="step-group">
+      <div class="step-left">
+        <div class="step-number">Step 14</div>
+        <div class="step-title">Do It All Again</div>
+        <div class="step-desc">Next PO arrives. New retailer = start from zero with completely different rules.</div>
+      </div>
+      <div class="dot dot-nobody"></div>
+      <div class="step-right">
+        <span class="software-tag tag-nobody">Nothing compounds</span>
+        <div class="step-desc" style="margin-top:8px">No learning carries over. Every retailer, every DC, every time.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-callout">
+    <h3>The Intelligence Layer Nobody Has Built</h3>
+    <p>
+      There are tools for messaging (SPS Commerce), tools for the warehouse (WMS), tools for disputes (SupplyPike), and people for the compliance knowledge (consultants, distributors, contractors). 
+      <br><br>
+      <strong style="color:#fff">Nobody sits in the middle connecting the PO to the compliance rules to the execution instructions.</strong>
+      <br><br>
+      That's EasyOps. The decision layer between the purchase order and the warehouse floor.
+    </p>
+  </div>
+
+</div>
+</body>
+</html>

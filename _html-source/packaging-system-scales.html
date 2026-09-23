@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building a Packaging System That Scales — Logic Agency Inc.</title>
+<meta name="description" content="The difference between ordering packaging and building a packaging system. Three stages of packaging maturity, five decisions that lock you in or set you free, and when to stop DIY-ing.">
+<meta name="keywords" content="packaging for startup, packaging development process, scaling packaging, DTC to retail packaging, packaging system for growing brand, when to hire packaging operations, packaging from prototype to production">
+<link rel="canonical" href="https://logicagencyinc.com/guides/packaging-system-that-scales">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- JSON-LD Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Building a Packaging System That Scales",
+  "description": "How growing brands build packaging systems that work at 10K units and 500K units — the three stages of packaging maturity, critical early decisions, and when to stop managing packaging yourself.",
+  "author": {
+    "@type": "Organization",
+    "name": "Logic Agency Inc.",
+    "url": "https://logicagencyinc.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Logic Agency Inc."
+  },
+  "mainEntityOfPage": "https://logicagencyinc.com/guides/packaging-system-that-scales",
+  "datePublished": "2025-02-01",
+  "dateModified": "2025-02-01"
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When should a startup invest in professional packaging?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Before your first production run, not after. The decisions you make at launch — structural design, material selection, tooling, supplier choice — either scale with you or require expensive rework later. A packaging system designed for scale from the start costs marginally more upfront but avoids the retooling, redesign, and rebranding costs that catch most brands between 50K and 200K units."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between ordering packaging and building a packaging system?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ordering packaging is transactional: you find a supplier, get a quote, place an order. A packaging system is the complete infrastructure — structural specs that survive production and transit, supplier relationships with backup options, scalable designs that work at 10K and 500K units without retooling, documentation (tech packs, BOMs, spec sheets) that any manufacturer can produce from, and retail-readiness built in from the start even if you're DTC today."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to build an in-house packaging operations team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A senior packaging or operations hire costs $150-200K in salary in major US markets, plus benefits, software, recruiting fees, and onboarding time — easily $250K+ all in for one person. That person likely won't have deep expertise across packaging engineering, global sourcing, retail compliance, and inventory management. An outsourced packaging operations retainer starts at $2,500 per month and provides access to all of those capabilities from day one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the stages of packaging maturity for growing brands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stage 1 (Survival, 0-50K units): Get packaging that works, ships, and represents the brand. Speed matters more than optimization. Stage 2 (Systematization, 50K-500K units): Lock in suppliers, formalize specs, start optimizing for cost and efficiency. This is where most brands stall. Stage 3 (Optimization, 500K+ units): Continuous cost reduction, DIM weight optimization, sustainability improvements, and multi-channel packaging variants."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--o:#FF600A;--od:#E55509;--bl:#0055FF;--bk:#212121;--gr:#3E3E3E;--dk:#2A2A2A;--lt:#DFDFDF;--ow:#F3F3F3;--w:#FFF}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--bk);background:var(--ow);overflow-x:hidden}
+.gl{background-color:var(--ow);background-image:linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px);background-size:28px 28px}
+.gd{background-color:var(--dk);background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(42,42,42,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.lo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.lo svg{width:36px;height:36px}
+.lo span{font-weight:700;font-size:17px;color:var(--o);letter-spacing:-.3px}
+.nr{display:flex;gap:32px;align-items:center}
+.nr a{color:rgba(255,255,255,.85);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nr a:hover{color:#fff}
+.nc{background:var(--o)!important;color:#fff!important;padding:10px 24px!important;border-radius:50px!important;font-weight:600!important;font-size:13px!important}
+.nc:hover{background:var(--od)!important}
+.bt{padding:16px 36px;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;font-family:'Poppins',sans-serif}
+.bo{background:var(--o);color:#fff}
+.bo:hover{background:var(--od);transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,96,10,.3)}
+.bw{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}
+.bw:hover{border-color:rgba(255,255,255,.6);transform:translateY(-2px)}
+
+/* ARTICLE HERO */
+.a-hero{padding:140px 60px 80px;background-color:var(--ow)}
+.a-hero-inner{max-width:800px;margin:0 auto}
+.breadcrumb{font-size:13px;color:var(--gr);margin-bottom:32px}
+.breadcrumb a{color:var(--o);text-decoration:none;font-weight:600}
+.breadcrumb a:hover{text-decoration:underline}
+.a-hero h1{font-size:clamp(36px,4.5vw,56px);font-weight:800;line-height:1.08;letter-spacing:-2px;margin-bottom:24px}
+.a-hero h1 .o{color:var(--o)}
+.a-lede{font-size:19px;line-height:1.75;color:var(--gr);margin-bottom:32px}
+.a-meta{display:flex;gap:24px;align-items:center;padding-top:24px;border-top:1px solid var(--lt);font-size:13px;color:var(--gr)}
+.a-meta strong{color:var(--bk)}
+
+/* ARTICLE BODY */
+.article{padding:0 60px 100px}
+.article-inner{max-width:800px;margin:0 auto}
+.article h2{font-size:clamp(24px,3vw,32px);font-weight:800;line-height:1.15;letter-spacing:-1px;margin:64px 0 20px;color:var(--bk)}
+.article h2:first-child{margin-top:0}
+.article h3{font-size:20px;font-weight:700;line-height:1.3;margin:40px 0 14px;color:var(--bk)}
+.article p{font-size:16.5px;line-height:1.8;color:var(--gr);margin-bottom:20px}
+.article p strong{color:var(--bk);font-weight:700}
+
+/* CALLOUT */
+.callout{background:#fff;border-left:4px solid var(--o);border-radius:0 12px 12px 0;padding:28px 32px;margin:36px 0}
+.callout p{margin-bottom:0;font-size:15px;line-height:1.7}
+.callout p:not(:last-child){margin-bottom:12px}
+.callout strong{color:var(--bk)}
+
+/* STAGE CARDS */
+.stage{background:#fff;border-radius:20px;padding:40px;margin:24px 0;border:1px solid rgba(0,0,0,.04);position:relative;overflow:hidden}
+.stage::before{content:'';position:absolute;top:0;left:0;bottom:0;width:4px}
+.stage-1::before{background:var(--lt)}
+.stage-2::before{background:var(--o)}
+.stage-3::before{background:var(--bk)}
+.stage-header{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.stage-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:6px 14px;border-radius:50px}
+.stage-1 .stage-tag{background:rgba(0,0,0,.05);color:var(--gr)}
+.stage-2 .stage-tag{background:rgba(255,96,10,.1);color:var(--o)}
+.stage-3 .stage-tag{background:var(--bk);color:#fff}
+.stage-vol{font-size:13px;color:var(--gr)}
+.stage h3{font-size:22px;font-weight:800;margin-bottom:12px;letter-spacing:-.5px}
+.stage p{font-size:15px;line-height:1.7;color:var(--gr);margin-bottom:0}
+.stage p:not(:last-child){margin-bottom:12px}
+
+/* DECISION CARDS */
+.dec-grid{margin:36px 0}
+.dec{display:flex;gap:24px;padding:28px 0;border-bottom:1px solid var(--lt)}
+.dec:first-child{padding-top:0}
+.dec:last-child{border-bottom:none}
+.dec-num{flex-shrink:0;width:40px;height:40px;border-radius:12px;background:rgba(255,96,10,.08);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--o)}
+.dec h4{font-size:17px;font-weight:700;margin-bottom:8px}
+.dec p{font-size:15px;line-height:1.7;color:var(--gr);margin-bottom:0}
+
+/* SIGNS LIST */
+.signs{margin:36px 0}
+.sign{background:#fff;border-radius:12px;padding:20px 24px;margin:12px 0;border:1px solid rgba(0,0,0,.04);display:flex;align-items:flex-start;gap:16px}
+.sign-icon{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:rgba(255,96,10,.08);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.sign-icon svg{width:14px;height:14px}
+.sign p{font-size:15px;line-height:1.6;color:var(--gr);margin:0}
+.sign p strong{color:var(--bk)}
+
+/* MATH BOX */
+.math-box{background:var(--dk);border-radius:16px;padding:40px;margin:40px 0;color:#fff}
+.math-box h3{font-size:20px;font-weight:800;color:#fff;margin-bottom:20px}
+.math-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.math-row:last-child{border-bottom:none}
+.math-label{font-size:15px;color:rgba(255,255,255,.8)}
+.math-val{font-size:20px;font-weight:800;color:var(--o);letter-spacing:-.5px}
+.math-note{margin-top:20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
+
+/* CTA BAND */
+.cta-band{background-color:var(--dk);padding:80px 60px;text-align:center}
+.cta-inner{max-width:720px;margin:0 auto}
+.cta-inner h2{font-size:clamp(28px,3.5vw,40px);font-weight:800;color:#fff;line-height:1.15;letter-spacing:-1.5px;margin-bottom:16px}
+.cta-inner h2 .o{color:var(--o)}
+.cta-inner>p{font-size:17px;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:32px}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta-sub{display:block;margin-top:16px;font-size:13px;color:rgba(255,255,255,.5)}
+
+/* RELATED */
+.related{padding:80px 60px;background-color:var(--ow)}
+.related-inner{max-width:800px;margin:0 auto}
+.related h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--o);margin-bottom:24px}
+.related-links{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.related-link{background:#fff;border-radius:12px;padding:24px;border:1px solid rgba(0,0,0,.04);text-decoration:none;color:var(--bk);transition:all .3s}
+.related-link:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.related-link h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.related-link p{font-size:13px;color:var(--gr);line-height:1.5;margin:0}
+
+/* FOOTER */
+footer{background-color:var(--dk);color:rgba(255,255,255,.7);padding:48px 60px 32px;border-top:1px solid rgba(255,255,255,.06)}
+.fti{max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.fti .lo span{font-size:15px}
+.fti p{font-size:13px;color:rgba(255,255,255,.5)}
+
+@media(max-width:768px){
+  .a-hero,.article,.cta-band,.related,footer{padding-left:24px!important;padding-right:24px!important}
+  .a-hero{padding-top:110px!important}
+  .a-meta{flex-direction:column;align-items:flex-start;gap:8px}
+  .related-links{grid-template-columns:1fr}
+  .nr{display:none}
+  nav{padding:0 24px}
+  .fti{flex-direction:column;gap:16px;text-align:center}
+  .dec{flex-direction:column;gap:12px}
+  .math-row{flex-direction:column;align-items:flex-start;gap:4px}
+  .stage{padding:32px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<a href="/" class="lo"><svg viewBox="0 0 40 40" fill="none"><circle cx="15" cy="20" r="12" stroke="#FF600A" stroke-width="2.5" fill="none"/><circle cx="25" cy="20" r="12" stroke="#FF600A" stroke-width="2.5" fill="none"/></svg><span>Logic Agency Inc.</span></a>
+<div class="nr"><a href="/">Home</a><a href="/#pricing">Pricing</a><a href="/#results">Results</a><a href="/#faq">FAQ</a><a href="/#cta" class="nc">Let's Talk</a></div>
+</nav>
+
+<!-- HERO -->
+<section class="a-hero gl">
+<div class="a-hero-inner">
+<div class="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; Guides</div>
+<h1>Building a Packaging System <span class="o">That Scales</span></h1>
+<p class="a-lede">Most brands solve packaging the same way: find a supplier, get a quote, order boxes. It works at 5,000 units. At 50,000 it starts cracking. At 500,000 it breaks completely. The difference between brands that scale smoothly and those that hit a wall is whether they built a packaging system or just ordered packaging.</p>
+<div class="a-meta">
+<span><strong>Logic Agency Inc.</strong></span>
+<span>14 min read</span>
+<span>Guides</span>
+</div>
+</div>
+</section>
+
+<!-- ARTICLE -->
+<div class="article gl">
+<div class="article-inner">
+
+<!-- SECTION 1 -->
+<h2>What a "Packaging System" Actually Is</h2>
+
+<p>A packaging system isn't a box. It's the complete infrastructure that gets your product from factory to customer in one piece, looking the way you intended, at a cost you can sustain.</p>
+
+<p>It includes <strong>structural specifications</strong> that survive production and transit — not just a pretty dieline, but engineering that accounts for stacking pressure, humidity, vibration, and drop impact across your entire supply chain. It includes <strong>supplier relationships</strong> with backup options, so a factory delay in one region doesn't shut down your business. It includes <strong>scalable designs</strong> that work at 10,000 units and 500,000 units without retooling, because retooling mid-growth is the most expensive packaging mistake a brand can make.</p>
+
+<p>It includes <strong>documentation</strong> — tech packs, bills of materials, spec sheets, dielines, print-ready files — comprehensive enough that any qualified manufacturer anywhere in the world can produce your packaging from them. If your packaging knowledge lives in one supplier's head or one employee's email, you don't have a system. You have a dependency.</p>
+
+<p>And it includes <strong>retail-readiness built in from the start</strong>, even if you're DTC today. Because the cost of retrofitting DTC packaging for retail is almost always higher than designing for both channels from the beginning.</p>
+
+<div class="callout">
+<p><strong>The test is simple:</strong> if your current packaging supplier disappeared tomorrow, could you hand your documentation to a new manufacturer and be back in production within 4 weeks? If the answer is no, you don't have a packaging system. You have a vendor relationship.</p>
+</div>
+
+<!-- SECTION 2 -->
+<h2>The Three Stages of Packaging Maturity</h2>
+
+<p>Every brand's packaging goes through three stages. The brands that scale well understand which stage they're in and what the next stage requires. The ones that struggle either try to skip stages or stay in Stage 1 far too long.</p>
+
+<div class="stage stage-1">
+<div class="stage-header">
+<span class="stage-tag">Stage 1</span>
+<span class="stage-vol">0 &ndash; 50K units</span>
+</div>
+<h3>Survival</h3>
+<p>Get something that works, ships, and represents the brand. Speed matters more than optimization. You're proving product-market fit, and packaging needs to be good enough to not embarrass you while you figure out whether this business is real.</p>
+<p>The trap at Stage 1 is making decisions that feel temporary but become permanent. Choosing a box size that doesn't fit standard case packs. Selecting a material that can't be sourced at volume. Working with a local supplier who can't scale past 20,000 units. Using tooling that requires custom dies at every reorder.</p>
+<p><strong>The smart move:</strong> spend the extra two weeks at this stage to make choices that scale. The marginal cost of designing for Stage 2 while you're in Stage 1 is almost nothing. The cost of redesigning later is significant.</p>
+</div>
+
+<div class="stage stage-2">
+<div class="stage-header">
+<span class="stage-tag">Stage 2</span>
+<span class="stage-vol">50K &ndash; 500K units</span>
+</div>
+<h3>Systematization</h3>
+<p>Lock in suppliers, formalize specs, start optimizing for cost and efficiency. This is the transition from "ordering packaging" to "running a packaging program." You need documented specs, negotiated pricing tiers, quality control processes, and a sourcing strategy that doesn't depend on a single factory.</p>
+<p>This is where most brands stall. The founder or head of ops is still managing packaging alongside product development, marketing, and fundraising. They know the packaging needs attention but can't justify a full-time hire. Orders get placed reactively. Costs creep. Suppliers start taking advantage because nobody's auditing the relationship.</p>
+<p><strong>The smart move:</strong> this is the stage where outsourced packaging operations makes the most sense. You need the expertise of a packaging team without the overhead of building one. The volume justifies the investment and the complexity demands dedicated attention.</p>
+</div>
+
+<div class="stage stage-3">
+<div class="stage-header">
+<span class="stage-tag">Stage 3</span>
+<span class="stage-vol">500K+ units</span>
+</div>
+<h3>Optimization</h3>
+<p>Continuous cost reduction, DIM weight optimization, sustainability improvements, multi-channel packaging variants (DTC, retail, club, international), and supply chain redundancy across regions. At this volume, a 3% cost reduction is worth tens of thousands of dollars annually. A 1-day reduction in lead time compounds across hundreds of orders.</p>
+<p>This stage requires dedicated operational focus — someone whose job is to make the packaging program better every quarter. That can be an in-house team or an embedded external partner, but it can't be a side project for someone with five other responsibilities.</p>
+<p><strong>The smart move:</strong> invest in the data infrastructure to track landed cost per unit, damage rates, supplier performance, and inventory turns. The brands that win at Stage 3 make decisions from dashboards, not gut feel.</p>
+</div>
+
+<!-- SECTION 3 -->
+<h2>Five Decisions That Lock You In (or Set You Free)</h2>
+
+<p>The choices you make in the first six months of your packaging program determine your cost structure, flexibility, and scaling options for the next two years. These are the five that matter most.</p>
+
+<div class="dec-grid">
+<div class="dec">
+<div class="dec-num">1</div>
+<div>
+<h4>Structural design choices that scale vs. ones that require retooling</h4>
+<p>A custom die-cut box with complex closures looks premium at 5,000 units. At 100,000 units, that complexity means longer production runs, higher defect rates, and tooling that wears out. A well-designed tuck-end box or mailer can deliver the same brand experience with dramatically better production economics. The design should be ambitious. The structure should be practical.</p>
+</div>
+</div>
+<div class="dec">
+<div class="dec-num">2</div>
+<div>
+<h4>Minimum order quantities and cash flow</h4>
+<p>A supplier who offers great pricing at 50,000-unit MOQs isn't helping you if your first order is 5,000 units. Conversely, a flexible supplier who does small runs at premium pricing will drain your margins as you scale. The right answer is usually a supplier who can accommodate your launch volumes with a clear pricing ladder as volume grows — and a contractual path to get there.</p>
+</div>
+</div>
+<div class="dec">
+<div class="dec-num">3</div>
+<div>
+<h4>Domestic vs. international sourcing</h4>
+<p>Domestic sourcing gives you speed, small MOQs, and simpler logistics. International sourcing gives you lower unit costs, higher quality options in some categories, and access to manufacturing capabilities that don't exist domestically. Most brands at scale use both — domestic for fast-turn and low-volume SKUs, international for high-volume primary packaging. The mistake is committing to one or the other based on a single quote rather than running a full landed cost comparison.</p>
+</div>
+</div>
+<div class="dec">
+<div class="dec-num">4</div>
+<div>
+<h4>Tooling investments</h4>
+<p>Custom tooling — dies, molds, embossing plates — is an upfront investment that reduces per-unit cost at volume. But it also locks you into a specific design. If you invest in tooling before your packaging design is final, you'll either live with a suboptimal design or write off the tooling cost. The rule: finalize through prototyping and small-run production before committing to tooling. The exception: simple dies for standard structures, which are inexpensive enough to iterate on.</p>
+</div>
+</div>
+<div class="dec">
+<div class="dec-num">5</div>
+<div>
+<h4>Packaging that works for DTC and retail from day one</h4>
+<p>If there's any chance you'll sell through retail channels in the next two years, design your primary packaging for retail from the start. That means correct barcode placement, shelf-facing orientation, structural durability for case packing, and dimensions that work in standard retail configurations. Adding retail readiness later means a full redesign — new dielines, new tooling, new supplier quotes, and a 3-4 month timeline when a retailer might only give you 60 days.</p>
+</div>
+</div>
+</div>
+
+<!-- SECTION 4 -->
+<h2>When to Stop DIY-ing and Get Help</h2>
+
+<p>Most founders manage packaging themselves through Stage 1. It's a hands-on, scrappy phase and direct involvement makes sense. The problem is that most founders stay hands-on well into Stage 2, long past the point where their time on packaging is costing more than professional help would.</p>
+
+<p>Here are the signs:</p>
+
+<div class="signs">
+<div class="sign">
+<div class="sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF600A" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+<p><strong>You're spending 10+ hours a week on packaging.</strong> Emailing suppliers, chasing quotes, reviewing proofs, tracking shipments, troubleshooting quality issues. That's a quarter of your work week on operations that aren't growing the business.</p>
+</div>
+<div class="sign">
+<div class="sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF600A" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+<p><strong>Deadlines are slipping.</strong> Production runs are coming in late. Reorders are placed at the last minute. You've had at least one stockout caused by packaging timing.</p>
+</div>
+<div class="sign">
+<div class="sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF600A" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+<p><strong>Costs are creeping and you can't explain why.</strong> Your unit cost keeps going up but nothing obvious has changed. You suspect you're overpaying but don't have the bandwidth to audit it.</p>
+</div>
+<div class="sign">
+<div class="sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF600A" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+<p><strong>Supplier relationships are fraying.</strong> Your supplier isn't responding as fast. Quality is inconsistent. You're getting the feeling you're not their priority anymore because your volume is too small or your orders are too sporadic.</p>
+</div>
+<div class="sign">
+<div class="sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF600A" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+<p><strong>A retail opportunity appeared and you're not ready.</strong> Someone wants to put your product on shelves and your packaging can't pass compliance. You need to move fast but don't know where to start.</p>
+</div>
+</div>
+
+<p>If three or more of those are true, you've outgrown DIY packaging management. The question becomes: hire or outsource?</p>
+
+<div class="math-box">
+<h3>The Math: Hire vs. Outsource</h3>
+<div class="math-row">
+<span class="math-label">Senior ops hire (salary + benefits + software)</span>
+<span class="math-val">$250K+ /yr</span>
+</div>
+<div class="math-row">
+<span class="math-label">Recruiting and onboarding time</span>
+<span class="math-val">3-6 months</span>
+</div>
+<div class="math-row">
+<span class="math-label">Outsourced packaging ops (Starter tier)</span>
+<span class="math-val">$30-36K /yr</span>
+</div>
+<div class="math-row">
+<span class="math-label">Outsourced packaging ops (Growth tier)</span>
+<span class="math-val">$60-84K /yr</span>
+</div>
+<div class="math-row">
+<span class="math-label">Time to operational</span>
+<span class="math-val">Days</span>
+</div>
+<p class="math-note">A single senior hire gives you one person's expertise and availability. An outsourced team gives you packaging engineering, global sourcing, retail compliance, inventory planning, and vendor management from day one — at a fraction of the cost.</p>
+</div>
+
+<!-- SECTION 5 -->
+<h2>Building It Right the First Time</h2>
+
+<p>We're currently building a packaging system for a pre-seed brand — from scratch, before their first production run. The system is designed for launch and engineered to scale into commercial volumes and retail distribution. Every structural choice, material selection, and supplier relationship is evaluated against the question: does this work at 10,000 units and 500,000 units?</p>
+
+<p>That's the difference between ordering packaging and building a packaging system. Ordering is transactional. Building is strategic. The transactional approach gets you a box. The strategic approach gets you infrastructure that grows with your business instead of breaking under it.</p>
+
+<p>Most of the expensive packaging problems we see — the rework, the retooling, the emergency freight, the retailer chargebacks, the founder spending 15 hours a week on something that should take two — trace back to a decision made in the first few months that nobody revisited. A supplier chosen for speed rather than scalability. A design locked in before anyone thought about retail. Documentation that doesn't exist because "we'll figure it out later."</p>
+
+<p>Later is expensive. Early is cheap. And the gap between the two gets wider every month you're in market.</p>
+
+</div>
+</div>
+
+<!-- CTA -->
+<section class="cta-band gd">
+<div class="cta-inner">
+<h2>Ready to build packaging that <span class="o">grows with you?</span></h2>
+<p>Whether you're pre-launch or scaling past 500K units, our tiers match where you are right now. Tell us your stage and we'll tell you exactly what the next step looks like.</p>
+<div class="cta-btns">
+<a href="/cdn-cgi/l/email-protection#761c1904121718361a19111f1517111318150f1f18155815191b490503141c1315024b2617151d17111f1811534446250f0502131b534446321300131a19061b131802" class="bt bo">Start a Conversation &rarr;</a>
+<a href="/#pricing" class="bt bw">See Plans &amp; Pricing</a>
+</div>
+<span class="cta-sub">Logic Agency Inc. &middot; Packaging &amp; Supply Chain Ops on a Monthly Retainer</span>
+</div>
+</section>
+
+<!-- RELATED -->
+<section class="related gl">
+<div class="related-inner">
+<h3>More Guides</h3>
+<div class="related-links">
+<a href="/guides/retail-ready-packaging" class="related-link">
+<h4>Getting Your Packaging Retail-Ready</h4>
+<p>Case packs, pallet specs, retailer compliance, and the timeline nobody talks about.</p>
+</a>
+<a href="/guides/packaging-cost-reduction" class="related-link">
+<h4>Packaging Cost Reduction Without Sacrificing Brand</h4>
+<p>The five hidden cost drivers and where brands typically save 15-30%.</p>
+</a>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="fti">
+<a href="/" class="lo"><svg viewBox="0 0 40 40" fill="none" width="28" height="28"><circle cx="15" cy="20" r="12" stroke="#FF600A" stroke-width="2.5" fill="none"/><circle cx="25" cy="20" r="12" stroke="#FF600A" stroke-width="2.5" fill="none"/></svg><span>Logic Agenc
