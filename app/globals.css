@@ -1069,6 +1069,25 @@ footer.guide-footer .fti p{font-size:13px;color:rgba(255,255,255,.5)}
 .concept-services-light .service-domain-dark li{color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.1)}
 .concept-services-light .service-domain-dark ul{border-top-color:rgba(255,255,255,.14)}
 .concept-services-light .service-domain-dark .domain-top p{color:rgba(255,255,255,.5)}
+/* Mid card (orange-forward) for the middle discipline in the trio */
+.concept-services-light .service-domain-mid{background:var(--o);border-color:var(--o);color:#fff}
+.concept-services-light .service-domain-mid h3{color:#fff}
+.concept-services-light .service-domain-mid .domain-lede{color:rgba(255,255,255,.85)}
+.concept-services-light .service-domain-mid li{color:rgba(255,255,255,.92);border-color:rgba(255,255,255,.18)}
+.concept-services-light .service-domain-mid ul{border-top-color:rgba(255,255,255,.24)}
+.concept-services-light .service-domain-mid .domain-top span{color:#fff}
+.concept-services-light .service-domain-mid .domain-top p{color:rgba(255,255,255,.7)}
+.concept-services-light .service-domain-mid li:before{color:#fff}
+/* Trio grid replaces duo when three disciplines are shown */
+.service-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:55px}
+
+/* FAQ legibility fix — override the FaqAccordion's dark-bg defaults when the FAQ section sits on a light background (concept homepage places FAQ inside .sc.gl) */
+.concept-v2 #faq.gl .fi{border-color:rgba(0,0,0,.1)}
+.concept-v2 #faq.gl .fi:first-child{border-top-color:rgba(0,0,0,.1)}
+.concept-v2 #faq.gl .fq h3{color:var(--bk)}
+.concept-v2 #faq.gl .fi:hover .fq h3{color:var(--o)}
+.concept-v2 #faq.gl .fa p{color:var(--gr)}
+.concept-v2 #faq.gl .ft{background:rgba(255,96,10,.08)}
 /* ============================================
    CONCEPT 3 — INTEGRATION COMPARISON
    ============================================ */
@@ -1239,7 +1258,7 @@ footer.guide-footer .fti p{font-size:13px;color:rgba(255,255,255,.5)}
   .design-console__tags{display:none}
 }
 @media(max-width:900px){
-  .concept-hero{grid-template-columns:1fr;padding:125px 32px 70px;gap:45px}.concept-hero-map{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.map-line{display:none}.concept-proofbar{grid-template-columns:1fr 1fr;padding:0}.concept-proofbar span:nth-child(2){border-right:0}.service-duo,.result-grid,.why-grid,.integration-compare,.trust-grid,.work-slate{grid-template-columns:1fr}.why-grid{gap:40px}.industry-stack article{grid-template-columns:45px 1fr}.industry-stack ul{grid-column:2}.engage-grid{grid-template-columns:1fr}.retainer-bands{grid-template-columns:1fr}.retainer-bands>div{border-right:0;border-bottom:1px solid var(--lt)}.why-list p{grid-template-columns:35px 170px 1fr}
+  .concept-hero{grid-template-columns:1fr;padding:125px 32px 70px;gap:45px}.concept-hero-map{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.map-line{display:none}.concept-proofbar{grid-template-columns:1fr 1fr;padding:0}.concept-proofbar span:nth-child(2){border-right:0}.service-duo,.service-trio,.result-grid,.why-grid,.integration-compare,.trust-grid,.work-slate{grid-template-columns:1fr}.why-grid{gap:40px}.industry-stack article{grid-template-columns:45px 1fr}.industry-stack ul{grid-column:2}.engage-grid{grid-template-columns:1fr}.retainer-bands{grid-template-columns:1fr}.retainer-bands>div{border-right:0;border-bottom:1px solid var(--lt)}.why-list p{grid-template-columns:35px 170px 1fr}
   .hub-center{width:150px;height:150px}.hub-center strong{font-size:19px}.compare-hub{min-height:280px}
   .cert-grid,.country-grid{grid-template-columns:repeat(3,1fr)}
   .design-intro__copy{grid-template-columns:1fr;gap:22px}

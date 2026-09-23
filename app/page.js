@@ -3,6 +3,7 @@ import FooterHome from '@/components/FooterHome';
 import FadeIn from '@/components/FadeIn';
 import FaqAccordion from '@/components/FaqAccordion';
 import EmailButton from '@/components/EmailButton';
+import DesignJourney from '@/components/DesignJourney';
 
 export const metadata = {
   title: 'Logic Agency Inc. — One Integrated Packaging & Supply Chain Team',
@@ -44,12 +45,12 @@ export default function HomePage() {
       <Nav variant="home" />
 
       <main className="concept-v2">
-        {/* HERO — Integration lead */}
+        {/* HERO — Concept 2 messaging (reverted) */}
         <section className="concept-hero gl">
           <div className="concept-hero-copy">
-            <div className="concept-kicker">Packaging + Supply Chain · One Integrated Team</div>
-            <h1>We work as your brand, <span>for your brand.</span></h1>
-            <p>Most brands fight through disconnected suppliers, siloed services, and finger-pointing. Logic embeds as one accountable team — from material selection through production, compliance, freight, and shelf.</p>
+            <div className="concept-kicker">Supply chain consulting + implementation</div>
+            <h1>We solve the operational problems between product idea and <span>successful scale.</span></h1>
+            <p>We help physical-product brands make better decisions about materials, manufacturing, packaging, compliance, sourcing, and retail execution — then stay to implement them.</p>
             <div className="hb">
               <EmailButton subject="Let's Talk — Logic Agency" className="bt bo">Tell Us What&apos;s Not Working &rarr;</EmailButton>
               <a href="#services" className="bt bg">See What We Own</a>
@@ -122,7 +123,7 @@ export default function HomePage() {
           <div className="si">
             <div className="sl">What We Solve</div><div className="or" />
             <h2 className="sh">The symptoms are visible. <span className="o">The real problem usually isn&apos;t.</span></h2>
-            <p className="ss">Brands rarely call because they need &ldquo;supply chain architecture.&rdquo; They call because a launch is slipping, margins are moving, or a product cannot reliably make it from idea to shelf.</p>
+            <p className="ss">The visible issue is usually a late shipment, a failed audit, an expensive material decision, or a packaging spec that no longer fits the business. The root cause almost always lives one layer deeper.</p>
             <FadeIn className="problem-ledger">
               {problems.map(([title, copy], i) => (
                 <article className="problem-row" key={title}>
@@ -133,40 +134,60 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SERVICES — two connected disciplines */}
+        {/* SERVICES — three connected disciplines */}
         <section id="services" className="sc wh concept-services concept-services-light">
           <div className="si">
             <div className="sl">Services</div><div className="or" />
-            <h2 className="sh">Two connected disciplines. <span className="o">One accountable team.</span></h2>
-            <p className="ss">Most failures happen between the product decision and the operating reality. Logic works across both.</p>
-            <FadeIn className="service-duo">
+            <h2 className="sh">Three connected disciplines. <span className="o">One accountable team.</span></h2>
+            <p className="ss">Brands rarely call because they need &ldquo;supply chain architecture.&rdquo; They call because a launch is slipping, margins are moving, or a product cannot reliably make it from idea to shelf.</p>
+            <FadeIn className="service-trio">
               <article className="service-domain service-domain-dark">
-                <div className="domain-top"><span>01</span><p>Primary practice</p></div>
-                <h3>Supply Chain Consulting</h3>
-                <p className="domain-lede">Find the cost, risk, quality, sourcing, and execution problems underneath the visible issue — and fix them.</p>
+                <div className="domain-top"><span>01</span><p>Discipline</p></div>
+                <h3>Manufacturing Optimization</h3>
+                <p className="domain-lede">Match the product to the right factory, tools, and process — and hold that partner to spec, cost, and calendar.</p>
+                <ul>
+                  <li>Manufacturing selection &amp; onboarding</li>
+                  <li>Supplier qualification &amp; oversight</li>
+                  <li>Material &amp; component decisions</li>
+                  <li>Tooling, sampling &amp; production management</li>
+                  <li>Quality control &amp; testing systems</li>
+                  <li>Cost, margin &amp; landed-cost analysis</li>
+                </ul>
+              </article>
+              <article className="service-domain service-domain-mid">
+                <div className="domain-top"><span>02</span><p>Discipline</p></div>
+                <h3>Supply Chain Control</h3>
+                <p className="domain-lede">Design and run the flow of materials, product, and information from origin to warehouse — so nothing arrives late, wrong, or unexplained.</p>
                 <ul>
                   <li>Supply chain &amp; cost audits</li>
-                  <li>Manufacturing selection &amp; management</li>
-                  <li>Supplier qualification &amp; oversight</li>
-                  <li>Cost, margin &amp; landed-cost analysis</li>
-                  <li>Quality control &amp; testing systems</li>
-                  <li>Inventory, freight &amp; fulfillment</li>
+                  <li>Global sourcing across 13 countries</li>
+                  <li>Freight, customs &amp; logistics management</li>
+                  <li>Inventory planning &amp; fulfillment</li>
+                  <li>Vendor coordination &amp; accountability</li>
+                  <li>Risk assessment &amp; contingency planning</li>
                 </ul>
               </article>
               <article className="service-domain service-domain-light">
-                <div className="domain-top"><span>02</span><p>Specialist practice</p></div>
-                <h3>Product &amp; Retail Readiness</h3>
-                <p className="domain-lede">Design and engineer the product, packaging, documentation, and operating plan for production and the channel.</p>
+                <div className="domain-top"><span>03</span><p>Discipline</p></div>
+                <h3>Retail Readiness</h3>
+                <p className="domain-lede">Engineer the product, packaging, documentation, and compliance so it lands on shelf without chargebacks, deductions, or rework.</p>
                 <ul>
-                  <li>Material &amp; component selection</li>
-                  <li>Structural &amp; packaging engineering</li>
-                  <li>Certifications &amp; regulatory compliance</li>
+                  <li>Retail-ready structural packaging</li>
+                  <li>Case pack, pallet &amp; routing specs</li>
+                  <li>Retailer compliance (KeHE, UNFI, big-box)</li>
+                  <li>EDI, ASN &amp; chargeback prevention</li>
+                  <li>Certifications (ISO, FSC, FDA, ASTM, CPC)</li>
                   <li>Retail-display &amp; packout development</li>
-                  <li>Technical files &amp; production specs</li>
-                  <li>Testing, sampling &amp; commercialization</li>
                 </ul>
               </article>
             </FadeIn>
+          </div>
+        </section>
+
+        {/* DESIGN SYSTEM — scroll-led product-to-shelf journey */}
+        <section id="design-system" className="sc dks gd concept-design">
+          <div className="si">
+            <DesignJourney />
           </div>
         </section>
 
