@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -9,15 +10,16 @@ const articleSchema = {
   "headline": "The Retail Readiness Bible: Everything You Need to Launch and Scale in Retail",
   "description": "A comprehensive operational playbook for brands entering retail — covering packaging systems, supply chain infrastructure, inventory forecasting, retailer compliance, cost modeling, and a phased checklist from first PO through scale.",
   "author": {
-    "@type": "Organization",
-    "name": "Logic Agency Inc.",
+    "@type": "Person",
+    "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Logic Agency Inc."
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/guides/retail-readiness",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/guides/retail-readiness",
   "datePublished": "2025-02-01",
   "dateModified": "2026-05-26"
 };
@@ -74,19 +76,22 @@ export const metadata = {
   description: 'The complete operational playbook for launching into retail: packaging, supply chain, inventory forecasting, retailer compliance, cost modeling, and a 60-point checklist from pre-PO through scale.',
   keywords: 'how to launch product in retail, retail launch checklist, retail readiness guide, what do I need to sell in retail stores, DTC to retail transition, retail launch plan, retail supply chain, retail inventory forecasting, retail packaging checklist',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/guides/retail-readiness',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/retail-readiness',
   },
   openGraph: {
+    type: 'article',
+    publishedTime: '2025-02-01',
+    authors: ['Jordan Harper'],
     title: 'The Retail Readiness Bible',
     description: 'The complete operational playbook for launching into retail. Packaging, supply chain, compliance, and a 60-point checklist.',
-    url: 'https://www.logicagencyinc.com/guides/retail-readiness',
-    images: [{ url: 'https://www.logicagencyinc.com/images/og-retail-readiness.jpg', width: 1200, height: 630 }],
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/retail-readiness',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-retail-readiness.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The Retail Readiness Bible',
     description: 'The complete operational playbook for launching into retail. Packaging, supply chain, compliance, and a 60-point checklist.',
-    images: ['https://www.logicagencyinc.com/images/og-retail-readiness.jpg'],
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-retail-readiness.jpg'],
   },
 };
 
@@ -98,22 +103,38 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Logic Agency",
-      "item": "https://www.logicagencyinc.com"
+      "item": "https://credyset.github.io/logic-agency-site-concept"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Guides",
-      "item": "https://www.logicagencyinc.com/guides"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "The Retail Readiness Bible: Everything You Need to Launch and Scale in Retail",
-      "item": "https://www.logicagencyinc.com/guides/retail-readiness"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides/retail-readiness"
     }
   ]
 };
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to launch and scale a CPG product in retail",
+  "description": "A three-phase operational process from pre-PO readiness through ongoing retail operations.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Operational assessment", "text": "Audit your packaging, supply chain infrastructure, inventory systems, and cost model before committing to a retailer timeline." },
+    { "@type": "HowToStep", "position": 2, "name": "Retailer compliance and vendor onboarding", "text": "Complete EDI setup, ASN capability, routing guide compliance, case pack and pallet configuration, barcode verification, and vendor portal registration." },
+    { "@type": "HowToStep", "position": 3, "name": "Packaging system development", "text": "Adapt or develop retail-compliant packaging including case packs, inner packs, pallet configurations, and compliant labeling." },
+    { "@type": "HowToStep", "position": 4, "name": "Inventory planning and forecasting", "text": "Build a demand forecast using pipeline fill, weekly sell-through velocity, safety stock calculation, and replenishment cycle timing." },
+    { "@type": "HowToStep", "position": 5, "name": "Production and logistics", "text": "Execute the production run, arrange freight to retailer distribution centers, and coordinate receiving appointments within the delivery window." },
+    { "@type": "HowToStep", "position": 6, "name": "Ship, receive, and reorder", "text": "Ship the initial PO, confirm DC receiving, monitor sell-through velocity, and establish the reorder cadence for ongoing replenishment." }
+  ]
+};
+
 export default function RetailReadinessBible() {
   return (
     <>
@@ -129,13 +150,17 @@ export default function RetailReadinessBible() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
 
       <Nav variant="guide" />
 
       {/* HERO */}
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
           <h1>The Retail Readiness <span className="o">Bible</span></h1>
           <p className="a-lede">Getting a buyer to say yes is the easy part. The hard part is everything that happens next &mdash; packaging, supply chain, inventory, compliance, economics, and the operational infrastructure that determines whether you&apos;re still on shelf in 12 months or burned through cash and out of stock by month three. This is the complete playbook.</p>
           <div className="a-meta">
@@ -299,7 +324,7 @@ export default function RetailReadinessBible() {
           {/* SECTION 3: PACKAGING */}
           <h2 id="packaging">Packaging: From DTC Box to Retail System</h2>
 
-          <p>We wrote an <a href="/guides/retail-ready-packaging" style={{ color: 'var(--o)', fontWeight: 600 }}>entire guide on getting packaging retail-ready</a> &mdash; case packs, pallet specs, barcodes, compliance, and timeline. If you haven&apos;t read it, start there for the specifics.</p>
+          <p>We wrote an <Link href="/guides/retail-ready-packaging" style={{ color: 'var(--o)', fontWeight: 600 }}>entire guide on getting packaging retail-ready</Link> &mdash; case packs, pallet specs, barcodes, compliance, and timeline. If you haven&apos;t read it, start there for the specifics.</p>
 
           <p>Here&apos;s the strategic view: your DTC packaging and your retail packaging serve fundamentally different purposes and operate in fundamentally different supply chains.</p>
 
@@ -545,13 +570,13 @@ export default function RetailReadinessBible() {
       <section className="cta-band gd">
         <div className="cta-inner">
           <h2>Want someone to own this <span className="o">checklist for you?</span></h2>
-          <p>This is exactly what our Growth and Enterprise tiers are built for &mdash; the operational infrastructure that gets you into retail and keeps you there. We&apos;ve taken brands through every phase of this checklist. Tell us where you are and we&apos;ll tell you what comes next.</p>
+          <p>Logic builds and coordinates the operational infrastructure that gets a product into retail and keeps it there. We&apos;ve taken brands through every phase of this checklist. Tell us where you are and we&apos;ll tell you what comes next.</p>
           <div className="cta-btns">
             <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Start a Conversation &rarr;</a>
-            <a href="/#pricing" className="bt bw">See Plans &amp; Pricing</a>
+            <Link href="/how-we-work" className="bt bw">See How Logic Works</Link>
           </div>
-          <a href="/guides/retail-readiness-scorecard" className="cta-dl">Download the free 40-Point Readiness Scorecard &rarr;</a>
-          <span className="cta-sub">Logic Agency Inc. &middot; Packaging &amp; Supply Chain Ops on a Monthly Retainer</span>
+          <Link href="/guides/retail-readiness-scorecard" className="cta-dl">Use the free 40-Point Retail-Readiness Scorecard &rarr;</Link>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -560,14 +585,14 @@ export default function RetailReadinessBible() {
         <div className="related-inner">
           <h3>Go Deeper</h3>
           <div className="related-links">
-            <a href="/guides/retail-ready-packaging" className="related-link">
+            <Link href="/guides/retail-ready-packaging" className="related-link">
               <h4>Getting Your Packaging Retail-Ready</h4>
               <p>The detailed breakdown of case packs, pallet specs, barcodes, and retailer compliance requirements.</p>
-            </a>
-            <a href="/guides/packaging-cost-reduction" className="related-link">
+            </Link>
+            <Link href="/guides/packaging-cost-reduction" className="related-link">
               <h4>Packaging Cost Reduction Without Sacrificing Brand</h4>
               <p>Where the hidden costs are and how brands typically save 15-30% without downgrading.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

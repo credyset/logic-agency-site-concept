@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -9,15 +10,16 @@ const articleSchema = {
   "headline": "The CPG Brand's First 90 Days in Retail",
   "description": "A week-by-week account of what actually happens after a retailer says yes — packaging, compliance, inventory, logistics, and the operational reality that nobody warns first-time retail brands about.",
   "author": {
-    "@type": "Organization",
-    "name": "Logic Agency Inc.",
+    "@type": "Person",
+    "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Logic Agency Inc."
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/guides/first-90-days-in-retail",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/guides/first-90-days-in-retail",
   "datePublished": "2025-03-01",
   "dateModified": "2026-05-26"
 };
@@ -70,23 +72,26 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'First 90 Days in Retail | Logic Agency',
+  title: 'First 90 Days in Retail — Logic Agency Inc.',
   description: 'The first 90 days in retail require vendor onboarding, packaging checks, inventory planning, routing compliance, and reorder timing.',
   keywords: 'how to launch in retail, first retail order, CPG retail launch plan, DTC to retail transition, first 90 days retail, retail launch timeline, getting into retail stores, retail launch checklist CPG, selling to retailers for the first time',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/guides/first-90-days-in-retail',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/first-90-days-in-retail',
   },
   openGraph: {
+    type: 'article',
+    publishedTime: '2025-03-01',
+    authors: ['Jordan Harper'],
     title: 'Your First 90 Days in Retail',
     description: 'A week-by-week account of what actually happens after a retailer says yes — the chaos, the surprises, and the operational reality.',
-    url: 'https://www.logicagencyinc.com/guides/first-90-days-in-retail',
-    images: [{ url: 'https://www.logicagencyinc.com/images/og-first-90-days-in-retail.jpg', width: 1200, height: 630 }],
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/first-90-days-in-retail',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-first-90-days-in-retail.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Your First 90 Days in Retail',
     description: 'A week-by-week account of what actually happens after a retailer says yes — the chaos, the surprises, and the operational reality.',
-    images: ['https://www.logicagencyinc.com/images/og-first-90-days-in-retail.jpg'],
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-first-90-days-in-retail.jpg'],
   },
 };
 
@@ -98,19 +103,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Logic Agency",
-      "item": "https://www.logicagencyinc.com"
+      "item": "https://credyset.github.io/logic-agency-site-concept"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Guides",
-      "item": "https://www.logicagencyinc.com/guides"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "The CPG Brand's First 90 Days in Retail",
-      "item": "https://www.logicagencyinc.com/guides/first-90-days-in-retail"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides/first-90-days-in-retail"
     }
   ]
 };
@@ -125,7 +130,7 @@ export default function First90DaysInRetail() {
       {/* HERO */}
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
           <h1>Your First 90 Days <span className="o">in Retail</span></h1>
           <p className="a-lede">The first 90 days in retail are the operating window between buyer approval and stable replenishment: vendor onboarding, packaging compliance, inventory build, routing setup, first shipment, and reorder planning. The brands that win the reorder start this work before the official PO arrives.</p>
           <div className="a-meta">
@@ -421,10 +426,10 @@ export default function First90DaysInRetail() {
           <p>We&apos;ve guided brands through their first 90 days and through their fiftieth retail shipment. Whether you&apos;re staring at a routing guide for the first time or trying to fix an operation that&apos;s already in motion &mdash; tell us where you are.</p>
           <div className="cta-btns">
             <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Start a Conversation &rarr;</a>
-            <a href="/#pricing" className="bt bw">See Plans &amp; Pricing</a>
+            <Link href="/how-we-work" className="bt bw">See How Logic Works</Link>
           </div>
-          <a href="/guides/retail-readiness-scorecard" className="cta-dl">Download the free 40-Point Readiness Scorecard &rarr;</a>
-          <span className="cta-sub">Logic Agency Inc. &middot; Packaging, Supply Chain &amp; Operations on a Monthly Retainer</span>
+          <Link href="/guides/retail-readiness-scorecard" className="cta-dl">Use the free 40-Point Retail-Readiness Scorecard &rarr;</Link>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -433,14 +438,14 @@ export default function First90DaysInRetail() {
         <div className="related-inner">
           <h3>Go Deeper</h3>
           <div className="related-links">
-            <a href="/guides/retail-readiness" className="related-link">
+            <Link href="/guides/retail-readiness" className="related-link">
               <h4>The Retail Readiness Bible</h4>
               <p>The complete operational playbook with a 45-point checklist across three phases.</p>
-            </a>
-            <a href="/guides/retail-ready-packaging" className="related-link">
+            </Link>
+            <Link href="/guides/retail-ready-packaging" className="related-link">
               <h4>Getting Your Packaging Retail-Ready</h4>
               <p>Case packs, pallet specs, barcodes, retailer compliance, and the timeline nobody talks about.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

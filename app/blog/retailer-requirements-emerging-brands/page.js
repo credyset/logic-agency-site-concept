@@ -2,6 +2,7 @@ import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
+import Link from 'next/link';
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -11,6 +12,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -18,7 +20,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/retailer-requirements-emerging-brands",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/retailer-requirements-emerging-brands",
   "datePublished": "2026-06-15",
   "dateModified": "2026-06-15"
 };
@@ -27,9 +29,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "What Retailers Actually Want from Emerging Brands", "item": "https://www.logicagencyinc.com/blog/retailer-requirements-emerging-brands" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "What Retailers Actually Want from Emerging Brands", "item": "https://credyset.github.io/logic-agency-site-concept/blog/retailer-requirements-emerging-brands" }
   ]
 };
 
@@ -85,18 +87,20 @@ export const metadata = {
   description: 'Retail buyers evaluate category fit, margin structure, velocity proof, operational readiness, and compliance documentation before placing a first PO. Most brands focus on the wrong things.',
   keywords: 'retailer onboarding requirements, how to get into retail, what retailers look for in brands, retail buyer expectations',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/retailer-requirements-emerging-brands',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/retailer-requirements-emerging-brands',
   },
   openGraph: {
     title: 'What Retailers Actually Want from Emerging Brands: Inside the Buyer\'s Mind',
     description: 'Retail buyers evaluate category fit, margin structure, velocity proof, operational readiness, and compliance documentation before placing a first PO. Most brands focus on the wrong things.',
-    url: 'https://www.logicagencyinc.com/blog/retailer-requirements-emerging-brands',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/retailer-requirements-emerging-brands',
     type: 'article',
     publishedTime: '2026-06-15',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-retailer-requirements-emerging-brands.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-retailer-requirements-emerging-brands.jpg'],
     title: 'What Retailers Actually Want from Emerging Brands: Inside the Buyer\'s Mind',
     description: 'Retail buyers evaluate category fit, margin structure, velocity proof, operational readiness, and compliance documentation before placing a first PO. Most brands focus on the wrong things.',
   },
@@ -124,11 +128,11 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Retail Launch</span>
           <h1>What Retailers Actually Want from Emerging Brands</h1>
-          <p className="b-lede">Retailer onboarding requirements go beyond having a good product — buyers evaluate category fit, margin structure, velocity proof, operational readiness, and marketing support before placing a first PO. The brands that get to shelf aren't always the best products. They're the ones that made the buyer's job easy. After 20+ years working with brands through the retail onboarding process — and sitting on the other side of that table — we've seen what separates a brand that gets a first meeting from a brand that gets a first PO. This is the checklist that retail buyers actually work from, whether they publish it or not.</p>
+          <p className="b-lede">The brands that get to shelf aren&apos;t always the best products &mdash; they&apos;re the ones that made the buyer&apos;s job easy. Here&apos;s the checklist buyers actually work from.</p>
           <div className="b-meta">
             <span><strong>Jordan Harper, Logic Agency Inc.</strong></span>
             <span>Jun 2026</span>
@@ -140,7 +144,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-retail.jpg" alt="Retail buyer requirements and onboarding for emerging consumer brands" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-retail.jpg" alt="Retail buyer requirements and onboarding for emerging consumer brands" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -158,9 +162,19 @@ export default function Page() {
             </ul>
           </div>
 
-          <p>Retailer onboarding requirements go beyond having a good product &mdash; buyers evaluate category fit, margin structure, velocity proof, operational readiness, and marketing support before placing a first PO. The brands that get to shelf aren&apos;t always the best products. They&apos;re the ones that made the buyer&apos;s job easy.</p>
-
-          <p>After 20+ years working with brands through the retail onboarding process &mdash; and sitting on the other side of that table &mdash; we&apos;ve seen what separates a brand that gets a first meeting from a brand that gets a first PO. This is the checklist that retail buyers actually work from, whether they publish it or not.</p>
+          <div className="toc">
+            <h3>What&apos;s Inside</h3>
+            <ul className="toc-list">
+              <li><a href="#category-fit-and-differentiation-the-first-filter">Category Fit and Differentiation</a></li>
+              <li><a href="#velocity-proof-show-demand-not-potential">Velocity Proof: Show Demand, Not Potential</a></li>
+              <li><a href="#margin-requirements-the-math-the-buyer-runs-before-anything-else">Margin Requirements</a></li>
+              <li><a href="#operational-readiness-can-you-ship-on-time-every-time">Operational Readiness</a></li>
+              <li><a href="#marketing-support-what-buyers-expect-you-ll-spend">Marketing Support</a></li>
+              <li><a href="#insurance-and-compliance-the-documentation-that-blocks-onboarding">Insurance and Compliance</a></li>
+              <li><a href="#the-timeline-first-meeting-to-shelf-placement">The Timeline: First Meeting to Shelf</a></li>
+              <li><a href="#what-most-brands-underestimate">What Most Brands Underestimate</a></li>
+            </ul>
+          </div>
 
           <h2 id="category-fit-and-differentiation-the-first-filter">Category Fit and Differentiation: The First Filter</h2>
 
@@ -174,9 +188,11 @@ export default function Page() {
 
           <p><strong>Your product fills a whitespace.</strong> The buyer&apos;s current assortment doesn&apos;t cover a specific need, price point, or customer segment. Maybe they have premium skincare but nothing at a mid-tier clinical price point. Maybe they have conventional snack bars but nothing in the adaptogenic wellness space.</p>
 
-          <p>What buyers don&apos;t want: another product that looks like what they already have. "We&apos;re like [Competitor X] but better" is the fastest way to end a buyer meeting. Buyers aren&apos;t looking for incrementally better versions of products they already carry. They&apos;re looking for differentiation that brings a new customer to the shelf or captures a need their current assortment misses.</p>
+          <div className="callout"><p><strong>The fastest way to end a buyer meeting.</strong> &ldquo;We&apos;re like [Competitor X] but better.&rdquo; Buyers aren&apos;t looking for incrementally better versions of products they already carry.</p></div>
 
-          <p className="b-note">&rarr; Our <a href="/guides/retail-readiness">Retail Readiness Bible</a> covers how to research a retailer&apos;s current assortment and identify whitespace before the buyer meeting.</p>
+          <p>What buyers don&apos;t want: another product that looks like what they already have. Buyers aren&apos;t looking for incrementally better versions of products they already carry. They&apos;re looking for differentiation that brings a new customer to the shelf or captures a need their current assortment misses.</p>
+
+          <p className="b-note">&rarr; Our <Link href="/guides/retail-readiness">Retail Readiness Bible</Link> covers how to research a retailer&apos;s current assortment and identify whitespace before the buyer meeting.</p>
 
           <h2 id="velocity-proof-show-demand-not-potential">Velocity Proof: Show Demand, Not Potential</h2>
 
@@ -250,11 +266,11 @@ export default function Page() {
 
           <p>If your product retails at $29.99 and you&apos;re in beauty, the buyer expects a wholesale price of $12&ndash;$15 (40&ndash;50% of MSRP). Your COGS need to support that wholesale price while leaving you a viable margin after freight, compliance costs, and trade spend.</p>
 
-          <p>The most common margin mistake: DTC brands price their product for a DTC margin model (70% gross margin on a direct sale) and then discover they can&apos;t offer wholesale pricing that works for retail without going below their cost floor.</p>
+          <div className="callout"><p><strong>The most common margin mistake.</strong> DTC brands price their product for a DTC margin model (70% gross margin on a direct sale) and then discover they can&apos;t offer wholesale pricing that works for retail without going below their cost floor.</p></div>
 
           <p>Run the retail margin math before the buyer meeting, not during it. If your wholesale price doesn&apos;t work for the retailer, you have three options: reduce COGS, raise MSRP, or acknowledge that retail isn&apos;t the right channel yet.</p>
 
-          <p className="b-note">&rarr; Our <a href="/guides/packaging-cost-reduction">packaging cost reduction guide</a> covers practical strategies for reducing COGS to make retail margin math work &mdash; we&apos;ve achieved 15&ndash;20% cost reductions for brands like Epicutis and Artilect without sacrificing brand quality.</p>
+          <p className="b-note">&rarr; Our <Link href="/guides/packaging-cost-reduction">packaging cost reduction guide</Link> covers practical strategies for reducing COGS to make retail margin math work &mdash; including the changes behind Epicutis&apos; approved 15% savings result.</p>
 
           <h2 id="operational-readiness-can-you-ship-on-time-every-time">Operational Readiness: Can You Ship on Time, Every Time?</h2>
 
@@ -276,7 +292,7 @@ export default function Page() {
 
           <p>The brands that win these conversations don&apos;t just say "we can handle it." They show a capabilities document: their 3PL name and retail accounts served, their EDI provider, their fill rate from existing accounts, and their production lead times. One page. No narrative. Just the operational facts that let a buyer say "this brand won&apos;t create problems for me."</p>
 
-          <p className="b-note">&rarr; Our <a href="/guides/first-90-days-in-retail">First 90 Days in Retail guide</a> covers the operational capabilities document that de-risks you in the buyer&apos;s eyes.</p>
+          <p className="b-note">&rarr; Our <Link href="/guides/first-90-days-in-retail">First 90 Days in Retail guide</Link> covers the operational capabilities document that de-risks you in the buyer&apos;s eyes.</p>
 
           <h2 id="marketing-support-what-buyers-expect-you-ll-spend">Marketing Support: What Buyers Expect You&apos;ll Spend</h2>
 
@@ -294,7 +310,9 @@ export default function Page() {
 
           <p><strong>Co-op advertising.</strong> Participation in the retailer&apos;s circular, website features, or seasonal marketing campaigns. The retailer handles the creative; you fund a portion.</p>
 
-          <p>The total Year 1 marketing support investment for a brand launching in one major retailer typically runs $20,000&ndash;$75,000. That&apos;s on top of your standard marketing budget. Brands that don&apos;t budget for this find themselves either refusing buyer requests (which damages the relationship) or scrambling to fund programs that weren&apos;t in the plan.</p>
+          <div className="callout"><p><strong>Year 1 reality.</strong> The total marketing support investment for a brand launching in one major retailer typically runs $20,000&ndash;$75,000 &mdash; on top of your standard marketing budget.</p></div>
+
+          <p>Brands that don&apos;t budget for this find themselves either refusing buyer requests (which damages the relationship) or scrambling to fund programs that weren&apos;t in the plan.</p>
 
           <h2 id="insurance-and-compliance-the-documentation-that-blocks-onboarding">Insurance and Compliance: The Documentation That Blocks Onboarding</h2>
 
@@ -383,39 +401,13 @@ export default function Page() {
 
           <p>The brands that succeed at retail treat it as a channel that requires its own strategy, its own budget, and its own operational infrastructure &mdash; not an extension of what they&apos;ve already built for DTC.</p>
 
-          <p className="b-note">&rarr; Our <a href="/guides/retail-readiness">Retail Readiness Bible</a> is the complete operational guide for getting retail-ready. It covers everything from this post in deeper detail, with templates and checklists for each stage.</p>
-
-          <h2 id="frequently-asked-questions" className="b-faq-h">Frequently Asked Questions</h2>
-
-          <p><strong>What do retail buyers look for in emerging brands?</strong></p>
-
-          <p>Retail buyers evaluate six factors: (1) category fit &mdash; does the product fill a gap in their current assortment? (2) margin structure &mdash; does the wholesale pricing support standard retail margins? (3) velocity proof &mdash; is there evidence of real demand? (4) operational readiness &mdash; can the brand ship on time, every time? (5) marketing support &mdash; will the brand invest in driving traffic to the product on shelf? (6) compliance documentation &mdash; is all required insurance, certification, and vendor paperwork ready?</p>
-
-          <p><strong>How long does it take to get an emerging brand into retail?</strong></p>
-
-          <p>From first buyer meeting to product on shelf, expect 6&ndash;12 months. The timeline includes buyer review (2&ndash;6 weeks), category/line review decisions (4&ndash;12 weeks, often seasonal), vendor setup (4&ndash;8 weeks), and production/fulfillment of the initial PO (8&ndash;16 weeks). Missing a seasonal line review window can add 3&ndash;6 months to the timeline.</p>
-
-          <p><strong>What margins do retailers expect from CPG brands?</strong></p>
-
-          <p>Margins vary by category. Beauty and skincare buyers typically expect 50&ndash;60% retail margin (wholesale price at 40&ndash;50% of MSRP). Food and beverage runs 35&ndash;45%. Wellness and supplements range 45&ndash;55%. Your COGS need to support the wholesale price while leaving viable brand margin after freight, compliance, and trade spend.</p>
-
-          <p><strong>How much does it cost to launch in retail as an emerging brand?</strong></p>
-
-          <p>Beyond product and inventory costs, budget $15,000&ndash;$50,000 for retail readiness (EDI, packaging compliance, insurance, documentation) and $20,000&ndash;$75,000 for Year 1 marketing support (trade spend, sampling, promotional programs). Total Year 1 investment beyond inventory: $35,000&ndash;$125,000 per major retail account. The brands that underbudget this don&apos;t fail on product. They fail on cash flow.</p>
-
-          <p><strong>Do I need to be in DTC before approaching retail?</strong></p>
-
-          <p>No, but it helps. DTC sales data provides velocity proof that de-risks the buyer&apos;s decision. Amazon sales data serves a similar purpose. If you&apos;re approaching retail without DTC or Amazon traction, you&apos;ll need other demand signals &mdash; strong social following, press coverage, successful regional retail performance, or a category whitespace argument that&apos;s compelling enough to offset the lack of sales data.</p>
-
-          <p><strong>What&apos;s the most common reason emerging brands get rejected by retail buyers?</strong></p>
-
-          <p>Lack of differentiation. "We&apos;re like [Brand X] but better/cleaner/more premium" doesn&apos;t give a buyer a reason to add another SKU when they already carry a brand that fills that slot. The brands that get meetings present a clear category whitespace argument: what need exists in the buyer&apos;s current assortment that your product uniquely fills?</p>
+          <p className="b-note">&rarr; Our <Link href="/guides/retail-readiness">Retail Readiness Bible</Link> is the complete operational guide for getting retail-ready. It covers everything from this post in deeper detail, with templates and checklists for each stage.</p>
 
           <h2 id="start-a-conversation">Start a Conversation</h2>
 
-          <p>Getting into retail is an operational challenge as much as a brand challenge. We&apos;ve helped brands prepare for and navigate the retailer onboarding process &mdash; from buyer pitch through first PO and sustained shelf performance. Our fractional operations model gives emerging brands access to 20+ years of retail experience and <a href="/guides/retail-ready-packaging">retail-ready packaging</a> capabilities at $30&ndash;120K/yr &mdash; a fraction of the $600&ndash;830K cost of building it in-house.</p>
+          <p>Getting into retail is an operational challenge as much as a brand challenge. We&apos;ve helped brands prepare for and navigate the retailer onboarding process &mdash; from buyer pitch through first PO and sustained shelf performance. Logic connects 20+ years of retail experience with <Link href="/guides/retail-ready-packaging">retail-ready packaging</Link>, supply-chain coordination, and hands-on implementation under one accountable team.</p>
 
-          <p><a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a></p>
+          <p><a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a></p>
 
           <p><em>About the author: Jordan Harper is the founder of Logic Agency, a fractional supply chain and packaging operations firm serving consumer brands from pre-launch through $50M+. With 20+ years of retail and eCommerce experience and manufacturing relationships in 15+ countries, he&apos;s helped brands like Epicutis achieve 7x SKU growth (3 to 21+ SKUs) while reducing costs 15% and scaling to 1M+ units/year.</em></p>
 
@@ -434,8 +426,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Have an Operations<br /><em>Question?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

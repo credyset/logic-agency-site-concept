@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
@@ -10,6 +11,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -17,7 +19,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/routing-guide-compliance-retail",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/routing-guide-compliance-retail",
   "datePublished": "2026-06-17",
   "dateModified": "2026-06-17"
 };
@@ -26,9 +28,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "Retail Routing Guide Compliance: What Every Brand Gets Wrong", "item": "https://www.logicagencyinc.com/blog/routing-guide-compliance-retail" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "Retail Routing Guide Compliance: What Every Brand Gets Wrong", "item": "https://credyset.github.io/logic-agency-site-concept/blog/routing-guide-compliance-retail" }
   ]
 };
 
@@ -80,22 +82,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'Retail Routing Guide Compliance for CPG Brands | Logic Agency',
+  title: 'Retail Routing Guide Compliance for CPG Brands — Logic Agency Inc.',
   description: 'A practical guide to retail routing guide compliance: ASN timing, carrier rules, pallet specs, case packs, delivery appointments, and chargeback prevention.',
   keywords: 'retail routing guide compliance, routing guide compliance, retail chargeback prevention, CPG routing guide, ASN timing retail, retail shipment compliance',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/routing-guide-compliance-retail',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/routing-guide-compliance-retail',
   },
   openGraph: {
     title: 'Retail Routing Guide Compliance: What Every Brand Gets Wrong',
     description: 'A practical guide to retail routing guide compliance: ASN timing, carrier rules, pallet specs, case packs, delivery appointments, and chargeback prevention.',
-    url: 'https://www.logicagencyinc.com/blog/routing-guide-compliance-retail',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/routing-guide-compliance-retail',
     type: 'article',
     publishedTime: '2026-06-17',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg'],
     title: 'Retail Routing Guide Compliance: What Every Brand Gets Wrong',
     description: 'A practical guide to retail routing guide compliance: ASN timing, carrier rules, pallet specs, case packs, delivery appointments, and chargeback prevention.',
   },
@@ -122,7 +126,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Retail Compliance</span>
           <h1>Retail Routing Guide Compliance: What Every Brand Gets Wrong</h1>
@@ -138,7 +142,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-retail.jpg" alt="Retail routing guide compliance checklist for CPG brands shipping to major retailers" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-retail.jpg" alt="Retail routing guide compliance checklist for CPG brands shipping to major retailers" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -377,8 +381,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Ready to Ship<br /><em>Clean?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll review your first retail PO before it becomes a chargeback file.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll review your first retail PO before it becomes a chargeback file.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

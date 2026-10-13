@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
+import SkipLink from '@/components/SkipLink';
 import FooterHome from '@/components/FooterHome';
 
 const collectionSchema = {
@@ -6,7 +8,7 @@ const collectionSchema = {
   "@type": "Blog",
   "name": "Logic Agency Blog",
   "description": "Operational advice on supply chain, retail launch, packaging, and fractional operations for consumer product brands.",
-  "url": "https://www.logicagencyinc.com/blog",
+  "url": "https://credyset.github.io/logic-agency-site-concept/blog",
   "publisher": {
     "@type": "Organization",
     "name": "Logic Agency Inc.",
@@ -17,11 +19,11 @@ const collectionSchema = {
 export const metadata = {
   title: 'Blog — Supply Chain & Retail Operations for CPG Brands — Logic Agency Inc.',
   description: 'Operational advice on retail launch, supply chain, packaging economics, and fractional operations for consumer product brands doing $5M–$20M in revenue.',
-  alternates: { canonical: 'https://www.logicagencyinc.com/blog' },
+  alternates: { canonical: 'https://credyset.github.io/logic-agency-site-concept/blog' },
   openGraph: {
     title: 'Logic Agency Blog — Supply Chain & Retail Operations',
     description: 'Operational advice on retail launch, supply chain, packaging economics, and fractional operations for scaling consumer product brands.',
-    url: 'https://www.logicagencyinc.com/blog',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog',
     type: 'website',
   },
   twitter: {
@@ -78,41 +80,44 @@ export default function BlogIndex() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
+      <SkipLink />
       <Nav />
 
-      {/* HERO */}
-      <section className="gd" style={{ padding: '80px 60px 64px' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <main id="main-content" tabIndex={-1}>
+        {/* HERO */}
+        <section className="gd blog-index-hero">
+          <div className="blog-index-hero-inner">
           <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--o)', marginBottom: '16px' }}>Logic Agency</p>
           <h1 style={{ fontSize: 'clamp(32px,5vw,52px)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-2px', color: '#fff', margin: '0 0 20px' }}>Operations Insights</h1>
           <p style={{ fontSize: '18px', lineHeight: 1.65, color: 'rgba(255,255,255,.75)', maxWidth: '580px', margin: 0 }}>Practical advice on supply chain, retail launch, packaging economics, and fractional operations &mdash; for brands scaling from $5M to $20M+ in revenue.</p>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* BLOG GRID */}
-      <div className="blog-grid">
-        {posts.map(p => (
-          <a key={p.href} href={p.href} className="blog-card">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={p.img} alt={p.alt} className="blog-card-img" />
-            <div className="blog-card-body">
-              <div className="blog-card-tag">{p.tag} &middot; {p.time}</div>
-              <h2>{p.title}</h2>
-              <p>{p.desc}</p>
-              <span className="blog-card-link">Read Article &rarr;</span>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      {/* CTA */}
-      <section className="cta-band gd">
-        <div className="cta-band-inner">
-          <h2>Have an Operations<br /><em>Question?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+        {/* BLOG GRID */}
+        <div className="blog-grid">
+          {posts.map(p => (
+            <Link key={p.href} href={p.href} className="blog-card">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={`/logic-agency-site-concept${p.img}`} alt={p.alt} className="blog-card-img" />
+              <div className="blog-card-body">
+                <div className="blog-card-tag">{p.tag} &middot; {p.time}</div>
+                <h2>{p.title}</h2>
+                <p>{p.desc}</p>
+                <span className="blog-card-link">Read Article &rarr;</span>
+              </div>
+            </Link>
+          ))}
         </div>
-      </section>
+
+        {/* CTA */}
+        <section className="cta-band gd">
+          <div className="cta-band-inner">
+            <h2>Have an Operations<br /><em>Question?</em></h2>
+            <p>Book a 15-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
+            <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
+          </div>
+        </section>
+      </main>
 
       <FooterHome />
     </>

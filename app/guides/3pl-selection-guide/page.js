@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -9,15 +10,16 @@ const articleSchema = {
   "headline": "3PL Selection Guide for Consumer Product Brands",
   "description": "3PL selection guide for CPG brands: how to evaluate fulfillment partners on channel fit, retail compliance, pricing, transition risk, and red flags before signing.",
   "author": {
-    "@type": "Organization",
-    "name": "Logic Agency Inc.",
+    "@type": "Person",
+    "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Logic Agency Inc."
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/guides/3pl-selection-guide",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/guides/3pl-selection-guide",
   "datePublished": "2026-06-15",
   "dateModified": "2026-06-15"
 };
@@ -70,15 +72,20 @@ export const metadata = {
   description: '3PL selection guide for CPG brands: how to evaluate fulfillment partners on channel fit, retail compliance, pricing, transition risk, and red flags before signing.',
   keywords: '3PL selection guide CPG, how to choose a 3PL, 3PL for consumer brands, fulfillment partner selection, 3PL evaluation checklist, warehouse selection small brand',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/guides/3pl-selection-guide',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/3pl-selection-guide',
   },
   openGraph: {
+    type: 'article',
+    publishedTime: '2026-06-15',
+    authors: ['Jordan Harper'],
     title: '3PL Selection Guide for CPG Brands',
     description: '3PL selection guide for CPG brands: how to evaluate fulfillment partners on channel fit, retail compliance, pricing, transition risk, and red flags before signing.',
-    url: 'https://www.logicagencyinc.com/guides/3pl-selection-guide',
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/3pl-selection-guide',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-3pl-selection-guide.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-3pl-selection-guide.jpg'],
     title: '3PL Selection Guide for CPG Brands',
     description: '3PL selection guide for CPG brands: how to evaluate fulfillment partners on channel fit, retail compliance, pricing, transition risk, and red flags before signing.',
   },
@@ -92,19 +99,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Logic Agency",
-      "item": "https://www.logicagencyinc.com"
+      "item": "https://credyset.github.io/logic-agency-site-concept"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Guides",
-      "item": "https://www.logicagencyinc.com/guides"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "3PL Selection Guide for Consumer Product Brands",
-      "item": "https://www.logicagencyinc.com/guides/3pl-selection-guide"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides/3pl-selection-guide"
     }
   ]
 };
@@ -129,7 +136,7 @@ export default function Page() {
       {/* HERO */}
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
           <h1>3PL Selection Guide for Consumer <span className="o">Product Brands</span></h1>
           <p className="a-lede">Choosing a 3PL for a CPG brand comes down to six evaluation criteria: channel fit (DTC vs. retail), technology (WMS, real-time inventory, EDI), geography, retail compliance experience, pricing structure, and red-flag detection. Most brands optimize for the lowest pick-and-pack rate and discover too late that they picked a 3PL that can&apos;t handle their actual channel mix.</p>
           <div className="a-meta">
@@ -184,7 +191,7 @@ export default function Page() {
           <div className="audit-step"><div className="audit-n">60&ndash;90 days</div><div><h4>Minimum transition timeline</h4><p>From signed contract to clean handoff, 60-90 days is the minimum for a reasonably smooth transition. That includes integration setup, inventory transfer, parallel operation, and compliance testing with retail trading partners.</p></div></div>
           <div className="audit-step"><div className="audit-n">2x storage</div><div><h4>Dual inventory cost during transition</h4><p>You will carry inventory at both locations during the overlap period. Plan for 4&ndash;8 weeks of dual storage cost, especially if the transition spans a seasonal period.</p></div></div>
           <div className="audit-step"><div className="audit-n">1&ndash;3 months</div><div><h4>EDI and systems re-integration time</h4><p>Retail trading partner EDI connections must be re-established with the new warehouse. Each retailer connection requires testing. Errors during this window create chargebacks.</p></div></div>
-          <div className="callout"><p><strong>The best time to evaluate your 3PL is before you need to switch.</strong> Annual reviews against current performance data are better than reactive searches during a crisis. Our <a href="/guides/retail-readiness">Retail Readiness Bible</a> includes the 3PL evaluation criteria that matter most for retail channel compliance.</p></div>
+          <div className="callout"><p><strong>The best time to evaluate your 3PL is before you need to switch.</strong> Annual reviews against current performance data are better than reactive searches during a crisis. Our <Link href="/guides/retail-readiness">Retail Readiness Bible</Link> includes the 3PL evaluation criteria that matter most for retail channel compliance.</p></div>
         </div>
       
           <p className="pac-xlink">Packaging design directly affects 3PL efficiency — carton dimensions, pallet configurations, and master carton specs all touch warehouse workflows. See <a href="https://www.logic-pac.com/capabilities">Logic Pac&apos;s packaging capabilities</a> for how packaging engineering feeds into logistics planning.</p>
@@ -202,13 +209,13 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-inner">
           <h2>Ready to talk about <span className="o">your supply chain?</span></h2>
-          <p>Every retainer starts with a conversation about what&apos;s actually breaking. Tell us where the gaps are.</p>
+          <p>Every useful working relationship starts with a conversation about what&apos;s actually breaking. Tell us where the gaps are.</p>
           <div className="cta-btns">
             <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Start a Conversation &rarr;</a>
-            <a href="/#pricing" className="bt bw">See Plans &amp; Pricing</a>
+            <Link href="/how-we-work" className="bt bw">See How Logic Works</Link>
           </div>
-          <a href="/guides/retail-readiness-scorecard" className="cta-dl">Download the free 40-Point Readiness Scorecard &rarr;</a>
-          <span className="cta-sub">Logic Agency Inc. &middot; Packaging &amp; Supply Chain Ops on a Monthly Retainer</span>
+          <Link href="/guides/retail-readiness-scorecard" className="cta-dl">Use the free 40-Point Retail-Readiness Scorecard &rarr;</Link>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -217,18 +224,18 @@ export default function Page() {
         <div className="related-inner">
           <h3>More Guides</h3>
           <div className="related-links">
-            <a href="/guides/retail-readiness" className="related-link">
+            <Link href="/guides/retail-readiness" className="related-link">
               <h4>The Retail Readiness Bible</h4>
               <p>The complete operational playbook for retail launch — including 3PL requirements for retail compliance.</p>
-            </a>
-            <a href="/guides/dtc-to-retail-supply-chain" className="related-link">
+            </Link>
+            <Link href="/guides/dtc-to-retail-supply-chain" className="related-link">
               <h4>DTC to Retail Supply Chain</h4>
               <p>What changes when you move from DTC fulfillment to retail B2B shipments.</p>
-            </a>
-            <a href="/guides/retail-chargebacks" className="related-link">
+            </Link>
+            <Link href="/guides/retail-chargebacks" className="related-link">
               <h4>Retail Chargebacks Explained</h4>
               <p>How to prevent chargeback penalties — many of which originate from 3PL compliance failures.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

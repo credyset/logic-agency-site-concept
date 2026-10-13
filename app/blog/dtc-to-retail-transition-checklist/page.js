@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
@@ -10,6 +11,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -17,7 +19,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/dtc-to-retail-transition-checklist",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/dtc-to-retail-transition-checklist",
   "datePublished": "2026-06-17",
   "dateModified": "2026-06-17"
 };
@@ -26,9 +28,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "The Complete DTC-to-Retail Transition Checklist", "item": "https://www.logicagencyinc.com/blog/dtc-to-retail-transition-checklist" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "The Complete DTC-to-Retail Transition Checklist", "item": "https://credyset.github.io/logic-agency-site-concept/blog/dtc-to-retail-transition-checklist" }
   ]
 };
 
@@ -88,22 +90,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'DTC to Retail Checklist: 60 Items Before Your First PO | Logic Agency',
+  title: 'DTC to Retail Checklist: 60 Items Before Your First PO — Logic Agency Inc.',
   description: 'A complete DTC-to-retail checklist: GS1 setup, EDI, case packs, routing guide compliance, wholesale margins, and inventory planning for the first retail PO.',
   keywords: 'DTC to retail transition checklist, retail readiness checklist CPG, DTC to retail supply chain checklist, wholesale transition checklist, retail launch preparation checklist, how to prepare for first retail purchase order',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/dtc-to-retail-transition-checklist',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/dtc-to-retail-transition-checklist',
   },
   openGraph: {
     title: 'The Complete DTC-to-Retail Transition Checklist (60-Point Pre-PO Guide)',
     description: 'A complete DTC-to-retail checklist: GS1 setup, EDI, case packs, routing guide compliance, wholesale margins, and inventory planning for the first retail PO.',
-    url: 'https://www.logicagencyinc.com/blog/dtc-to-retail-transition-checklist',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/dtc-to-retail-transition-checklist',
     type: 'article',
     publishedTime: '2026-06-17',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-dtc-to-retail-transition-checklist.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-dtc-to-retail-transition-checklist.jpg'],
     title: 'The Complete DTC-to-Retail Transition Checklist (60-Point Pre-PO Guide)',
     description: 'A complete DTC-to-retail checklist: GS1 setup, EDI, case packs, routing guide compliance, wholesale margins, and inventory planning for the first retail PO.',
   },
@@ -130,7 +134,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Retail Readiness</span>
           <h1>The Complete DTC-to-Retail Transition Checklist</h1>
@@ -146,7 +150,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-skincare.jpg" alt="DTC to retail transition checklist covering GS1, EDI, packaging, routing guide, and inventory planning" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-skincare.jpg" alt="DTC to retail transition checklist covering GS1, EDI, packaging, routing guide, and inventory planning" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -321,8 +325,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Ready to Pressure-Test<br /><em>Your Retail Readiness?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll work through the checklist with you before the buyer says yes.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll work through the checklist with you before the buyer says yes.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

@@ -1,204 +1,262 @@
 # CLAUDE.md — Logic Agency Site Concept
 
-> **CONCEPT-ONLY REPOSITORY:** This is not the live Logic Agency website repository. Do not connect it to the production deployment, push it to the production repository, or deploy it to the Logic Agency domain. Any transfer to production requires explicit human approval and a separate review.
+## Non-live boundary
 
-## What This Project Is
+This is the **Logic Agency site-concept repository**, not the live Logic Agency website.
 
-An isolated website concept for exploring Logic Agency positioning, copy, layout, and service architecture. It is intended for local and team review only.
+- Work only in `credyset/logic-agency-site-concept` and its GitHub Pages preview.
+- Never connect this project to the live website repository or deploy it to `logicagencyinc.com`.
+- Never copy concept changes into the live site without explicit human approval and a separate review.
+- Do not alter live-domain hosting, DNS, analytics, redirects, integrations, or deployment settings from this repository.
+- Do not push or publish without explicit human approval.
 
-## Company Context
+The concept preview is:
 
-Logic Agency is an outsourced packaging and supply chain ops team on a monthly retainer. Founded by Jordan Harper, 20+ years in China/Asia supply chain operations. Based in Orange County, CA and Salt Lake City, UT.
+`https://credyset.github.io/logic-agency-site-concept/`
 
-**What they do:** Packaging sourcing, supply chain management, retail execution, inventory management, vendor coordination, global sourcing across 15+ countries.
+## Purpose
 
-**Who they serve:** Brands in beauty/wellness, CPG, and tech wearables doing $5-20M+ revenue, shipping 50K-500K+ units. Clients include Adidas, Vans, Target, Disney, Puma, Paramount+, Spotify, Epicutis, A24.
+This project explores a possible revision to Logic Agency's positioning, messaging hierarchy, information architecture, visual system, interaction design, and supporting content. It is intentionally isolated so the team can experiment without disrupting the live site.
 
-**How they charge:** Monthly retainers, not projects.
-- Starter: $2,500-3,000/month — Advisory and sourcing
-- Growth: $5,000-7,000/month — Packaging program management (most popular)
-- Enterprise: $10,000+/month — Embedded operations
+## Approved positioning
 
-**Contact:**
-- jordan@logicagencyinc.com
-- 385.368.6837
-- Domain: logicagencyinc.com
+### Five-second definition
 
-## Site Architecture
+Logic is **an embedded packaging, supply-chain, and operations team**.
 
+### Primary audience
+
+The first visitor who should recognize themselves is the **founder or CEO of a scaling physical-product brand**.
+
+### Primary problem framing
+
+The strongest conversations begin with a margin, cost, or quality problem that has surfaced because growth has increased operational pressure. Lead with the visible business problem, then reveal the product, packaging, supplier, manufacturing, quality, freight, inventory, or workflow cause beneath it.
+
+### Differentiation hierarchy
+
+Lead with:
+
+1. **One accountable team**
+
+Support it with:
+
+- Hands-on implementation
+- 20+ years of operator experience
+- A global supplier network
+- Connected, AI-enabled operating systems where relevant and supportable
+- More flexible operating capacity than building the equivalent internal team
+
+Avoid framing Logic as a conventional consultancy, a source of recommendations only, staff augmentation, or a collection of disconnected vendors.
+
+## The three organizing frameworks
+
+These frameworks have different jobs and should not be collapsed into one list.
+
+### 1. Three disciplines — what Logic delivers
+
+1. **Product & Packaging Development**
+2. **Manufacturing & Quality**
+3. **Supply Chain & Operations**
+
+Packaging is a co-equal discipline. It can serve as a tangible entry point into the broader supply-chain and operations story, but it should not make the site read as a packaging-only business.
+
+### 2. Product → Make → Move → Sell — the connected system
+
+- **Product — Logic owns:** development, materials, components, form, packaging architecture, specifications, prototypes, testing, cost, and manufacturability decisions.
+- **Make — Logic owns:** supplier qualification, tooling, sampling, production standards, inspection planning, factory oversight, quality, and corrective action.
+- **Move — Logic coordinates:** freight, customs, warehouse, inventory, 3PL, fulfillment, vendor handoffs, reporting, and operating cadence.
+- **Sell — the brand owns; Logic supports:** Logic prepares packaging, documentation, compliance, and operations for the channel. Do not imply that Logic owns demand, merchandising, sales, or sell-through.
+
+Use the framework to make responsibility explicit. “Support” is the appropriate shorthand for Sell; do not overstate ownership.
+
+### 3. Diagnose → Define → Deliver — how Logic works
+
+- **Diagnose:** inspect the product, packaging, suppliers, costs, quality controls, compliance requirements, workflows, and growth constraints behind the visible symptom.
+- **Define:** turn findings into specifications, priorities, owners, decisions, budget, timeline, risk controls, and decision gates.
+- **Deliver:** stay through implementation—own Product and Make execution, coordinate Move, support Sell readiness, and keep the handoffs aligned.
+
+This is a continuous operating thread, not a three-part consulting handoff.
+
+## Commercial-content rule
+
+Commercial pricing, tier, package, and retainer language is outside the scope of this concept.
+
+- Do not add pricing sections, starting prices, tier cards, package names, fee comparisons, or “most popular” commercial offers.
+- Do not route guide or article CTAs to pricing.
+- Do not infer commercial terms from archived HTML, old documentation, or the live site.
+- If engagement structure becomes relevant, describe accountability and implementation continuity without implying a specific contract or fee model.
+
+## CTA hierarchy
+
+Use a consistent decision ladder:
+
+1. **Primary:** “Tell us what's not working”
+2. **Secondary:** “Book a 15-minute call”
+3. **Optional lower-commitment path:** a contextually relevant guide, checklist, or diagnostic
+
+Do not introduce competing primary CTAs. Lower-commitment resources help visitors who are not ready to start a conversation; they should not displace the primary action.
+
+## Current route architecture
+
+### Primary experience
+
+```text
+/                       Homepage
+/services               What We Do
+/who-we-help            Who We Help
+/work                   Work / case-study index
+/work/epicutis          Epicutis case study
+/work/audio-enhancement Audio Enhancement case study
+/how-we-work            Diagnose → Define → Deliver
 ```
-/                                    → Homepage (conversion page with tiers)
-/guides/retail-ready-packaging       → Guide: Getting Your Packaging Retail-Ready
-/guides/packaging-cost-reduction     → Guide: Packaging Cost Reduction Without Sacrificing Brand
-/guides/packaging-system-that-scales → Guide: Building a Packaging System That Scales
-/guides/packaging-sourcing           → Guide: How to Source Packaging Without Getting Burned
+
+### Supporting proof and decision support
+
+```text
+/why-logic              Evidence for the integrated-team model
+/faq                    Fit, scope, and process questions
+/guides                 Evergreen operating guides and diagnostics
+/guides/[slug]          Individual guide pages
+/blog                   Field Notes index
+/blog/[slug]            Focused operating analysis
 ```
 
-Future pages (not yet built):
-- `/guides/us-market-entry` — US Market Entry for International Brands (build when Haldirams case study has results)
+### Primary navigation
 
-## Design System
+The header navigation is:
 
-### Colors
+- What We Do
+- Who We Help
+- Work
+- How We Work
+- Insights
+- Book a Call
+
+Insights groups the Guide Library, Field Notes, and selected diagnostic resources. Why Logic and FAQ are supporting links rather than primary-navigation requirements.
+
+### Homepage role
+
+The homepage should orient and route, not reproduce every subpage. Preserve this hierarchy:
+
+1. Hero: audience, problem, and embedded-team definition
+2. One accountable team: fragmented handoffs versus an integrated system
+3. Service disciplines and ownership boundaries
+4. Selected proof
+5. Primary CTA
+
+Detailed growth symptoms belong mainly on Who We Help. Detailed method content belongs mainly on How We Work. Detailed evidence belongs in Work, Services, and Why Logic.
+
+## Case-study and proof guardrails
+
+Case-study facts must have a clear source of truth.
+
+1. Prefer the latest explicit decision from Bryan, Jordan, or the human project owner.
+2. Next, use the approved Logic brand knowledge maintained for this workspace.
+3. Treat current case-study pages as publishable only after their claims have been reconciled with that approved source.
+4. Treat `_html-source/`, generated deployment folders, old documentation, and live-site copy as historical reference—not approval.
+5. When two sources conflict, do not combine the most favorable numbers. Flag the conflict and ask for confirmation.
+6. Never invent a metric, client result, quote, date, scope of work, certification, or relationship.
+
+Specific cautions:
+
+- **Epicutis:** approved reference metrics include growth from 3 to 21+ SKUs, 15% cost savings, and a 90-day inventory plan. Keep scope and wording consistent across the homepage and case-study page.
+- **Audio Enhancement:** approved reference metrics include 20% shipping savings, an upgrade achieved with no additional landed cost, and expansion across 4+ SKUs. Other locally drafted claims require explicit approval before publication.
+- **Artilect:** approved reference metrics include 20% cost reduction and 95% material reduction. Do not promote this to a full case study until the public narrative and assets are approved.
+- **Haldirams:** work is in progress. Never present it as a completed engagement or attach completed-outcome language.
+- Use only client names already authorized for public reference.
+- Confirm public contact information before changing it; do not choose between conflicting phone numbers by assumption.
+
+## Voice and copy
+
+Write like an operator who has done the work:
+
+- Direct, practical, specific, and calm
+- Pain and consequence first, then the operating cause and response
+- Plain language over consulting jargon
+- Short, decisive headings and readable paragraphs
+- Evidence over unsupported superlatives
+- “We” for Logic; address the reader directly when useful
+- One clear action per CTA cluster
+
+Avoid empty transformation language, inflated ownership claims, generic agency language, hype about AI, or overly sales-oriented phrasing.
+
+## Visual system
+
+The current direction is industrial-editorial: structured, operational, high-contrast, and precise rather than decorative.
+
+### Core tokens
+
 ```css
---o: #FF600A;    /* Tiger Orange — primary brand color, CTAs, accents */
---od: #E55509;   /* Orange dark — hover states */
---bl: #0055FF;   /* Accent Blue — secondary accent, rarely used */
---bk: #212121;   /* Near black — body text */
---gr: #3E3E3E;   /* Gray — secondary text */
---dk: #2A2A2A;   /* Dark — dark section backgrounds */
---lt: #DFDFDF;   /* Light gray — borders, dividers */
---ow: #F3F3F3;   /* Off-white — light section backgrounds */
---w: #FFFFFF;    /* White — cards, content areas */
+--o:  #FF600A; /* Logic Orange */
+--od: #E55509; /* Orange hover */
+--bk: #212121; /* Near black */
+--gr: #3E3E3E; /* Gray */
+--dk: #2A2A2A; /* Dark sections */
+--lt: #DFDFDF; /* Borders */
+--ow: #F3F3F3; /* Off-white */
+--w:  #FFFFFF; /* White */
 ```
 
-### Typography
-- Font: **Poppins** (Google Fonts) — weights 400, 500, 600, 700, 800, 900
-- Headlines: 800 weight, tight letter-spacing (-1.5px to -2.5px), tight line-height (1.05-1.15)
-- Body: 400 weight, 16.5px, line-height 1.8, color `var(--gr)`
-- Labels: 11-13px, 700 weight, uppercase, letter-spacing 1.5-2.5px
+- Typeface: self-hosted Poppins, weights 400–900.
+- Logic Orange is the brand accent for key labels, ownership states, active navigation, and calls to action. Do not substitute red.
+- Ensure small orange text on light backgrounds passes contrast; use a darker accessible treatment where required.
+- Light and dark sections may use the subtle grid texture already defined in `app/globals.css`.
+- Every section must define a readable background and foreground combination.
+- Motion should explain the system: handoffs connecting, operating stages activating, or evidence revealing. Avoid continuous decorative animation.
+- All motion must respect reduced-motion preferences and must not hide essential information behind hover.
 
-### Grid Texture
-Light and dark sections use a subtle grid background:
-```css
-/* Light grid */
-.gl { background-color: var(--ow); background-image: linear-gradient(rgba(0,0,0,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px); background-size: 28px 28px; }
+## Accessibility and responsive behavior
 
-/* Dark grid */
-.gd { background-color: var(--dk); background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 28px 28px; }
+- Preserve semantic landmarks and heading order.
+- Include a working skip link and visible keyboard focus.
+- Give fixed-navigation anchor targets sufficient scroll margin.
+- Maintain keyboard, pointer, and touch parity for interactive content.
+- Keep essential proof visible without animation, hover, or JavaScript.
+- Test the fixed navigation, CTA clusters, ownership maps, case-study evidence, long-form tables, and footer on desktop and mobile.
+- Explicitly define backgrounds for dark and light sections to prevent inherited-color failures on mobile.
+
+## Technology and local commands
+
+The project uses Next.js 14 with the App Router, React 18, CSS Modules plus shared global CSS, and a static export configured for GitHub Pages.
+
+`next.config.mjs` intentionally includes:
+
+- `output: 'export'`
+- `basePath: '/logic-agency-site-concept'`
+- `trailingSlash: true`
+- unoptimized Next.js images for static hosting
+
+Local development:
+
+```bash
+npm install
+npm run dev
 ```
 
-**CRITICAL:** Every section must have an explicit `background-color`, not just `background-image`. Without it, mobile browsers show transparent sections and text becomes unreadable against inherited dark backgrounds.
+Open:
 
-### Logo
-SVG — two overlapping circles in Tiger Orange:
-```html
-<svg viewBox="0 0 40 40" fill="none">
-  <circle cx="15" cy="20" r="12" stroke="#FF600A" stroke-width="2.5" fill="none"/>
-  <circle cx="25" cy="20" r="12" stroke="#FF600A" stroke-width="2.5" fill="none"/>
-</svg>
+`http://localhost:3000/logic-agency-site-concept/`
+
+Required checks before a concept release:
+
+```bash
+npm run lint
+npm run verify:guides
+npm run build
 ```
 
-### Buttons
-- Primary: `.bo` — Tiger Orange background, white text, 50px border-radius
-- Ghost light: `.bg` — transparent, dark text, light border
-- Ghost dark: `.bw` — transparent, white text, white border at 40% opacity
-- All buttons: 16px 36px padding, 700 weight, 15px font size, hover lifts with translateY(-2px)
+The build outputs static files to `out/`. Do not hand-edit generated output or temporary deployment folders.
 
-### Section Pattern
-Sections alternate between light (`.gl`) and dark (`.gd .dks`) backgrounds. Dark sections use white text with opacity for hierarchy (100% headlines, 85% body, 75% secondary, 60% tertiary, 50% labels).
+## Repository hygiene
 
-### Navigation
-Fixed dark nav bar, 72px height, backdrop blur. Logo left, links right. "Let's Talk" CTA button in orange. Nav links hide on mobile (max-width: 640px).
+- Keep generated output and temporary deployment folders out of source review.
+- Do not recover copy from archived HTML without checking it against the approved direction above.
+- Do not add live-domain redirects or deployment configuration to make this repository behave like the production site.
+- Keep internal links compatible with the configured GitHub Pages base path.
+- Preserve the concept indexing policy: every page is `noindex, nofollow`; `robots.txt` allows crawlers to read that directive; no sitemap is published.
+- Point concept-page canonicals, social images, breadcrumbs, and page schemas to the GitHub Pages concept URL. Keep the live URL only for deliberate Logic Agency organization identity and contact references.
+- Treat Guides and Field Notes as separate systems: guides are evergreen decision tools; Field Notes are narrower analysis and operating lessons.
 
-### Cards
-White background, 16-20px border-radius, 1px border at 4% black opacity, hover lifts with translateY(-4px to -6px) and box-shadow.
+## Decision rule
 
-## Page Templates
-
-### Homepage
-Full marketing page with sections: Hero → Situations (problem cards) → How It Works → Pricing Tiers → Metrics → Case Studies → Industries → FAQ (accordion) → CTA → Footer.
-
-### Guide Pages
-Article layout: Nav → Hero (breadcrumb, h1, lede paragraph, meta bar) → Article body (800px max-width, prose with embedded components) → CTA Band → Related Guides → Footer.
-
-Guide-specific components (vary by page):
-- Numbered section cards
-- Comparison tables (dark header, alternating rows)
-- Callout boxes (white, orange left border)
-- Timeline layouts
-- Checklist grids
-- Inline case study cards (dark background)
-- Red flag cards (red X icon)
-- Landed cost calculator boxes
-- Stage cards (colored left border progression)
-- Sign/warning cards
-- Math comparison boxes
-
-## Content Strategy
-
-### Voice
-Direct, operational, expert. No marketing fluff. Writes like someone who's done the work, not someone selling a service. Uses specific numbers, real scenarios, and pattern-matched insights from 20 years of sourcing experience.
-
-### SEO
-- Each guide targets a specific search intent cluster
-- JSON-LD Article schema on every guide page
-- JSON-LD FAQ schema with 4-5 questions per guide (tuned for LLM discoverability)
-- Meta descriptions target primary search queries
-- Canonical URLs set on all pages
-- Internal links: every guide links to homepage pricing section and to other guides via Related Guides section
-
-### Search Intent Mapping
-- Retail-Ready → "retail packaging requirements", "case pack requirements", "packaging for Target/Walmart"
-- Cost Reduction → "reduce packaging costs", "packaging too expensive", "DIM weight optimization"
-- System That Scales → "packaging for startup", "scaling packaging", "when to hire packaging operations"
-- Packaging Sourcing → "where to source packaging", "packaging suppliers", "domestic vs overseas packaging"
-
-## Case Studies (Reference Data)
-
-### Epicutis (Premium Skincare — Enterprise Tier)
-- Scaled from 3 to 21+ SKUs
-- Full packaging program ownership
-- Managed inventory system reducing order-to-cash time
-- 15% cost savings
-- 90-day inventory plan
-
-### Audio Enhancement (B2B Hardware — Growth Tier)
-- Packaging system functioning as daily-use product hub for classroom microphones
-- Premium overseas production at $0 additional landed cost
-- 20% shipping savings through right-sizing
-- 4+ SKU expansion
-
-### Gesine (Pre-Seed Startup — Growth Tier)
-- Packaging system built for launch and engineered for commercial scale
-- Retail-scalable from day one
-- Full program management
-
-### Artilect (Referenced in cost reduction content)
-- 3-phase cost reduction roadmap
-- 95% material reduction
-
-### Haldirams (Enterprise — In Progress)
-- US mainstream market entry
-- Packaging adaptation for US retail
-- Expo West launch planning
-- Do NOT present as completed case study — still in progress
-
-## Development Notes
-
-### Tech Stack
-- Next.js (App Router recommended)
-- Tailwind CSS or keep existing vanilla CSS (both work)
-- Deploy to Vercel
-- Static generation — no server-side rendering needed
-- No CMS — content lives in code
-
-### Shared Components to Extract
-- Nav (fixed dark bar with logo + links + CTA)
-- Footer (dark, simplified on guide pages vs. 4-column on homepage)
-- CTA Band (dark section with headline + subtext + two buttons)
-- Related Guides (grid of linked cards)
-- Callout Box (white card with orange left border)
-
-### Mobile Breakpoints
-- 1024px: Collapse multi-column grids to single column
-- 640px: Hide nav links, reduce padding to 24px, stack flex layouts
-
-### Performance
-- No JavaScript frameworks beyond Next.js
-- Minimal JS: intersection observer for scroll animations, accordion toggle for FAQ
-- Google Fonts loaded via link tag (Poppins)
-- No images currently — placeholder zones exist on homepage for future photos
-
-### Accessibility
-- All text meets WCAG AA contrast on both light and dark backgrounds
-- Interactive elements have hover states
-- Semantic HTML (sections, nav, footer, headings in order)
-
-## Key Principles
-
-1. **Pricing is the centerpiece.** The tiers should be visible and clear on the homepage. Every guide page funnels back to pricing.
-2. **Search intent first.** Guide pages exist to capture organic search traffic. Write for the person typing the query, not for the brand.
-3. **No blog.** Guides are evergreen reference content at `/guides/`, not dated blog posts.
-4. **Show expertise through specificity.** Real numbers, real timelines, real scenarios. Never generic.
-5. **Mobile-first testing.** Jordan checks everything on phone first. Every section must render correctly on mobile with explicit background colors and single-column layouts.
+When a proposed change conflicts with the approved positioning, ownership boundaries, CTA hierarchy, case-study evidence, non-live boundary, or no-commercial-details rule, stop and ask for direction. Do not resolve the conflict by copying the live site or by restoring an older concept.

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useId } from 'react';
 
 const EMAIL = 'jordan@logicagencyinc.com';
 
@@ -17,25 +17,49 @@ function getProviders(subject) {
 export default function EmailButton({ subject, className, children }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
+  const buttonRef = useRef(null);
+  const menuRef = useRef(null);
+  const menuId = useId();
 
   useEffect(() => {
     if (!open) return;
-    function close(e) {
+    menuRef.current?.querySelector('a')?.focus();
+
+    function closeOnPointer(e) {
       if (ref.current && !ref.current.contains(e.target)) setOpen(false);
     }
-    document.addEventListener('mousedown', close);
-    return () => document.removeEventListener('mousedown', close);
+
+    function closeOnEscape(e) {
+      if (e.key !== 'Escape') return;
+      setOpen(false);
+      buttonRef.current?.focus();
+    }
+
+    document.addEventListener('mousedown', closeOnPointer);
+    document.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.removeEventListener('mousedown', closeOnPointer);
+      document.removeEventListener('keydown', closeOnEscape);
+    };
   }, [open]);
 
   const providers = getProviders(subject);
 
   return (
     <span className="email-wrap" ref={ref}>
-      <button type="button" className={className} onClick={() => setOpen(o => !o)}>
+      <button
+        ref={buttonRef}
+        type="button"
+        className={className}
+        aria-expanded={open}
+        aria-haspopup="dialog"
+        aria-controls={menuId}
+        onClick={() => setOpen(o => !o)}
+      >
         {children}
       </button>
       {open && (
-        <span className="email-dd">
+        <span className="email-dd" id={menuId} ref={menuRef} role="dialog" aria-label="Choose an email provider">
           {providers.map(p => (
             <a
               key={p.label}

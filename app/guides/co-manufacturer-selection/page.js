@@ -7,8 +7,8 @@ export const metadata = {
   title: guide.title + ' — Logic Agency Inc.',
   description: guide.description,
   keywords: guide.keywords,
-  alternates: { canonical: 'https://www.logicagencyinc.com/guides/co-manufacturer-selection' },
-  openGraph: { title: guide.title, description: guide.description, url: 'https://www.logicagencyinc.com/guides/co-manufacturer-selection' },
+  alternates: { canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/co-manufacturer-selection' },
+  openGraph: { title: guide.title, description: guide.description, url: 'https://credyset.github.io/logic-agency-site-concept/guides/co-manufacturer-selection' },
 };
 
 export default function Page() { return <EvergreenGuidePage guide={guide} />; }

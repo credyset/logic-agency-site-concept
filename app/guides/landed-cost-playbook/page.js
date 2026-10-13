@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -9,15 +10,16 @@ const articleSchema = {
   "headline": "Landed Cost Playbook for CPG Brands",
   "description": "A line-by-line breakdown of the 6-line landed cost stack for CPG imports — freight, duties, MPF/HMF, brokerage, DIM overage, tooling amortization, and warehousing — plus what the July 2026 USPS DIM divisor change is already costing you.",
   "author": {
-    "@type": "Organization",
-    "name": "Logic Agency Inc.",
-    "url": "https://logicagencyinc.com"
+    "@type": "Person",
+    "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
+    "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Logic Agency Inc."
   },
-  "mainEntityOfPage": "https://logicagencyinc.com/guides/landed-cost-playbook",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/guides/landed-cost-playbook",
   "datePublished": "2026-07-27",
   "dateModified": "2026-07-27"
 };
@@ -74,19 +76,19 @@ export const metadata = {
   description: 'The 6-line landed cost stack for CPG imports: freight, duties, MPF/HMF, brokerage, DIM weight overage, tooling amortization, and warehousing — plus what the July 2026 USPS DIM divisor change is already costing you.',
   keywords: 'landed cost CPG, landed cost per SKU, unit cost vs landed cost, DIM weight CPG, USPS DIM weight changes 2026, packaging freight cost, customs duties CPG, import cost breakdown',
   alternates: {
-    canonical: 'https://logicagencyinc.com/guides/landed-cost-playbook',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/landed-cost-playbook',
   },
   openGraph: {
     title: 'Landed Cost Playbook for CPG Brands',
     description: 'The 6-line landed cost stack for CPG imports — and what the July 2026 USPS DIM changes are already costing you.',
-    url: 'https://logicagencyinc.com/guides/landed-cost-playbook',
-    images: [{ url: 'https://logicagencyinc.com/images/og-landed-cost-playbook.jpg', width: 1200, height: 630 }],
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/landed-cost-playbook',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-landed-cost-playbook.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Landed Cost Playbook for CPG Brands',
     description: 'The 6-line landed cost stack for CPG imports — and what the July 2026 USPS DIM changes are already costing you.',
-    images: ['https://logicagencyinc.com/images/og-landed-cost-playbook.jpg'],
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-landed-cost-playbook.jpg'],
   },
 };
 
@@ -98,19 +100,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Logic Agency",
-      "item": "https://logicagencyinc.com"
+      "item": "https://credyset.github.io/logic-agency-site-concept"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Guides",
-      "item": "https://logicagencyinc.com/guides"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Landed Cost Playbook for CPG Brands",
-      "item": "https://logicagencyinc.com/guides/landed-cost-playbook"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides/landed-cost-playbook"
     }
   ]
 };
@@ -135,7 +137,7 @@ export default function LandedCostPlaybook() {
       {/* HERO */}
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
           <h1>Landed Cost Playbook <span className="o">for CPG Brands</span></h1>
           <p className="a-lede">Your supplier says $0.65 per unit. Your P&amp;L says $1.28. The gap isn&apos;t an error &mdash; it&apos;s every cost between the supplier&apos;s invoice and the product sitting sellable in your warehouse. A typical CPG import from Asia lands 40-50% above the product price. This guide breaks down where that delta comes from, line by line.</p>
           <div className="a-meta">
@@ -359,13 +361,13 @@ export default function LandedCostPlaybook() {
       <section className="cta-band gd">
         <div className="cta-inner">
           <h2>Paying more than your <span className="o">supplier quoted?</span></h2>
-          <p>Landed cost modeling is the first thing we build into every retainer. We map every cost line between the supplier quote and your warehouse, identify the gaps in your margin model, and show you where the money is actually going.</p>
+          <p>Landed cost modeling is one of the first operating views we build. We map every cost line between the supplier quote and your warehouse, identify the gaps in your margin model, and show you where the money is actually going.</p>
           <div className="cta-btns">
             <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Start a Conversation &rarr;</a>
-            <a href="/#pricing" className="bt bw">See Plans &amp; Pricing</a>
+            <Link href="/how-we-work" className="bt bw">See How Logic Works</Link>
           </div>
-          <a href="/Logic-Agency-Readiness-Scorecard.pdf" className="cta-dl" target="_blank" rel="noopener noreferrer">Download the free 40-Point Readiness Scorecard &rarr;</a>
-          <span className="cta-sub">Logic Agency Inc. &middot; Packaging &amp; Supply Chain Ops on a Monthly Retainer</span>
+          <Link href="/guides/retail-readiness-scorecard" className="cta-dl">Use the free 40-Point Readiness Scorecard &rarr;</Link>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -374,18 +376,18 @@ export default function LandedCostPlaybook() {
         <div className="related-inner">
           <h3>More Guides</h3>
           <div className="related-links">
-            <a href="/guides/packaging-sourcing" className="related-link">
+            <Link href="/guides/packaging-sourcing" className="related-link">
               <h4>How to Source Packaging Without Getting Burned</h4>
               <p>The real sourcing process &mdash; including the landed cost modeling most brands skip.</p>
-            </a>
-            <a href="/guides/packaging-cost-reduction" className="related-link">
+            </Link>
+            <Link href="/guides/packaging-cost-reduction" className="related-link">
               <h4>Packaging Cost Reduction Without Sacrificing Brand</h4>
               <p>DIM weight optimization, material right-sizing, and the five hidden cost drivers.</p>
-            </a>
-            <a href="/guides/cpg-working-capital-playbook" className="related-link">
+            </Link>
+            <Link href="/guides/cpg-working-capital-playbook" className="related-link">
               <h4>The CPG Working Capital Playbook</h4>
               <p>How the landed cost timeline feeds the 90-180 day cash gap &mdash; and what to do about it.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -8,9 +9,9 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Getting Your Packaging Retail-Ready: What Brands Need to Know Before Their First PO",
   "description": "A comprehensive guide to retail packaging requirements including case packs, pallet configurations, retailer compliance specs, and the real timeline for getting shelf-ready.",
-  "author": { "@type": "Organization", "name": "Logic Agency Inc.", "url": "https://www.logicagencyinc.com" },
+  "author": { "@type": "Person", "name": "Jordan Harper", "jobTitle": "Founder & CEO", "url": "https://www.logicagencyinc.com" },
   "publisher": { "@type": "Organization", "name": "Logic Agency Inc." },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/guides/retail-ready-packaging",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/guides/retail-ready-packaging",
   "datePublished": "2025-02-01",
   "dateModified": "2026-05-26"
 };
@@ -43,21 +44,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'Retail-Ready Packaging Guide | Logic Agency',
+  title: 'Retail-Ready Packaging Guide — Logic Agency Inc.',
   description: 'Retail-ready packaging means compliant case packs, pallet specs, barcode placement, labels, and timelines before the first PO ships.',
   keywords: 'retail packaging requirements, retail-ready packaging, case pack requirements, pallet configuration, Target packaging requirements, Walmart packaging compliance, retail packaging compliance, DTC to retail packaging',
-  alternates: { canonical: 'https://www.logicagencyinc.com/guides/retail-ready-packaging' },
+  alternates: { canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/retail-ready-packaging' },
   openGraph: {
+    type: 'article',
+    publishedTime: '2025-02-01',
+    authors: ['Jordan Harper'],
     title: 'Getting Your Packaging Retail-Ready',
     description: 'Case pack specs, pallet configurations, retailer compliance, labeling requirements, and the timeline nobody talks about.',
-    url: 'https://www.logicagencyinc.com/guides/retail-ready-packaging',
-    images: [{ url: 'https://www.logicagencyinc.com/images/og-retail-ready-packaging.jpg', width: 1200, height: 630 }],
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/retail-ready-packaging',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-retail-ready-packaging.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Getting Your Packaging Retail-Ready',
     description: 'Case pack specs, pallet configurations, retailer compliance, labeling requirements, and the timeline nobody talks about.',
-    images: ['https://www.logicagencyinc.com/images/og-retail-ready-packaging.jpg'],
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-retail-ready-packaging.jpg'],
   },
 };
 
@@ -69,19 +73,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Logic Agency",
-      "item": "https://www.logicagencyinc.com"
+      "item": "https://credyset.github.io/logic-agency-site-concept"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Guides",
-      "item": "https://www.logicagencyinc.com/guides"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Getting Your Packaging Retail-Ready",
-      "item": "https://www.logicagencyinc.com/guides/retail-ready-packaging"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides/retail-ready-packaging"
     }
   ]
 };
@@ -96,7 +100,7 @@ export default function RetailReadyPackaging() {
 
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
           <h1>Getting Your Packaging <span className="o">Retail-Ready</span></h1>
           <p className="a-lede">Retail-ready packaging means your primary pack, case pack, pallet configuration, barcode placement, labels, and shipment documentation all meet the retailer&apos;s receiving rules before the first PO ships. Your DTC packaging usually is not enough.</p>
           <div className="a-meta">
@@ -274,13 +278,13 @@ export default function RetailReadyPackaging() {
       <section className="cta-band gd">
         <div className="cta-inner">
           <h2>Staring at a retail deadline and your packaging <span className="o">isn&apos;t ready?</span></h2>
-          <p>This is exactly what our Growth and Enterprise tiers are built for. We&apos;ve taken brands from DTC-only to retail shelf in under 90 days. Tell us what you&apos;re dealing with and we&apos;ll be honest about whether we can help.</p>
+          <p>Logic connects packaging development, compliance, sourcing, production, and retail-readiness work so the handoffs do not become launch risks. Tell us what you&apos;re dealing with and we&apos;ll be honest about whether we can help.</p>
           <div className="cta-btns">
             <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Start a Conversation &rarr;</a>
-            <a href="/#pricing" className="bt bw">See Plans &amp; Pricing</a>
+            <Link href="/how-we-work" className="bt bw">See How Logic Works</Link>
           </div>
-          <a href="/guides/retail-readiness-scorecard" className="cta-dl">Download the free 40-Point Readiness Scorecard &rarr;</a>
-          <span className="cta-sub">Logic Agency Inc. &middot; Packaging &amp; Supply Chain Ops on a Monthly Retainer</span>
+          <Link href="/guides/retail-readiness-scorecard" className="cta-dl">Use the free 40-Point Retail-Readiness Scorecard &rarr;</Link>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -288,14 +292,14 @@ export default function RetailReadyPackaging() {
         <div className="related-inner">
           <h3>More Guides</h3>
           <div className="related-links">
-            <a href="/guides/packaging-cost-reduction" className="related-link">
+            <Link href="/guides/packaging-cost-reduction" className="related-link">
               <h4>Packaging Cost Reduction Without Sacrificing Brand</h4>
               <p>The five hidden cost drivers most brands don&apos;t track, and where we typically find 15-30% savings.</p>
-            </a>
-            <a href="/guides/packaging-system-that-scales" className="related-link">
+            </Link>
+            <Link href="/guides/packaging-system-that-scales" className="related-link">
               <h4>Building a Packaging System That Scales</h4>
               <p>The difference between ordering packaging and building a packaging system &mdash; and when it matters.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

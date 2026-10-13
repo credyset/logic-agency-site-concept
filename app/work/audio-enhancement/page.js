@@ -1,6 +1,8 @@
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import CaseStudyFaqAccordion from '@/components/CaseStudyFaqAccordion';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const faqs = [
   {
@@ -31,8 +33,9 @@ const caseStudySchema = {
   "headline": "How Logic Helped Audio Enhancement Remove a Supplier Bottleneck and Protect Product Growth",
   "description": "Audio Enhancement had outgrown the supplier behind a small but highly visible product component. Logic stabilized quality in the interim and managed the transition to a larger-scale manufacturing partner.",
   "author": {
-    "@type": "Organization",
-    "name": "Logic Agency Inc.",
+    "@type": "Person",
+    "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -40,7 +43,7 @@ const caseStudySchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/work/audio-enhancement",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/work/audio-enhancement",
   "datePublished": "2026-06-16",
   "dateModified": "2026-06-20",
   "keywords": ["supplier transition", "supply chain management", "quality control", "fractional supply chain", "CPG operations"]
@@ -50,9 +53,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Client Work", "item": "https://www.logicagencyinc.com/#results" },
-    { "@type": "ListItem", "position": 3, "name": "Audio Enhancement", "item": "https://www.logicagencyinc.com/work/audio-enhancement" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Client Work", "item": "https://credyset.github.io/logic-agency-site-concept/work/" },
+    { "@type": "ListItem", "position": 3, "name": "Audio Enhancement", "item": "https://credyset.github.io/logic-agency-site-concept/work/audio-enhancement" }
   ]
 };
 
@@ -96,24 +99,26 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'Audio Enhancement Case Study | Logic Agency',
+  title: 'Audio Enhancement Case Study — Logic Agency Inc.',
   description: 'How Logic Agency helped Audio Enhancement qualify a new manufacturing partner and protect product quality through a supplier transition — keeping growth on track.',
   keywords: 'supply chain supplier transition, packaging manufacturer qualification, product quality management CPG, fractional supply chain operations',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/work/audio-enhancement',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/work/audio-enhancement',
   },
   openGraph: {
-    title: 'How Logic Helped Audio Enhancement Remove a Supplier Bottleneck and Protect Product Growth',
-    description: 'Audio Enhancement had outgrown the supplier behind a visible product component. Logic stabilized quality and managed the transition to a manufacturing partner that could support scale.',
-    url: 'https://www.logicagencyinc.com/work/audio-enhancement',
     type: 'article',
     publishedTime: '2026-06-16',
     authors: ['Jordan Harper'],
+    title: 'How Logic Helped Audio Enhancement Remove a Supplier Bottleneck and Protect Product Growth',
+    description: 'Audio Enhancement had outgrown the supplier behind a visible product component. Logic stabilized quality and managed the transition to a manufacturing partner that could support scale.',
+    url: 'https://credyset.github.io/logic-agency-site-concept/work/audio-enhancement',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-audio-enhancement.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'How Logic Helped Audio Enhancement Protect Product Growth',
     description: 'Audio Enhancement had outgrown their supplier. Logic stabilized quality, managed the transition, and kept growth on track.',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-audio-enhancement.jpg'],
   },
 };
 
@@ -136,7 +141,7 @@ export default function AudioEnhancementCaseStudy() {
 
       <section className="cs-hero">
         <div className="cs-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/#results">Work</a> &nbsp;/&nbsp; Audio Enhancement</div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/work">Work</Link> &nbsp;/&nbsp; Audio Enhancement</div>
           <div className="cs-eyebrow">Case Study &middot; Supply Chain &amp; Manufacturing</div>
           <h1>When a Supplier Can&apos;t Keep Up <span>With Your Growth</span></h1>
           <p className="cs-lede">Audio Enhancement had outgrown the factory behind their premier classroom product component. Logic stabilized quality, kept operations running, and managed the transition to a manufacturing base that could support the next stage of scale &mdash; without disrupting product availability.</p>
@@ -149,7 +154,14 @@ export default function AudioEnhancementCaseStudy() {
           </div>
 
           <div className="cs-hero-img cs-photo">
-            <img src="/images/work/audio-enhancement/teacher-box-blue-bg.jpg" alt="Audio Enhancement redesigned teacher microphone packaging by Logic Agency" />
+            <Image
+              src="/logic-agency-site-concept/images/work/audio-enhancement/teacher-box-blue-bg.jpg"
+              alt="Audio Enhancement redesigned teacher microphone packaging by Logic Agency"
+              width={2400}
+              height={1800}
+              sizes="(max-width: 900px) 100vw, 1120px"
+              priority
+            />
             <div className="cs-hero-img-badge">Project Image</div>
           </div>
         </div>
@@ -190,11 +202,23 @@ export default function AudioEnhancementCaseStudy() {
 
           <div className="image-compare">
             <div>
-              <img src="/images/work/audio-enhancement/old-packaging-1.jpeg" alt="Audio Enhancement legacy teacher microphone packaging before supplier transition" />
+              <Image
+                src="/logic-agency-site-concept/images/work/audio-enhancement/old-packaging-1.jpeg"
+                alt="Audio Enhancement legacy teacher microphone packaging before supplier transition"
+                width={1600}
+                height={1600}
+                sizes="(max-width: 700px) 100vw, 50vw"
+              />
               <span>Before / Legacy Packaging</span>
             </div>
             <div>
-              <img src="/images/work/audio-enhancement/updated-packaging-interior.jpg" alt="Audio Enhancement updated teacher microphone packaging interior after supplier transition" />
+              <Image
+                src="/logic-agency-site-concept/images/work/audio-enhancement/updated-packaging-interior.jpg"
+                alt="Audio Enhancement updated teacher microphone packaging interior after supplier transition"
+                width={1276}
+                height={1276}
+                sizes="(max-width: 700px) 100vw, 50vw"
+              />
               <span>After / Updated Packaging</span>
             </div>
           </div>
@@ -208,21 +232,21 @@ export default function AudioEnhancementCaseStudy() {
             <div className="step">
               <div className="step-n">1</div>
               <div>
-                <h4>Containment &mdash; Protecting Current Inventory</h4>
-                <p>The first priority was the product already produced. Logic built and managed a QC team to inspect existing badges, remove units that didn&apos;t meet the standard, and keep the client&apos;s operations moving while the supplier base was being rebuilt. Logic team members were on-site at the factory and with the client&apos;s packout team. The goal was to protect launch confidence and replenishment planning &mdash; not write a quality improvement plan.</p>
+                <h3>Containment &mdash; Protecting Current Inventory</h3>
+                <p>The first priority was the product already produced. Logic built and managed a QC team to inspect existing badges, remove units that didn&apos;t meet the standard, and keep the client&apos;s operations moving while the supplier base was being rebuilt. Logic team members supported production at the factory and containment at the client&apos;s warehouse. The goal was to protect launch confidence and replenishment planning &mdash; not write a quality improvement plan.</p>
               </div>
             </div>
             <div className="step">
               <div className="step-n">2</div>
               <div>
-                <h4>Transition &mdash; The Operating Bridge</h4>
+                <h3>Transition &mdash; The Operating Bridge</h3>
                 <p>Changing factories midstream is delicate. The existing supplier was still producing. The new supplier needed samples, pilot runs, and validation. The product had to stay visually consistent throughout. Logic managed the full sequence: sample development, pilot runs, and 100% QC on those pilots while the current factory was still operating near its ceiling. That is not a normal handoff &mdash; it is an operating bridge designed to eliminate delay.</p>
               </div>
             </div>
             <div className="step">
               <div className="step-n">3</div>
               <div>
-                <h4>Scale &mdash; Unlocking the Next Stage</h4>
+                <h3>Scale &mdash; Unlocking the Next Stage</h3>
                 <p>The long-term goal wasn&apos;t better badges. It was a manufacturing base capable of supporting the next level of volume and quality expectations without constant operational drag. Once the new supplier was qualified, Audio Enhancement could keep growing without the same ceiling limiting replenishment and rollout confidence.</p>
               </div>
             </div>
@@ -268,30 +292,30 @@ export default function AudioEnhancementCaseStudy() {
 
           <h3>Related Reading</h3>
           <div className="guide-links">
-            <a href="/guides/packaging-sourcing" className="guide-link-card">
+            <Link href="/guides/packaging-sourcing" className="guide-link-card">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
               <div>
                 <h4>How to Source Packaging Without Getting Burned</h4>
                 <p>Supplier qualification, landed cost modeling, and overseas sourcing math.</p>
               </div>
               <div className="guide-link-arrow">&rarr;</div>
-            </a>
-            <a href="/guides/retail-readiness" className="guide-link-card">
+            </Link>
+            <Link href="/guides/retail-readiness" className="guide-link-card">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 7H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2z"></path><path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2z"></path></svg>
               <div>
                 <h4>The Retail Readiness Bible</h4>
                 <p>The compliance, packaging, and supply chain work required before a retail launch.</p>
               </div>
               <div className="guide-link-arrow">&rarr;</div>
-            </a>
-            <a href="/guides/packaging-cost-reduction" className="guide-link-card">
+            </Link>
+            <Link href="/guides/packaging-cost-reduction" className="guide-link-card">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
               <div>
                 <h4>Packaging Cost Reduction Without Sacrificing Brand</h4>
                 <p>Where packaging margin leaks and how brands typically save 15&ndash;30%.</p>
               </div>
               <div className="guide-link-arrow">&rarr;</div>
-            </a>
+            </Link>
           </div>
 
           <CaseStudyFaqAccordion items={faqs} />
@@ -304,10 +328,10 @@ export default function AudioEnhancementCaseStudy() {
           <h2>Supplier ceiling <span>limiting your growth?</span></h2>
           <p>Most brands discover the problem after it&apos;s already customer-facing. We help you find and qualify the next supplier tier before you hit that ceiling.</p>
           <div className="cta-btns">
-            <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
-            <a href="/guides/packaging-sourcing" className="bt bw">Sourcing Guide</a>
+            <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
+            <Link href="/guides/packaging-sourcing" className="bt bw">Sourcing Guide</Link>
           </div>
-          <span className="cta-sub">Logic Agency Inc. &middot; Supply Chain &amp; Packaging Ops on Monthly Retainer</span>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -315,14 +339,14 @@ export default function AudioEnhancementCaseStudy() {
         <div className="related-inner">
           <h3>More Work</h3>
           <div className="related-links">
-            <a href="/#results" className="related-link">
+            <Link href="/work" className="related-link">
               <h4>Epicutis &mdash; Packaging at Scale</h4>
               <p>From 3 SKUs to 21+, managed inventory and normalized ordering across a growing clinical skincare line.</p>
-            </a>
-            <a href="/#results" className="related-link">
+            </Link>
+            <Link href="/work" className="related-link">
               <h4>Sleep Me &mdash; Packaging Redesign</h4>
               <p>A full packaging overhaul for a consumer wellness device brand preparing for broader distribution.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

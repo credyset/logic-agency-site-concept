@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
@@ -10,6 +11,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -17,7 +19,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/first-90-days-retail-operations-playbook",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/first-90-days-retail-operations-playbook",
   "datePublished": "2026-06-16",
   "dateModified": "2026-06-16"
 };
@@ -26,9 +28,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "The First 90 Days in Retail: An Operations Playbook", "item": "https://www.logicagencyinc.com/blog/first-90-days-retail-operations-playbook" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "The First 90 Days in Retail: An Operations Playbook", "item": "https://credyset.github.io/logic-agency-site-concept/blog/first-90-days-retail-operations-playbook" }
   ]
 };
 
@@ -88,22 +90,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'First 90 Days Retail Operations Playbook | Logic Agency',
+  title: 'First 90 Days Retail Operations Playbook — Logic Agency Inc.',
   description: 'The first 90 days in retail decide whether a brand earns a reorder. A week-by-week playbook for compliance, shipping, sell-through, and replenishment.',
   keywords: 'first 90 days retail operations, retail launch operations checklist, scaling DTC to retail, retail operations planning consumer brands, first retail PO operations',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/first-90-days-retail-operations-playbook',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/first-90-days-retail-operations-playbook',
   },
   openGraph: {
     title: 'The First 90 Days in Retail: An Operations Playbook',
     description: 'The first 90 days in retail decide whether a brand earns a reorder. A week-by-week playbook for compliance, shipping, sell-through, and replenishment.',
-    url: 'https://www.logicagencyinc.com/blog/first-90-days-retail-operations-playbook',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/first-90-days-retail-operations-playbook',
     type: 'article',
     publishedTime: '2026-06-16',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg'],
     title: 'The First 90 Days in Retail: An Operations Playbook',
     description: 'The first 90 days in retail decide whether a brand earns a reorder. A week-by-week playbook for compliance, shipping, sell-through, and replenishment.',
   },
@@ -130,7 +134,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Retail Operations</span>
           <h1>The First 90 Days in Retail: An Operations Playbook</h1>
@@ -146,7 +150,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/og-first-90-days-in-retail.jpg" alt="Retail operations playbook for the first 90 days after a brand enters retail" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/og-first-90-days-in-retail.jpg" alt="Retail operations playbook for the first 90 days after a brand enters retail" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -494,8 +498,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Have an Operations<br /><em>Question?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

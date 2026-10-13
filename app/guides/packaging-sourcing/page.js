@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -9,15 +10,16 @@ const articleSchema = {
   "headline": "How to Source Packaging Without Getting Burned",
   "description": "A sourcing guide from an agency with 20 years of global packaging sourcing experience: how to choose between domestic and international suppliers, vet factories, avoid MOQ traps, and run the landed cost math that most brands skip.",
   "author": {
-    "@type": "Organization",
-    "name": "Logic Agency Inc.",
+    "@type": "Person",
+    "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Logic Agency Inc."
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/guides/packaging-sourcing",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/guides/packaging-sourcing",
   "datePublished": "2025-02-01",
   "dateModified": "2026-05-26"
 };
@@ -70,23 +72,26 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'Packaging Sourcing Guide | Logic Agency',
+  title: 'Packaging Sourcing Guide — Logic Agency Inc.',
   description: 'Packaging sourcing requires supplier type clarity, MOQ math, factory vetting, landed cost comparison, quality control, and backup capacity.',
   keywords: 'packaging suppliers, where to source packaging, custom packaging sourcing, domestic vs overseas packaging, packaging manufacturer, packaging supplier for cosmetics, how to find packaging supplier, packaging sourcing China, packaging MOQ, packaging factory audit',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/guides/packaging-sourcing',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/packaging-sourcing',
   },
   openGraph: {
+    type: 'article',
+    publishedTime: '2025-02-01',
+    authors: ['Jordan Harper'],
     title: 'How to Source Packaging Without Getting Burned',
     description: 'Domestic vs. international, brokers vs. manufacturers, factory vetting, MOQ traps, landed cost math, and red flags.',
-    url: 'https://www.logicagencyinc.com/guides/packaging-sourcing',
-    images: [{ url: 'https://www.logicagencyinc.com/images/og-packaging-sourcing.jpg', width: 1200, height: 630 }],
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/packaging-sourcing',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-packaging-sourcing.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'How to Source Packaging Without Getting Burned',
     description: 'Domestic vs. international, brokers vs. manufacturers, factory vetting, MOQ traps, landed cost math, and red flags.',
-    images: ['https://www.logicagencyinc.com/images/og-packaging-sourcing.jpg'],
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-packaging-sourcing.jpg'],
   },
 };
 
@@ -98,19 +103,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Logic Agency",
-      "item": "https://www.logicagencyinc.com"
+      "item": "https://credyset.github.io/logic-agency-site-concept"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Guides",
-      "item": "https://www.logicagencyinc.com/guides"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "How to Source Packaging Without Getting Burned",
-      "item": "https://www.logicagencyinc.com/guides/packaging-sourcing"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides/packaging-sourcing"
     }
   ]
 };
@@ -135,7 +140,7 @@ export default function PackagingSourcingGuide() {
       {/* HERO */}
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
           <h1>How to Source Packaging <span className="o">Without Getting Burned</span></h1>
           <p className="a-lede">Packaging sourcing requires knowing who is actually making the pack, how MOQ and landed cost change the economics, whether the factory can meet quality standards, and what backup capacity exists if the first supplier misses. A low quote is not a sourcing strategy.</p>
           <div className="a-meta">
@@ -428,13 +433,13 @@ export default function PackagingSourcingGuide() {
       <section className="cta-band gd">
         <div className="cta-inner">
           <h2>Need sourcing expertise <span className="o">without the learning curve?</span></h2>
-          <p>We source packaging across 15+ countries with direct factory relationships, ISO/FAMA/FSC/FDA certified supply chains, and 20 years of doing this. Our Starter tier gives you sourcing advisory from day one. Tell us what you&apos;re looking for.</p>
+          <p>We source packaging across 15+ countries with direct factory relationships, ISO/FAMA/FSC/FDA certified supply chains, and 20 years of operating experience. Logic connects sourcing decisions to specifications, quality, production, and the downstream supply chain. Tell us what you&apos;re looking for.</p>
           <div className="cta-btns">
             <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Start a Conversation &rarr;</a>
-            <a href="/#pricing" className="bt bw">See Plans &amp; Pricing</a>
+            <Link href="/how-we-work" className="bt bw">See How Logic Works</Link>
           </div>
-          <a href="/guides/retail-readiness-scorecard" className="cta-dl">Download the free 40-Point Readiness Scorecard &rarr;</a>
-          <span className="cta-sub">Logic Agency Inc. &middot; Packaging &amp; Supply Chain Ops on a Monthly Retainer</span>
+          <Link href="/guides/retail-readiness-scorecard" className="cta-dl">Use the free 40-Point Retail-Readiness Scorecard &rarr;</Link>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -443,14 +448,14 @@ export default function PackagingSourcingGuide() {
         <div className="related-inner">
           <h3>More Guides</h3>
           <div className="related-links">
-            <a href="/guides/packaging-cost-reduction" className="related-link">
+            <Link href="/guides/packaging-cost-reduction" className="related-link">
               <h4>Packaging Cost Reduction Without Sacrificing Brand</h4>
               <p>The five hidden cost drivers and where brands typically save 15-30%.</p>
-            </a>
-            <a href="/guides/retail-ready-packaging" className="related-link">
+            </Link>
+            <Link href="/guides/retail-ready-packaging" className="related-link">
               <h4>Getting Your Packaging Retail-Ready</h4>
               <p>Case packs, pallet specs, retailer compliance, and the timeline nobody talks about.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

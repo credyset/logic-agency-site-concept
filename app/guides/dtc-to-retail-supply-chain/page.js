@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -9,15 +10,16 @@ const articleSchema = {
   "headline": "DTC to Retail Supply Chain: What Most Brands Get Wrong Before Their First PO",
   "description": "A complete DTC-to-retail supply chain guide covering readiness systems, margin compression, EDI, packaging compliance, 3PL fit, and inventory timing.",
   "author": {
-    "@type": "Organization",
-    "name": "Logic Agency Inc.",
+    "@type": "Person",
+    "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Logic Agency Inc."
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/guides/dtc-to-retail-supply-chain",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/guides/dtc-to-retail-supply-chain",
   "datePublished": "2026-06-15",
   "dateModified": "2026-06-15"
 };
@@ -66,19 +68,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'DTC to Retail Supply Chain Guide | Logic Agency',
+  title: 'DTC to Retail Supply Chain Guide — Logic Agency Inc.',
   description: 'A complete DTC-to-retail supply chain guide covering readiness systems, margin compression, EDI, packaging compliance, 3PL fit, and inventory timing.',
   keywords: 'DTC to retail supply chain, retail launch supply chain, scaling supply chain CPG, retail compliance CPG, retail readiness checklist, retail launch preparation',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/guides/dtc-to-retail-supply-chain',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/dtc-to-retail-supply-chain',
   },
   openGraph: {
+    type: 'article',
+    publishedTime: '2026-06-15',
+    authors: ['Jordan Harper'],
     title: 'DTC to Retail Supply Chain Transition Guide',
     description: 'A complete DTC-to-retail supply chain guide covering readiness systems, margin compression, EDI, packaging compliance, 3PL fit, and inventory timing.',
-    url: 'https://www.logicagencyinc.com/guides/dtc-to-retail-supply-chain',
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/dtc-to-retail-supply-chain',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-dtc-to-retail-supply-chain.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-dtc-to-retail-supply-chain.jpg'],
     title: 'DTC to Retail Supply Chain Transition Guide',
     description: 'A complete DTC-to-retail supply chain guide covering readiness systems, margin compression, EDI, packaging compliance, 3PL fit, and inventory timing.',
   },
@@ -92,19 +99,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Logic Agency",
-      "item": "https://www.logicagencyinc.com"
+      "item": "https://credyset.github.io/logic-agency-site-concept"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Guides",
-      "item": "https://www.logicagencyinc.com/guides"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "DTC to Retail Supply Chain: What Most Brands Get Wrong",
-      "item": "https://www.logicagencyinc.com/guides/dtc-to-retail-supply-chain"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides/dtc-to-retail-supply-chain"
     }
   ]
 };
@@ -129,7 +136,7 @@ export default function Page() {
       {/* HERO */}
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
           <h1>DTC to Retail Supply Chain: What Most Brands Get Wrong Before Their <span className="o">First PO</span></h1>
           <p className="a-lede">The DTC-to-retail supply chain transition requires five new systems most DTC brands don&apos;t have: inventory forecasting built for 10&ndash;16 week lead times, retail-compliant packaging, EDI infrastructure, a retail-capable 3PL, and a vendor compliance program. The brands that get them wrong absorb 3&ndash;7% of first-year retail revenue in chargebacks. The ones that get them right build all five before the buyer says yes.</p>
           <div className="a-meta">
@@ -149,10 +156,10 @@ export default function Page() {
           <p>Retail supply chains are built for volume, compliance, and predictability. You commit to a PO before you&apos;ve sold a unit. Your 3PL needs EDI capability and retail distribution experience. Your packaging needs to survive palletization, warehouse handling, and shelf stocking. Your inventory buffer needs to cover 10&ndash;16 week lead times.</p>
           <div className="callout"><p><strong>These aren&apos;t minor variations on the same model.</strong> They are fundamentally different operational architectures. The brands that succeed at retail are the ones who built retail-ready operations before the buyer said yes.</p></div>
           <h2>The 5 Supply Chain Systems You Need Before Signing a Retail PO</h2>
-          <div className="audit-step"><div className="audit-n">1</div><div><h4>Inventory forecasting built for 10&ndash;16 week lead times</h4><p>DTC brands reorder when inventory gets low. Retail brands reorder 10&ndash;16 weeks before they need inventory. You need verified average lead time data (not quoted lead time), a safety stock model that covers worst-case lead time variance, and a demand plan anchored to retailer sell-through data. See <a href="/guides/first-90-days-in-retail">First 90 Days in Retail</a> for a demand planning framework built around retail reorder cycles.</p></div></div>
-          <div className="audit-step"><div className="audit-n">2</div><div><h4>Retail-compliant packaging before the first shipment</h4><p>Your DTC packaging is probably wrong for retail. Case pack configurations, pallet stacking height, barcode placement, label specs, and case label requirements vary by retailer and must be locked before production runs. Getting packaging wrong on the first shipment generates chargebacks. See <a href="/guides/retail-ready-packaging">Getting Your Packaging Retail-Ready</a> for the full spec checklist.</p></div></div>
+          <div className="audit-step"><div className="audit-n">1</div><div><h4>Inventory forecasting built for 10&ndash;16 week lead times</h4><p>DTC brands reorder when inventory gets low. Retail brands reorder 10&ndash;16 weeks before they need inventory. You need verified average lead time data (not quoted lead time), a safety stock model that covers worst-case lead time variance, and a demand plan anchored to retailer sell-through data. See <Link href="/guides/first-90-days-in-retail">First 90 Days in Retail</Link> for a demand planning framework built around retail reorder cycles.</p></div></div>
+          <div className="audit-step"><div className="audit-n">2</div><div><h4>Retail-compliant packaging before the first shipment</h4><p>Your DTC packaging is probably wrong for retail. Case pack configurations, pallet stacking height, barcode placement, label specs, and case label requirements vary by retailer and must be locked before production runs. Getting packaging wrong on the first shipment generates chargebacks. See <Link href="/guides/retail-ready-packaging">Getting Your Packaging Retail-Ready</Link> for the full spec checklist.</p></div></div>
           <div className="audit-step"><div className="audit-n">3</div><div><h4>EDI setup and compliance infrastructure</h4><p>Most major retailers require Electronic Data Interchange for purchase orders, advance shipping notices (ASN), and invoices. EDI setup takes 4&ndash;8 weeks minimum for simple integrations and longer for full compliance mapping. Brands that skip EDI setup often discover the requirement after the PO has been signed.</p></div></div>
-          <div className="audit-step"><div className="audit-n">4</div><div><h4>A 3PL that can handle retail B2B shipments</h4><p>Your DTC fulfillment partner can probably pick and pack ecommerce orders. It may not be able to build pallets to retailer spec, generate compliant pallet labels, file ASNs, or route to retail DCs via the correct carriers. Confirm retail capability before signing a PO, not after a chargeback cycle. See <a href="/guides/3pl-selection-guide">3PL Selection Guide</a> for the evaluation checklist.</p></div></div>
+          <div className="audit-step"><div className="audit-n">4</div><div><h4>A 3PL that can handle retail B2B shipments</h4><p>Your DTC fulfillment partner can probably pick and pack ecommerce orders. It may not be able to build pallets to retailer spec, generate compliant pallet labels, file ASNs, or route to retail DCs via the correct carriers. Confirm retail capability before signing a PO, not after a chargeback cycle. See <Link href="/guides/3pl-selection-guide">3PL Selection Guide</Link> for the evaluation checklist.</p></div></div>
           <div className="audit-step"><div className="audit-n">5</div><div><h4>A vendor compliance program built before your first PO ships</h4><p>Every major retailer publishes a vendor compliance guide. Read it before your first shipment, not after your first deduction. Common compliance requirements include routing guide adherence, specific carrier selection, delivery appointment windows, pallet weight maximums, and label placement standards.</p></div></div>
           <h2>The Retail Margin Math Most DTC Brands Underestimate</h2>
           <p>DTC economics and retail economics are fundamentally different. Running the math before your first PO is not optional.</p>
@@ -193,13 +200,13 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-inner">
           <h2>Ready to talk about <span className="o">your supply chain?</span></h2>
-          <p>Every retainer starts with a conversation about what&apos;s actually breaking. Tell us where the gaps are.</p>
+          <p>Every useful working relationship starts with a conversation about what&apos;s actually breaking. Tell us where the gaps are.</p>
           <div className="cta-btns">
             <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Start a Conversation &rarr;</a>
-            <a href="/#pricing" className="bt bw">See Plans &amp; Pricing</a>
+            <Link href="/how-we-work" className="bt bw">See How Logic Works</Link>
           </div>
-          <a href="/guides/retail-readiness-scorecard" className="cta-dl">Download the free 40-Point Readiness Scorecard &rarr;</a>
-          <span className="cta-sub">Logic Agency Inc. &middot; Packaging &amp; Supply Chain Ops on a Monthly Retainer</span>
+          <Link href="/guides/retail-readiness-scorecard" className="cta-dl">Use the free 40-Point Retail-Readiness Scorecard &rarr;</Link>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -208,18 +215,18 @@ export default function Page() {
         <div className="related-inner">
           <h3>More Guides</h3>
           <div className="related-links">
-            <a href="/guides/retail-readiness" className="related-link">
+            <Link href="/guides/retail-readiness" className="related-link">
               <h4>The Retail Readiness Bible</h4>
               <p>The complete operational playbook for launching and scaling in retail.</p>
-            </a>
-            <a href="/guides/retail-ready-packaging" className="related-link">
+            </Link>
+            <Link href="/guides/retail-ready-packaging" className="related-link">
               <h4>Getting Your Packaging Retail-Ready</h4>
               <p>Case packs, pallet specs, retailer compliance, and the timeline nobody talks about.</p>
-            </a>
-            <a href="/guides/fractional-supply-chain-operations" className="related-link">
+            </Link>
+            <Link href="/guides/fractional-supply-chain-operations" className="related-link">
               <h4>Fractional Supply Chain Operations</h4>
               <p>How a fractional ops team can compress your retail readiness timeline from 12 months to 60-90 days.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

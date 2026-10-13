@@ -1,30 +1,28 @@
-'use client';
-
-import { useCallback } from 'react';
+function normalizeFaqText(value) {
+  return String(value ?? '')
+    .replace(/\\u([0-9a-fA-F]{4})/g, (_, code) => String.fromCharCode(Number.parseInt(code, 16)))
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1');
+}
 
 export default function GuideFaqAccordion({ items }) {
-  const handleClick = useCallback((e) => {
-    const item = e.currentTarget;
-    item.classList.toggle('gf-op');
-  }, []);
-
   return (
     <div className="gfaq">
       {items.map((item, i) => (
-        <div key={i} className="gf-item" onClick={handleClick}>
-          <div className="gf-q">
-            <h3>{item.q}</h3>
-            <div className="gf-toggle">
+        <details key={i} className="gf-item">
+          <summary className="gf-q">
+            <span className="gf-q-text">{item.q}</span>
+            <span className="gf-toggle" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <line x1="5" y1="12" x2="19" y2="12" />
               </svg>
-            </div>
-          </div>
+            </span>
+          </summary>
           <div className="gf-a">
-            <p>{item.a}</p>
+            <p>{normalizeFaqText(item.a)}</p>
           </div>
-        </div>
+        </details>
       ))}
     </div>
   );

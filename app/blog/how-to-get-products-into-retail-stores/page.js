@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
@@ -10,6 +11,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -17,7 +19,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/how-to-get-products-into-retail-stores",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/how-to-get-products-into-retail-stores",
   "datePublished": "2026-06-16",
   "dateModified": "2026-06-16"
 };
@@ -26,9 +28,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "How to Get Your Products Into Target, Walmart, and Costco", "item": "https://www.logicagencyinc.com/blog/how-to-get-products-into-retail-stores" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "How to Get Your Products Into Target, Walmart, and Costco", "item": "https://credyset.github.io/logic-agency-site-concept/blog/how-to-get-products-into-retail-stores" }
   ]
 };
 
@@ -88,22 +90,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'How to Get Products Into Retail Stores | Logic Agency',
+  title: 'How to Get Products Into Retail Stores — Logic Agency Inc.',
   description: 'Getting products into retail stores takes 12-18 months. The brands that make it through Target, Walmart, and Costco prepare operations before the pitch.',
   keywords: 'how to get products into retail stores, how to sell to Target, getting products into Walmart, Costco vendor requirements, retail buyer meeting preparation',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/how-to-get-products-into-retail-stores',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/how-to-get-products-into-retail-stores',
   },
   openGraph: {
     title: 'How to Get Your Products Into Target, Walmart, and Costco',
     description: 'Getting products into retail stores takes 12-18 months. The brands that make it through Target, Walmart, and Costco prepare operations before the pitch.',
-    url: 'https://www.logicagencyinc.com/blog/how-to-get-products-into-retail-stores',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/how-to-get-products-into-retail-stores',
     type: 'article',
     publishedTime: '2026-06-16',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-how-to-get-products-into-retail-stores.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-how-to-get-products-into-retail-stores.jpg'],
     title: 'How to Get Your Products Into Target, Walmart, and Costco',
     description: 'Getting products into retail stores takes 12-18 months. The brands that make it through Target, Walmart, and Costco prepare operations before the pitch.',
   },
@@ -130,7 +134,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Retail Strategy</span>
           <h1>How to Get Your Products Into Target, Walmart, and Costco</h1>
@@ -146,7 +150,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-us-retail.jpg" alt="Consumer product brand preparing to enter national retail stores" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-us-retail.jpg" alt="Consumer product brand preparing to enter national retail stores" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -454,8 +458,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Have an Operations<br /><em>Question?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

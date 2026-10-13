@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
@@ -10,6 +11,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -17,7 +19,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/operations-packaging-scaling-brands",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/operations-packaging-scaling-brands",
   "datePublished": "2026-06-16",
   "dateModified": "2026-06-16"
 };
@@ -26,9 +28,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "How Operations and Packaging Work Together to Scale a Consumer Product Brand", "item": "https://www.logicagencyinc.com/blog/operations-packaging-scaling-brands" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "How Operations and Packaging Work Together to Scale a Consumer Product Brand", "item": "https://credyset.github.io/logic-agency-site-concept/blog/operations-packaging-scaling-brands" }
   ]
 };
 
@@ -70,10 +72,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "What does a fractional packaging and operations model cost?",
+      "name": "What should an integrated packaging and operations partner own?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For most brands in the $5-20M range, a fractional model runs $30,000-$120,000/year versus $600,000-$830,000 for equivalent in-house hires. The fractional team manages supplier relationships, coordinates timelines, optimizes costs, and handles retail compliance across both packaging and operations."
+        "text": "An integrated partner should connect packaging, supplier management, quality, freight, inventory, and retail compliance; keep decisions visible across those workstreams; and remain accountable as the work moves into implementation."
       }
     },
     {
@@ -88,22 +90,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'Packaging & Supply Chain Management Together | Logic Agency',
+  title: 'Packaging & Supply Chain Management Together — Logic Agency Inc.',
   description: 'How integrated packaging and supply chain decisions stop costing scaling consumer brands an estimated 15-25% in margin in the brands we audit regularly.',
   keywords: 'packaging and supply chain management, packaging operations management, one stop packaging and operations, scaling brand operations, packaging and fulfillment optimization',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/operations-packaging-scaling-brands',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/operations-packaging-scaling-brands',
   },
   openGraph: {
     title: 'How Operations and Packaging Work Together to Scale a Consumer Product Brand',
     description: 'How integrated packaging and supply chain decisions stop costing scaling consumer brands an estimated 15-25% in margin in the brands we audit regularly.',
-    url: 'https://www.logicagencyinc.com/blog/operations-packaging-scaling-brands',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/operations-packaging-scaling-brands',
     type: 'article',
     publishedTime: '2026-06-16',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg'],
     title: 'How Operations and Packaging Work Together to Scale a Consumer Product Brand',
     description: 'How integrated packaging and supply chain decisions stop costing scaling consumer brands an estimated 15-25% in margin in the brands we audit regularly.',
   },
@@ -130,7 +134,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Operations</span>
           <h1>How Operations and Packaging Work Together to Scale a Consumer Product Brand</h1>
@@ -146,7 +150,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-launch.jpg" alt="Integrated packaging and operations management for scaling consumer brands" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-launch.jpg" alt="Integrated packaging and operations management for scaling consumer brands" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -286,9 +290,9 @@ export default function Page() {
 
           <p>Software improves visibility &mdash; ERP systems, PLM tools, and inventory platforms help both teams see the same data. But optimization decisions still require human judgment about tradeoffs: shelf presence vs. freight cost, material aesthetics vs. durability, MOQ economics vs. cash flow. AI can surface the data. Someone still needs to understand both domains deeply enough to evaluate the tradeoff correctly.</p>
 
-          <h3>What does a fractional packaging and operations model cost?</h3>
+          <h3>What should an integrated packaging and operations partner own?</h3>
 
-          <p>For most brands in the $5&ndash;20M range, a fractional model runs $30,000&ndash;$120,000/year versus $600,000&ndash;$830,000 for equivalent in-house hires. The fractional team manages supplier relationships, coordinates timelines, optimizes costs, and handles retail compliance across both packaging and operations &mdash; with a shared view that makes integrated decisions possible.</p>
+          <p>An integrated partner should connect packaging, supplier management, quality, freight, inventory, and retail compliance; keep decisions visible across those workstreams; and remain accountable as the work moves into implementation.</p>
 
           <h3>How do I start integrating my packaging and operations if they are currently siloed?</h3>
 
@@ -306,7 +310,7 @@ export default function Page() {
             { q: 'We already have a good packaging supplier and a good 3PL. Why would we change?', a: 'You might not need to change either. The gap isn\'t usually supplier quality — it\'s the coordination layer between them. Many brands solve this by adding an integration function that has visibility into both relationships and ensures packaging decisions account for operational impact and vice versa.' },
             { q: 'At what stage does siloed packaging and operations start costing real money?', a: 'The inflection point is typically 5-10 SKUs across 2+ channels. Below that, the complexity is manageable and the coordination cost is low. Above it, every new SKU and every new channel multiplies the interaction effects between packaging and operations.' },
             { q: 'Can AI or software solve the coordination problem?', a: 'Software improves visibility — ERP systems, PLM tools, and inventory platforms help both teams see the same data. But optimization decisions still require human judgment about tradeoffs. AI can surface the data. Someone still needs to understand both domains deeply enough to evaluate the tradeoff correctly.' },
-            { q: 'What does a fractional packaging and operations model cost?', a: 'For most brands in the $5-20M range, a fractional model runs $30,000-$120,000/year versus $600,000-$830,000 for equivalent in-house hires. The fractional team manages supplier relationships, coordinates timelines, optimizes costs, and handles retail compliance across both packaging and operations.' },
+            { q: 'What should an integrated packaging and operations partner own?', a: 'An integrated partner should connect packaging, supplier management, quality, freight, inventory, and retail compliance; keep decisions visible across those workstreams; and remain accountable as the work moves into implementation.' },
             { q: 'How do I start integrating my packaging and operations if they are currently siloed?', a: 'Start with a joint audit. Put your packaging cost data, freight cost data, fulfillment labor data, and redesign history in one view. Map which packaging decisions caused operational costs, and which operations requirements drove packaging changes. That analysis reveals the highest-cost misalignment points.' }
           ]} />
         </div>
@@ -316,8 +320,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Have an Operations<br /><em>Question?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

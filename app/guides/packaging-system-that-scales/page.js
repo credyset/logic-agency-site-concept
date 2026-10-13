@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -9,15 +10,16 @@ const articleSchema = {
   "headline": "Building a Packaging System That Scales",
   "description": "How growing brands build packaging systems that work at 10K units and 500K units — the three stages of packaging maturity, critical early decisions, and when to stop managing packaging yourself.",
   "author": {
-    "@type": "Organization",
-    "name": "Logic Agency Inc.",
+    "@type": "Person",
+    "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Logic Agency Inc."
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/guides/packaging-system-that-scales",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/guides/packaging-system-that-scales",
   "datePublished": "2025-02-01",
   "dateModified": "2026-05-26"
 };
@@ -47,7 +49,7 @@ const faqSchema = {
       "name": "How much does it cost to build an in-house packaging operations team?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A senior packaging or operations hire costs $150-200K in salary in major US markets, plus benefits, software, recruiting fees, and onboarding time — easily $250K+ all in for one person. That person likely won't have deep expertise across packaging engineering, global sourcing, retail compliance, and inventory management. An outsourced packaging operations retainer starts at $2,500 per month and provides access to all of those capabilities from day one."
+        "text": "A senior packaging or operations hire costs $150-200K in salary in major US markets, plus benefits, software, recruiting fees, and onboarding time — easily $250K+ all in for one person. That person may not have deep expertise across packaging engineering, global sourcing, retail compliance, and inventory management. An embedded operating partner can combine those disciplines without asking one new role to cover every lane."
       }
     },
     {
@@ -62,23 +64,26 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'Packaging System That Scales | Logic Agency',
+  title: 'Packaging System That Scales — Logic Agency Inc.',
   description: 'A scalable packaging system standardizes specs, suppliers, documentation, cost controls, and retail readiness before SKU growth creates chaos.',
   keywords: 'packaging for startup, packaging development process, scaling packaging, DTC to retail packaging, packaging system for growing brand, when to hire packaging operations, packaging from prototype to production',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/guides/packaging-system-that-scales',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/packaging-system-that-scales',
   },
   openGraph: {
+    type: 'article',
+    publishedTime: '2025-02-01',
+    authors: ['Jordan Harper'],
     title: 'Building a Packaging System That Scales',
     description: 'Three stages of packaging maturity, five decisions that lock you in or set you free, and when to stop DIY-ing.',
-    url: 'https://www.logicagencyinc.com/guides/packaging-system-that-scales',
-    images: [{ url: 'https://www.logicagencyinc.com/images/og-packaging-system-that-scales.jpg', width: 1200, height: 630 }],
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/packaging-system-that-scales',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-packaging-system-that-scales.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Building a Packaging System That Scales',
     description: 'Three stages of packaging maturity, five decisions that lock you in or set you free, and when to stop DIY-ing.',
-    images: ['https://www.logicagencyinc.com/images/og-packaging-system-that-scales.jpg'],
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-packaging-system-that-scales.jpg'],
   },
 };
 
@@ -90,19 +95,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Logic Agency",
-      "item": "https://www.logicagencyinc.com"
+      "item": "https://credyset.github.io/logic-agency-site-concept"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Guides",
-      "item": "https://www.logicagencyinc.com/guides"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Building a Packaging System That Scales",
-      "item": "https://www.logicagencyinc.com/guides/packaging-system-that-scales"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides/packaging-system-that-scales"
     }
   ]
 };
@@ -127,7 +132,7 @@ export default function PackagingSystemThatScales() {
       {/* HERO */}
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
           <h1>Building a Packaging System <span className="o">That Scales</span></h1>
           <p className="a-lede">A scalable packaging system standardizes structural specs, supplier options, documentation, cost controls, inventory planning, and retail readiness before SKU growth creates chaos. Ordering packaging solves the next run; building the system protects the next stage of growth.</p>
           <div className="a-meta">
@@ -292,12 +297,8 @@ export default function PackagingSystemThatScales() {
               <span className="math-val">3-6 months</span>
             </div>
             <div className="math-row">
-              <span className="math-label">Outsourced packaging ops (Starter tier)</span>
-              <span className="math-val">$30-36K /yr</span>
-            </div>
-            <div className="math-row">
-              <span className="math-label">Outsourced packaging ops (Growth tier)</span>
-              <span className="math-val">$60-84K /yr</span>
+              <span className="math-label">Embedded cross-functional operating team</span>
+              <span className="math-val">Packaging, sourcing, quality &amp; ops</span>
             </div>
             <div className="math-row">
               <span className="math-label">Time to operational</span>
@@ -325,20 +326,20 @@ export default function PackagingSystemThatScales() {
       <section className="guide-faq-section">
         <div className="guide-faq-inner">
           <h2>Frequently Asked Questions</h2>
-          <GuideFaqAccordion items={[{ q: 'When should a startup invest in professional packaging?', a: 'Before your first production run, not after. The decisions you make at launch — structural design, material selection, tooling, supplier choice — either scale with you or require expensive rework later. A packaging system designed for scale from the start costs marginally more upfront but avoids the retooling, redesign, and rebranding costs that catch most brands between 50K and 200K units.' }, { q: 'What is the difference between ordering packaging and building a packaging system?', a: 'Ordering packaging is transactional: you find a supplier, get a quote, place an order. A packaging system is the complete infrastructure — structural specs that survive production and transit, supplier relationships with backup options, scalable designs that work at 10K and 500K units without retooling, documentation (tech packs, BOMs, spec sheets) that any manufacturer can produce from, and retail-readiness built in from the start even if you\'re DTC today.' }, { q: 'How much does it cost to build an in-house packaging operations team?', a: 'A senior packaging or operations hire costs $150-200K in salary in major US markets, plus benefits, software, recruiting fees, and onboarding time — easily $250K+ all in for one person. That person likely won\'t have deep expertise across packaging engineering, global sourcing, retail compliance, and inventory management. An outsourced packaging operations retainer starts at $2,500 per month and provides access to all of those capabilities from day one.' }, { q: 'What are the stages of packaging maturity for growing brands?', a: 'Stage 1 (Survival, 0-50K units): Get packaging that works, ships, and represents the brand. Speed matters more than optimization. Stage 2 (Systematization, 50K-500K units): Lock in suppliers, formalize specs, start optimizing for cost and efficiency. This is where most brands stall. Stage 3 (Optimization, 500K+ units): Continuous cost reduction, DIM weight optimization, sustainability improvements, and multi-channel packaging variants.' }]} />
+          <GuideFaqAccordion items={[{ q: 'When should a startup invest in professional packaging?', a: 'Before your first production run, not after. The decisions you make at launch — structural design, material selection, tooling, supplier choice — either scale with you or require expensive rework later. A packaging system designed for scale from the start costs marginally more upfront but avoids the retooling, redesign, and rebranding costs that catch most brands between 50K and 200K units.' }, { q: 'What is the difference between ordering packaging and building a packaging system?', a: 'Ordering packaging is transactional: you find a supplier, get a quote, place an order. A packaging system is the complete infrastructure — structural specs that survive production and transit, supplier relationships with backup options, scalable designs that work at 10K and 500K units without retooling, documentation (tech packs, BOMs, spec sheets) that any manufacturer can produce from, and retail-readiness built in from the start even if you\'re DTC today.' }, { q: 'How much does it cost to build an in-house packaging operations team?', a: 'A senior packaging or operations hire costs $150-200K in salary in major US markets, plus benefits, software, recruiting fees, and onboarding time — easily $250K+ all in for one person. That person may not have deep expertise across packaging engineering, global sourcing, retail compliance, and inventory management. An embedded operating partner can combine those disciplines without asking one new role to cover every lane.' }, { q: 'What are the stages of packaging maturity for growing brands?', a: 'Stage 1 (Survival, 0-50K units): Get packaging that works, ships, and represents the brand. Speed matters more than optimization. Stage 2 (Systematization, 50K-500K units): Lock in suppliers, formalize specs, start optimizing for cost and efficiency. This is where most brands stall. Stage 3 (Optimization, 500K+ units): Continuous cost reduction, DIM weight optimization, sustainability improvements, and multi-channel packaging variants.' }]} />
         </div>
       </section>
       {/* CTA */}
       <section className="cta-band gd">
         <div className="cta-inner">
           <h2>Ready to build packaging that <span className="o">grows with you?</span></h2>
-          <p>Whether you&apos;re pre-launch or scaling past 500K units, our tiers match where you are right now. Tell us your stage and we&apos;ll tell you exactly what the next step looks like.</p>
+          <p>Whether you&apos;re pre-launch or scaling past 500K units, Logic connects packaging decisions to sourcing, manufacturing, quality, inventory, and retail readiness. Tell us your stage and we&apos;ll tell you what the next useful step looks like.</p>
           <div className="cta-btns">
             <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Start a Conversation &rarr;</a>
-            <a href="/#pricing" className="bt bw">See Plans &amp; Pricing</a>
+            <Link href="/how-we-work" className="bt bw">See How Logic Works</Link>
           </div>
-          <a href="/guides/retail-readiness-scorecard" className="cta-dl">Download the free 40-Point Readiness Scorecard &rarr;</a>
-          <span className="cta-sub">Logic Agency Inc. &middot; Packaging &amp; Supply Chain Ops on a Monthly Retainer</span>
+          <Link href="/guides/retail-readiness-scorecard" className="cta-dl">Use the free 40-Point Retail-Readiness Scorecard &rarr;</Link>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -347,14 +348,14 @@ export default function PackagingSystemThatScales() {
         <div className="related-inner">
           <h3>More Guides</h3>
           <div className="related-links">
-            <a href="/guides/retail-ready-packaging" className="related-link">
+            <Link href="/guides/retail-ready-packaging" className="related-link">
               <h4>Getting Your Packaging Retail-Ready</h4>
               <p>Case packs, pallet specs, retailer compliance, and the timeline nobody talks about.</p>
-            </a>
-            <a href="/guides/packaging-cost-reduction" className="related-link">
+            </Link>
+            <Link href="/guides/packaging-cost-reduction" className="related-link">
               <h4>Packaging Cost Reduction Without Sacrificing Brand</h4>
               <p>The five hidden cost drivers and where brands typically save 15-30%.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

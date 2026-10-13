@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
@@ -10,6 +11,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -17,7 +19,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/edi-setup-small-brands",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/edi-setup-small-brands",
   "datePublished": "2026-06-16",
   "dateModified": "2026-06-16"
 };
@@ -26,9 +28,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "EDI Setup for Small Brands: A Plain-English Guide to Getting Retail-Ready", "item": "https://www.logicagencyinc.com/blog/edi-setup-small-brands" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "EDI Setup for Small Brands: A Plain-English Guide to Getting Retail-Ready", "item": "https://credyset.github.io/logic-agency-site-concept/blog/edi-setup-small-brands" }
   ]
 };
 
@@ -88,22 +90,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'EDI Setup for Small Brands: Cost & Guide | Logic Agency',
+  title: 'EDI Setup for Small Brands: Cost & Guide — Logic Agency Inc.',
   description: 'EDI setup for small brands costs $150–$500/month and takes 4–8 weeks. A plain-English guide to transactions, providers, costs, and what to do first.',
   keywords: 'EDI setup small brand, EDI for small business, EDI ecommerce brand, EDI requirements retail, EDI setup cost',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/edi-setup-small-brands',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/edi-setup-small-brands',
   },
   openGraph: {
     title: 'EDI Setup for Small Brands: A Plain-English Guide to Getting Retail-Ready',
     description: 'EDI setup for small brands costs $150–$500/month and takes 4–8 weeks. A plain-English guide to transactions, providers, costs, and what to do first.',
-    url: 'https://www.logicagencyinc.com/blog/edi-setup-small-brands',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/edi-setup-small-brands',
     type: 'article',
     publishedTime: '2026-06-16',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-edi-setup-small-brands.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-edi-setup-small-brands.jpg'],
     title: 'EDI Setup for Small Brands: A Plain-English Guide to Getting Retail-Ready',
     description: 'EDI setup for small brands costs $150–$500/month and takes 4–8 weeks. A plain-English guide to transactions, providers, costs, and what to do first.',
   },
@@ -130,7 +134,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Operations</span>
           <h1>EDI Setup for Small Brands: A Plain-English Guide to Getting Retail-Ready</h1>
@@ -146,7 +150,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-retail.jpg" alt="Small brand setting up EDI for retail compliance" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-retail.jpg" alt="Small brand setting up EDI for retail compliance" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -416,8 +420,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Have an Operations<br /><em>Question?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

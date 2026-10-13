@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -9,15 +10,16 @@ const articleSchema = {
   "headline": "Packaging Cost Reduction Without Sacrificing Brand",
   "description": "A guide to finding 15-30% packaging savings through DIM weight optimization, material right-sizing, supplier consolidation, and landed cost analysis — without downgrading quality.",
   "author": {
-    "@type": "Organization",
-    "name": "Logic Agency Inc.",
+    "@type": "Person",
+    "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Logic Agency Inc."
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/guides/packaging-cost-reduction",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/guides/packaging-cost-reduction",
   "datePublished": "2025-02-01",
   "dateModified": "2026-05-26"
 };
@@ -62,23 +64,26 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'Packaging Cost Reduction Guide | Logic Agency',
+  title: 'Packaging Cost Reduction Guide — Logic Agency Inc.',
   description: 'Packaging cost reduction starts with landed cost, DIM weight, materials, supplier markup, rework, and emergency freight before cutting quality.',
   keywords: 'reduce packaging costs, packaging cost optimization, DIM weight optimization, packaging COGS reduction, cheaper packaging without looking cheap, packaging cost per unit, packaging cost audit, landed cost packaging',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/guides/packaging-cost-reduction',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/packaging-cost-reduction',
   },
   openGraph: {
+    type: 'article',
+    publishedTime: '2025-02-01',
+    authors: ['Jordan Harper'],
     title: 'Packaging Cost Reduction Without Sacrificing Brand',
     description: 'Where packaging margin actually leaks and how brands typically save 15-30% without downgrading quality.',
-    url: 'https://www.logicagencyinc.com/guides/packaging-cost-reduction',
-    images: [{ url: 'https://www.logicagencyinc.com/images/og-packaging-cost-reduction.jpg', width: 1200, height: 630 }],
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/packaging-cost-reduction',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-packaging-cost-reduction.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Packaging Cost Reduction Without Sacrificing Brand',
     description: 'Where packaging margin actually leaks and how brands typically save 15-30% without downgrading quality.',
-    images: ['https://www.logicagencyinc.com/images/og-packaging-cost-reduction.jpg'],
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-packaging-cost-reduction.jpg'],
   },
 };
 
@@ -90,19 +95,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Logic Agency",
-      "item": "https://www.logicagencyinc.com"
+      "item": "https://credyset.github.io/logic-agency-site-concept"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Guides",
-      "item": "https://www.logicagencyinc.com/guides"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Packaging Cost Reduction Without Sacrificing Brand",
-      "item": "https://www.logicagencyinc.com/guides/packaging-cost-reduction"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides/packaging-cost-reduction"
     }
   ]
 };
@@ -127,7 +132,7 @@ export default function PackagingCostReduction() {
       {/* HERO */}
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
           <h1>Packaging Cost Reduction <span className="o">Without Sacrificing Brand</span></h1>
           <p className="a-lede">Packaging cost reduction starts with true landed cost: materials, tooling, freight, DIM weight overages, damage rates, rework, warehousing, and emergency shipping. The best savings come from removing waste in the system before cutting quality from the pack.</p>
           <div className="a-meta">
@@ -316,13 +321,13 @@ export default function PackagingCostReduction() {
       <section className="cta-band gd">
         <div className="cta-inner">
           <h2>Know your packaging costs <span className="o">more than it should?</span></h2>
-          <p>Cost optimization is built into every tier we offer. At Starter level we advise on sourcing strategy. At Growth and Enterprise we actively manage the cost reduction roadmap as your packaging program partner. Tell us what you&apos;re dealing with.</p>
+          <p>Logic connects sourcing strategy, packaging engineering, supplier decisions, and implementation so cost reduction does not come at the expense of quality or brand experience. Tell us what you&apos;re dealing with.</p>
           <div className="cta-btns">
             <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Start a Conversation &rarr;</a>
-            <a href="/#pricing" className="bt bw">See Plans &amp; Pricing</a>
+            <Link href="/how-we-work" className="bt bw">See How Logic Works</Link>
           </div>
-          <a href="/guides/retail-readiness-scorecard" className="cta-dl">Download the free 40-Point Readiness Scorecard &rarr;</a>
-          <span className="cta-sub">Logic Agency Inc. &middot; Packaging &amp; Supply Chain Ops on a Monthly Retainer</span>
+          <Link href="/guides/retail-readiness-scorecard" className="cta-dl">Use the free 40-Point Retail-Readiness Scorecard &rarr;</Link>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -331,14 +336,14 @@ export default function PackagingCostReduction() {
         <div className="related-inner">
           <h3>More Guides</h3>
           <div className="related-links">
-            <a href="/guides/retail-ready-packaging" className="related-link">
+            <Link href="/guides/retail-ready-packaging" className="related-link">
               <h4>Getting Your Packaging Retail-Ready</h4>
               <p>Case packs, pallet specs, retailer compliance, and the timeline nobody talks about.</p>
-            </a>
-            <a href="/guides/packaging-system-that-scales" className="related-link">
+            </Link>
+            <Link href="/guides/packaging-system-that-scales" className="related-link">
               <h4>Building a Packaging System That Scales</h4>
               <p>The difference between ordering packaging and building a packaging system &mdash; and when it matters.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

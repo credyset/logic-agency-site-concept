@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -9,15 +10,16 @@ const articleSchema = {
   "headline": "Retail Chargebacks Explained: The CPG Brand’s Guide",
   "description": "Retail chargebacks for CPG brands explained: real cost ranges per violation, the most common deductions, a prevention framework, and dispute vs. absorb logic.",
   "author": {
-    "@type": "Organization",
-    "name": "Logic Agency Inc.",
+    "@type": "Person",
+    "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Logic Agency Inc."
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/guides/retail-chargebacks",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/guides/retail-chargebacks",
   "datePublished": "2026-06-15",
   "dateModified": "2026-06-15"
 };
@@ -70,15 +72,20 @@ export const metadata = {
   description: 'Retail chargebacks for CPG brands explained: real cost ranges per violation, the most common deductions, a prevention framework, and dispute vs. absorb logic.',
   keywords: 'retail chargebacks CPG, retailer chargebacks explained, retail compliance penalties, chargeback prevention CPG, retailer deductions small brands',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/guides/retail-chargebacks',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/retail-chargebacks',
   },
   openGraph: {
+    type: 'article',
+    publishedTime: '2026-06-15',
+    authors: ['Jordan Harper'],
     title: 'Retail Chargebacks for CPG Brands: Prevention Guide',
     description: 'Retail chargebacks for CPG brands explained: real cost ranges per violation, the most common deductions, a prevention framework, and dispute vs. absorb logic.',
-    url: 'https://www.logicagencyinc.com/guides/retail-chargebacks',
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/retail-chargebacks',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-retail-chargebacks.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-retail-chargebacks.jpg'],
     title: 'Retail Chargebacks for CPG Brands: Prevention Guide',
     description: 'Retail chargebacks for CPG brands explained: real cost ranges per violation, the most common deductions, a prevention framework, and dispute vs. absorb logic.',
   },
@@ -92,19 +99,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Logic Agency",
-      "item": "https://www.logicagencyinc.com"
+      "item": "https://credyset.github.io/logic-agency-site-concept"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Guides",
-      "item": "https://www.logicagencyinc.com/guides"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Retail Chargebacks Explained: The CPG Brand's Guide to Prevention and Recovery",
-      "item": "https://www.logicagencyinc.com/guides/retail-chargebacks"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides/retail-chargebacks"
     }
   ]
 };
@@ -129,7 +136,7 @@ export default function Page() {
       {/* HERO */}
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
           <h1>Retail Chargebacks Explained: The CPG <span className="o">Brand’s Guide</span></h1>
           <p className="a-lede">Retail chargebacks are automatic penalty deductions—not invoices you can dispute—and first-year brands commonly absorb 3–7% of total retail revenue in preventable violations. Here is what causes them, what they cost, and a prevention framework that works.</p>
           <div className="a-meta">
@@ -192,13 +199,13 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-inner">
           <h2>Ready to talk about <span className="o">your supply chain?</span></h2>
-          <p>Every retainer starts with a conversation about what&apos;s actually breaking. Tell us where the gaps are.</p>
+          <p>Every useful working relationship starts with a conversation about what&apos;s actually breaking. Tell us where the gaps are.</p>
           <div className="cta-btns">
             <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Start a Conversation &rarr;</a>
-            <a href="/#pricing" className="bt bw">See Plans &amp; Pricing</a>
+            <Link href="/how-we-work" className="bt bw">See How Logic Works</Link>
           </div>
-          <a href="/guides/retail-readiness-scorecard" className="cta-dl">Download the free 40-Point Readiness Scorecard &rarr;</a>
-          <span className="cta-sub">Logic Agency Inc. &middot; Packaging &amp; Supply Chain Ops on a Monthly Retainer</span>
+          <Link href="/guides/retail-readiness-scorecard" className="cta-dl">Use the free 40-Point Retail-Readiness Scorecard &rarr;</Link>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -207,18 +214,18 @@ export default function Page() {
         <div className="related-inner">
           <h3>More Guides</h3>
           <div className="related-links">
-            <a href="/guides/retail-readiness" className="related-link">
+            <Link href="/guides/retail-readiness" className="related-link">
               <h4>The Retail Readiness Bible</h4>
               <p>The complete operational playbook for launching and scaling in retail.</p>
-            </a>
-            <a href="/guides/dtc-to-retail-supply-chain" className="related-link">
+            </Link>
+            <Link href="/guides/dtc-to-retail-supply-chain" className="related-link">
               <h4>DTC to Retail Supply Chain</h4>
               <p>The 5 systems you need before signing a retail PO — including chargeback prevention infrastructure.</p>
-            </a>
-            <a href="/guides/retail-ready-packaging" className="related-link">
+            </Link>
+            <Link href="/guides/retail-ready-packaging" className="related-link">
               <h4>Getting Your Packaging Retail-Ready</h4>
               <p>Packaging compliance requirements that prevent the most common chargeback categories.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

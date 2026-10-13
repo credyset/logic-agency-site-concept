@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -8,9 +9,9 @@ const articleSchema = {
   '@type': 'Article',
   headline: '40-Point Retail Readiness Scorecard for CPG Brands',
   description: 'A 40-point self-audit covering packaging, sourcing, fulfillment, operations, team, and investor-grade readiness. Score yourself before your first retail PO or fundraise.',
-  author: { '@type': 'Organization', name: 'Logic Agency Inc.', url: 'https://www.logicagencyinc.com' },
+  author: { '@type': 'Person', name: 'Jordan Harper', jobTitle: 'Founder & CEO', url: 'https://www.logicagencyinc.com' },
   publisher: { '@type': 'Organization', name: 'Logic Agency Inc.' },
-  mainEntityOfPage: 'https://www.logicagencyinc.com/guides/retail-readiness-scorecard',
+  mainEntityOfPage: 'https://credyset.github.io/logic-agency-site-concept/guides/retail-readiness-scorecard',
   datePublished: '2026-06-23',
   dateModified: '2026-06-23',
 };
@@ -84,30 +85,33 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Logic Agency', item: 'https://www.logicagencyinc.com' },
-    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://www.logicagencyinc.com/guides' },
-    { '@type': 'ListItem', position: 3, name: '40-Point Retail Readiness Scorecard', item: 'https://www.logicagencyinc.com/guides/retail-readiness-scorecard' },
+    { '@type': 'ListItem', position: 1, name: 'Logic Agency', item: 'https://credyset.github.io/logic-agency-site-concept' },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://credyset.github.io/logic-agency-site-concept/guides' },
+    { '@type': 'ListItem', position: 3, name: '40-Point Retail Readiness Scorecard', item: 'https://credyset.github.io/logic-agency-site-concept/guides/retail-readiness-scorecard' },
   ],
 };
 
 export const metadata = {
-  title: '40-Point Retail Readiness Scorecard | Logic Agency',
+  title: '40-Point Retail Readiness Scorecard — Logic Agency Inc.',
   description: 'Score your packaging, sourcing, fulfillment, and operations readiness before your first retail PO or fundraise. Free 40-point self-audit for CPG brands.',
   keywords: 'retail readiness scorecard, CPG retail readiness checklist, DTC to retail checklist, retail operations audit, retail launch checklist CPG, ops readiness scorecard, packaging readiness checklist',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/guides/retail-readiness-scorecard',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/retail-readiness-scorecard',
   },
   openGraph: {
+    type: 'article',
+    publishedTime: '2026-06-23',
+    authors: ['Jordan Harper'],
     title: '40-Point Retail Readiness Scorecard for CPG Brands',
     description: 'Score your packaging, sourcing, fulfillment, and operations readiness before your first retail PO or fundraise.',
-    url: 'https://www.logicagencyinc.com/guides/retail-readiness-scorecard',
-    images: [{ url: 'https://www.logicagencyinc.com/images/og-retail-readiness.jpg', width: 1200, height: 630 }],
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/retail-readiness-scorecard',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-retail-readiness.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: '40-Point Retail Readiness Scorecard for CPG Brands',
     description: 'Score your packaging, sourcing, fulfillment, and operations readiness before your first retail PO or fundraise.',
-    images: ['https://www.logicagencyinc.com/images/og-retail-readiness.jpg'],
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-retail-readiness.jpg'],
   },
 };
 
@@ -124,7 +128,7 @@ export default function RetailReadinessScorecard() {
       {/* HERO */}
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
           <h1>40-Point Retail Readiness <span className="o">Scorecard</span></h1>
           <p className="a-lede">That big PO or national retailer pitch feels like a win &mdash; until your backend cannot keep up. This 40-point self-audit scores your packaging, sourcing, fulfillment, ops systems, and team readiness before chargebacks, stockouts, and missed resets teach you the same lessons at full cost.</p>
           <div className="a-meta">
@@ -249,7 +253,7 @@ export default function RetailReadinessScorecard() {
             </ul>
           </div>
 
-          <p>The cost gap between fractional ops and full-time build-out is significant. A fractional retainer typically runs $30,000&ndash;$120,000 per year. A senior ops bench with packaging, sourcing, and logistics covered runs $600,000&ndash;$830,000+. The capabilities are comparable. The timing and commitment are not.</p>
+          <p>The organizational difference between fractional ops and a full-time build-out is significant. An embedded team can connect packaging, sourcing, and logistics while the brand&apos;s permanent org chart is still taking shape. The capabilities may be comparable; the timing, structure, and commitment are not.</p>
 
           {/* SECTION 6 */}
           <h2 id="stakeholders">Section 6 &mdash; Stakeholders, Approvals &amp; Speed to Market <span className="o">(5 points)</span></h2>
@@ -400,23 +404,23 @@ export default function RetailReadinessScorecard() {
           <h2>Related Guides</h2>
 
           <div className="guide-link-card">
-            <h4><a href="/guides/retail-readiness">The Retail Readiness Bible</a></h4>
+            <h4><Link href="/guides/retail-readiness">The Retail Readiness Bible</Link></h4>
             <p>The complete operational playbook for retail launch &mdash; packaging, supply chain, inventory, compliance, and a 60-point checklist.</p>
           </div>
 
           <div className="guide-link-card">
-            <h4><a href="/guides/first-90-days-in-retail">Your First 90 Days in Retail</a></h4>
+            <h4><Link href="/guides/first-90-days-in-retail">Your First 90 Days in Retail</Link></h4>
             <p>A week-by-week account of what actually happens after the buyer says yes &mdash; and how to not get blindsided by it.</p>
           </div>
 
           <div className="guide-link-card">
-            <h4><a href="/guides/retail-chargebacks">Retail Chargebacks: Prevention Guide</a></h4>
+            <h4><Link href="/guides/retail-chargebacks">Retail Chargebacks: Prevention Guide</Link></h4>
             <p>The most common deductions, a prevention framework, and the dispute-versus-absorb logic for first-year retail brands.</p>
           </div>
 
           <div className="guide-link-card">
-            <h4><a href="/guides/fractional-supply-chain-operations">Fractional Supply Chain Operations</a></h4>
-            <p>What fractional ops covers, what it costs, and when it makes more sense than building a full in-house team.</p>
+            <h4><Link href="/guides/fractional-supply-chain-operations">Fractional Supply Chain Operations</Link></h4>
+            <p>What fractional ops covers, how the model works, and when it makes more sense than building a full in-house team.</p>
           </div>
 
           {/* FAQ */}
@@ -458,8 +462,8 @@ export default function RetailReadinessScorecard() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Ready to Fix <span className="o">the Gaps?</span></h2>
-          <p>Book a 30-minute call. We&apos;ll review your score and give you a straight answer on what to address first.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll review your score and give you a straight answer on what to address first.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
           <a href="https://drive.google.com/file/d/1v78gxZkoNjz4sk5bO-MCFMx6sob5jROp/view" className="cta-dl" target="_blank" rel="noopener noreferrer">Download the PDF Scorecard &rarr;</a>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
@@ -10,6 +11,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -17,7 +19,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/packaging-partner-vs-vendor",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/packaging-partner-vs-vendor",
   "datePublished": "2026-06-16",
   "dateModified": "2026-06-16"
 };
@@ -26,9 +28,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "Packaging Partner vs. Packaging Vendor: Why the Distinction Determines Your Margins", "item": "https://www.logicagencyinc.com/blog/packaging-partner-vs-vendor" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "Packaging Partner vs. Packaging Vendor: Why the Distinction Determines Your Margins", "item": "https://credyset.github.io/logic-agency-site-concept/blog/packaging-partner-vs-vendor" }
   ]
 };
 
@@ -80,22 +82,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'Packaging Partner vs Vendor for CPG Brands | Logic Agency',
+  title: 'Packaging Partner vs Vendor for CPG Brands — Logic Agency Inc.',
   description: 'Packaging partner vs vendor for CPG brands — compare costs, control, timelines, and why integrated partnerships often compress product launches by 4-8 weeks.',
   keywords: 'packaging partner vs packaging vendor, packaging partner selection, packaging vendor management, strategic packaging partner, packaging supplier vs partner',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/packaging-partner-vs-vendor',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/packaging-partner-vs-vendor',
   },
   openGraph: {
     title: 'Packaging Partner vs. Packaging Vendor: Why the Distinction Determines Your Margins',
     description: 'Packaging partner vs vendor for CPG brands — compare costs, control, timelines, and why integrated partnerships often compress product launches by 4-8 weeks.',
-    url: 'https://www.logicagencyinc.com/blog/packaging-partner-vs-vendor',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/packaging-partner-vs-vendor',
     type: 'article',
     publishedTime: '2026-06-16',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg'],
     title: 'Packaging Partner vs. Packaging Vendor: Why the Distinction Determines Your Margins',
     description: 'Packaging partner vs vendor for CPG brands — compare costs, control, timelines, and why integrated partnerships often compress product launches by 4-8 weeks.',
   },
@@ -122,7 +126,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Packaging Strategy</span>
           <h1>Packaging Partner vs. Packaging Vendor: Why the Distinction Determines Your Margins</h1>
@@ -138,7 +142,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-sourcing.jpg" alt="CPG brand evaluating packaging partner vs vendor relationship" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-sourcing.jpg" alt="CPG brand evaluating packaging partner vs vendor relationship" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -290,8 +294,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Have an Operations<br /><em>Question?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

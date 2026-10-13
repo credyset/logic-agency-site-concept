@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
@@ -10,6 +11,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -17,7 +19,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/supply-chain-technology-stack",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/supply-chain-technology-stack",
   "datePublished": "2026-06-17",
   "dateModified": "2026-06-17"
 };
@@ -26,9 +28,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "The Supply Chain Technology Stack for Scaling CPG Brands: What You Actually Need", "item": "https://www.logicagencyinc.com/blog/supply-chain-technology-stack" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "The Supply Chain Technology Stack for Scaling CPG Brands: What You Actually Need", "item": "https://credyset.github.io/logic-agency-site-concept/blog/supply-chain-technology-stack" }
   ]
 };
 
@@ -88,22 +90,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'Supply Chain Tech Stack for CPG Brands: What You Need | Logic Agency',
+  title: 'Supply Chain Tech Stack for CPG Brands: What You Need — Logic Agency Inc.',
   description: 'The supply chain technology stack a $5-20M CPG brand actually needs — OMS, WMS, EDI, forecasting tools — with costs, timelines, and revenue-stage guidance.',
   keywords: 'supply chain technology CPG brands, supply chain software for small brands, OMS for CPG brands, WMS for consumer brands, EDI provider small business, inventory forecasting software CPG, supply chain tools DTC to retail',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/supply-chain-technology-stack',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/supply-chain-technology-stack',
   },
   openGraph: {
     title: 'The Supply Chain Technology Stack for Scaling CPG Brands: What You Actually Need',
     description: 'The supply chain technology stack a $5-20M CPG brand actually needs — OMS, WMS, EDI, forecasting tools — with costs, timelines, and revenue-stage guidance.',
-    url: 'https://www.logicagencyinc.com/blog/supply-chain-technology-stack',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/supply-chain-technology-stack',
     type: 'article',
     publishedTime: '2026-06-17',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg'],
     title: 'The Supply Chain Technology Stack for Scaling CPG Brands: What You Actually Need',
     description: 'The supply chain technology stack a $5-20M CPG brand actually needs — OMS, WMS, EDI, forecasting tools — with costs, timelines, and revenue-stage guidance.',
   },
@@ -130,7 +134,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Supply Chain Operations</span>
           <h1>The Supply Chain Technology Stack for Scaling CPG Brands: What You Actually Need</h1>
@@ -146,7 +150,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-launch.jpg" alt="Supply chain technology stack for scaling CPG brands — OMS, WMS, EDI, forecasting" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-launch.jpg" alt="Supply chain technology stack for scaling CPG brands — OMS, WMS, EDI, forecasting" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -361,8 +365,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Not Sure Which Systems<br /><em>You Actually Need?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll audit your current tech stack and tell you exactly what&apos;s missing, what&apos;s redundant, and what to add first &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll audit your current tech stack and tell you exactly what&apos;s missing, what&apos;s redundant, and what to add first &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

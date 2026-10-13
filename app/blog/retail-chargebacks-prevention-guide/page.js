@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
@@ -10,6 +11,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -17,7 +19,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/retail-chargebacks-prevention-guide",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/retail-chargebacks-prevention-guide",
   "datePublished": "2026-06-17",
   "dateModified": "2026-06-17"
 };
@@ -26,9 +28,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "Retail Chargeback Prevention: The Pre-Shipment Audit Every CPG Brand Needs", "item": "https://www.logicagencyinc.com/blog/retail-chargebacks-prevention-guide" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "Retail Chargeback Prevention: The Pre-Shipment Audit Every CPG Brand Needs", "item": "https://credyset.github.io/logic-agency-site-concept/blog/retail-chargebacks-prevention-guide" }
   ]
 };
 
@@ -88,22 +90,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'Retail Chargeback Prevention Guide for CPG Brands | Logic Agency',
+  title: 'Retail Chargeback Prevention Guide for CPG Brands — Logic Agency Inc.',
   description: 'Stop chargebacks before they happen. A pre-shipment audit checklist covering routing guides, labels, case packs, ASNs, and the dispute-vs-absorb framework.',
   keywords: 'retail chargeback prevention CPG, how to prevent retail chargebacks, retail routing guide compliance checklist, pre-shipment audit CPG brand, chargeback dispute framework retail, ASN compliance checklist retail',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/retail-chargebacks-prevention-guide',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/retail-chargebacks-prevention-guide',
   },
   openGraph: {
     title: 'Retail Chargeback Prevention: The Pre-Shipment Audit Every CPG Brand Needs',
     description: 'Stop chargebacks before they happen. A pre-shipment audit checklist covering routing guides, labels, case packs, ASNs, and the dispute-vs-absorb framework.',
-    url: 'https://www.logicagencyinc.com/blog/retail-chargebacks-prevention-guide',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/retail-chargebacks-prevention-guide',
     type: 'article',
     publishedTime: '2026-06-17',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-retail-chargebacks-prevention-guide.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-retail-chargebacks-prevention-guide.jpg'],
     title: 'Retail Chargeback Prevention: The Pre-Shipment Audit Every CPG Brand Needs',
     description: 'Stop chargebacks before they happen. A pre-shipment audit checklist covering routing guides, labels, case packs, ASNs, and the dispute-vs-absorb framework.',
   },
@@ -130,7 +134,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Retail Operations</span>
           <h1>Retail Chargeback Prevention: The Pre-Shipment Audit Every CPG Brand Needs</h1>
@@ -146,7 +150,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-us-retail.jpg" alt="Retail chargeback prevention pre-shipment audit checklist for CPG brands" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-us-retail.jpg" alt="Retail chargeback prevention pre-shipment audit checklist for CPG brands" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -181,6 +185,8 @@ export default function Page() {
           <h2 id="audit-checklist">The Pre-Shipment Audit Checklist</h2>
 
           <p>Run this audit before every PO ships. The categories mirror the most common chargeback reason codes. Check every item. Flag any that cannot be confirmed. Do not ship until the flags are resolved.</p>
+
+          <p style={{margin:'1.5rem 0'}}>Before running this audit, confirm your packaging and logistics meet retailer standards with our <Link href="/guides/retail-readiness-scorecard" style={{color:'var(--o)',fontWeight:600}}>Retail Readiness Scorecard</Link>.</p>
 
           <h3>Category 1: Item Setup and PO Alignment</h3>
 
@@ -313,6 +319,8 @@ export default function Page() {
 
           <p><strong>Brief 3PLs every quarter.</strong> A quarterly 30-minute touchpoint on compliance performance and process keeps them calibrated.</p>
 
+          <p style={{margin:'1.5rem 0'}}>For a step-by-step process to onboard distributors and align them with your compliance standards, see our <Link href="/guides/distributor-onboarding-playbook" style={{color:'var(--o)',fontWeight:600}}>Distributor Onboarding Playbook</Link>.</p>
+
           <h3>How Logic Agency Manages This for Client Brands</h3>
 
           <p>When we take on a brand&apos;s retail operations, the pre-shipment audit is built into every PO workflow. It is not optional based on PO size or retailer relationship &mdash; every shipment goes through the same checklist.</p>
@@ -360,8 +368,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Chargebacks Higher<br /><em>Than They Should Be?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll walk through your current pre-shipment process and tell you exactly where the deductions are coming from &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll walk through your current pre-shipment process and tell you exactly where the deductions are coming from &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

@@ -2,6 +2,7 @@ import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
+import Link from 'next/link';
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -11,6 +12,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -18,7 +20,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/retail-margin-compression-dtc-wholesale",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/retail-margin-compression-dtc-wholesale",
   "datePublished": "2026-06-15",
   "dateModified": "2026-06-15"
 };
@@ -27,9 +29,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "DTC vs Retail Margins: What Founders Discover After the First PO", "item": "https://www.logicagencyinc.com/blog/retail-margin-compression-dtc-wholesale" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "DTC vs Retail Margins: What Founders Discover After the First PO", "item": "https://credyset.github.io/logic-agency-site-concept/blog/retail-margin-compression-dtc-wholesale" }
   ]
 };
 
@@ -84,18 +86,20 @@ export const metadata = {
   description: 'A brand healthy at 65–70% DTC gross margin can land at 20–40% contribution margin in retail. Here\'s the full cost stack — and how to model it before you say yes to a buyer.',
   keywords: 'DTC vs wholesale margin, retail margin compression CPG, wholesale pricing strategy, DTC to retail economics',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/retail-margin-compression-dtc-wholesale',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/retail-margin-compression-dtc-wholesale',
   },
   openGraph: {
     title: 'DTC vs Retail Margins: What Founders Discover After the First PO',
     description: 'A brand healthy at 65–70% DTC gross margin can land at 20–40% contribution margin in retail. Here\'s the full cost stack — and how to model it before you say yes to a buyer.',
-    url: 'https://www.logicagencyinc.com/blog/retail-margin-compression-dtc-wholesale',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/retail-margin-compression-dtc-wholesale',
     type: 'article',
     publishedTime: '2026-06-15',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-retail-margin-compression-dtc-wholesale.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-retail-margin-compression-dtc-wholesale.jpg'],
     title: 'DTC vs Retail Margins: What Founders Discover After the First PO',
     description: 'A brand healthy at 65–70% DTC gross margin can land at 20–40% contribution margin in retail. Here\'s the full cost stack — and how to model it before you say yes to a buyer.',
   },
@@ -122,11 +126,11 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Economics</span>
           <h1>DTC vs Retail Margins: What Founders Discover After the First PO</h1>
-          <p className="b-lede">A DTC vs wholesale margin comparison usually shows the same shock: a brand that looks healthy at 65-70% DTC gross margin can drop to 20-40% contribution margin in retail after wholesale pricing, freight, deductions, payment terms, and trade spend. That does not mean retail is bad. It means retail needs a different model.</p>
+          <p className="b-lede">A brand healthy at 65&ndash;70% DTC gross margin can drop to 20&ndash;40% contribution margin in retail. That doesn&apos;t mean retail is bad &mdash; it means retail needs a different model.</p>
           <div className="b-meta">
             <span><strong>Jordan Harper, Logic Agency Inc.</strong></span>
             <span>Jun 2026</span>
@@ -138,7 +142,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-launch.jpg" alt="Consumer product brand evaluating retail expansion economics" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-launch.jpg" alt="Consumer product brand evaluating retail expansion economics" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -156,9 +160,16 @@ export default function Page() {
             </ul>
           </div>
 
-          <p>A DTC vs wholesale margin comparison usually shows the same shock: a brand that looks healthy at 65-70% DTC gross margin can drop to 20-40% contribution margin in retail after wholesale pricing, freight, deductions, payment terms, and trade spend.</p>
-
-          <p>That does not mean retail is bad. It means retail needs a different model.</p>
+          <div className="toc">
+            <h3>What&apos;s Inside</h3>
+            <ul className="toc-list">
+              <li><a href="#the-dtc-margin-illusion">The DTC Margin Illusion</a></li>
+              <li><a href="#the-wholesale-margin-reality">The Wholesale Margin Reality</a></li>
+              <li><a href="#where-the-margin-goes-in-retail">Where the Margin Goes in Retail</a></li>
+              <li><a href="#how-to-build-a-retail-ready-margin-model">How to Build a Retail-Ready Margin Model</a></li>
+              <li><a href="#when-retail-does-not-make-financial-sense">When Retail Does Not Make Financial Sense</a></li>
+            </ul>
+          </div>
 
           <p>Most DTC founders know their product margin. Fewer know their retail margin after the retailer takes its cut, the shipment moves through a distribution center, the invoice is paid on terms, and the first chargeback hits. That gap is where retail plans break.</p>
 
@@ -176,7 +187,9 @@ export default function Page() {
 
           <p>The mistake is comparing DTC gross margin to wholesale gross margin without comparing the full operating model. Retail may produce less margin per unit but more predictable volume. DTC may produce higher margin per unit but require more acquisition spend.</p>
 
-          <p>The question is not "Which margin is higher?" The question is "Which channel produces profitable volume after all costs?"</p>
+          <div className="callout"><p><strong>The right question.</strong> Not &ldquo;Which margin is higher?&rdquo; but &ldquo;Which channel produces profitable volume after all costs?&rdquo;</p></div>
+
+          <p>Our <Link href="/guides/cpg-channel-economics">CPG Channel Economics guide</Link> breaks down DTC, wholesale, and hybrid economics side by side so you can model that answer before committing to a channel.</p>
 
           <h2 id="the-wholesale-margin-reality">The Wholesale Margin Reality</h2>
 
@@ -202,7 +215,7 @@ export default function Page() {
 
           <p>The PO is larger than a normal DTC order. The margin is thinner. The cash cycle is longer. The operational penalties are stricter.</p>
 
-          <p>Our <a href="/guides/retail-readiness">Retail Readiness Bible</a> covers the operational setup. This article covers the math.</p>
+          <p>Our <Link href="/guides/retail-readiness">Retail Readiness Bible</Link> covers the operational setup. This article covers the math.</p>
 
           <h2 id="where-the-margin-goes-in-retail">Where the Margin Goes in Retail</h2>
 
@@ -226,13 +239,13 @@ export default function Page() {
 
           <p>Packaging affects this directly. Case dimensions drive pallet count. Pallet count drives freight. Freight drives margin.</p>
 
-          <p>If packaging is part of the margin problem, start with the <a href="/guides/packaging-cost-reduction">Packaging Cost Reduction guide</a>. Small dimensional changes can create real freight savings.</p>
+          <p>If packaging is part of the margin problem, start with the <Link href="/guides/packaging-cost-reduction">Packaging Cost Reduction guide</Link>. Small dimensional changes can create real freight savings.</p>
 
           <h3>Chargebacks and Deductions</h3>
 
           <p>Retailers deduct for compliance failures: late ASNs, bad labels, wrong case packs, routing guide violations, shortage claims, late deliveries, and documentation issues.</p>
 
-          <p>For first-year retail launches, we recommend modeling a 2-5% reserve against wholesale revenue until the operation proves it can run cleaner. That reserve is not a goal. It is a reality check.</p>
+          <div className="callout"><p><strong>Plan for deductions.</strong> For first-year retail launches, model a 2&ndash;5% reserve against wholesale revenue until the operation proves it can run cleaner. That reserve is not a goal &mdash; it is a reality check.</p></div>
 
           <h3>Payment Terms and Working Capital</h3>
 
@@ -273,6 +286,8 @@ export default function Page() {
 
           <p>That is why retail planning should happen before buyer conversations get serious.</p>
 
+          <p>For a complete margin optimization framework including COGS benchmarks and contribution margin targets, see our <Link href="/guides/cpg-gross-margin-playbook">CPG Gross Margin Playbook</Link>.</p>
+
           <h3>Run the Model Three Ways</h3>
 
           <p>One retail margin model is not enough. We like to run three versions before a brand commits to an account.</p>
@@ -283,7 +298,7 @@ export default function Page() {
 
           <p><strong>Reorder case:</strong> better freight efficiency, cleaner compliance, lower deduction rate, and real sell-through data from the first cycle. This shows whether the account improves once the system is built.</p>
 
-          <p>The pressure case is the most important. If the account only works in the base case, the brand is not ready. Retail is too variable for a plan that requires everything to go perfectly.</p>
+          <div className="callout"><p><strong>The pressure case is the most important.</strong> If the account only works in the base case, the brand is not ready. Retail is too variable for a plan that requires everything to go perfectly.</p></div>
 
           <h3>Packaging Is Usually the First Margin Lever</h3>
 
@@ -295,7 +310,7 @@ export default function Page() {
 
           <p>The goal is not cheaper packaging. The goal is packaging that protects the product, supports the shelf, and fits the retail economics.</p>
 
-          <p>That is why packaging and operations have to be modeled together. A packaging decision is not just a design decision. In retail, it is margin architecture.</p>
+          <div className="callout"><p><strong>Packaging = margin architecture.</strong> A packaging decision is not just a design decision. In retail, packaging and operations have to be modeled together.</p></div>
 
           <h2 id="when-retail-does-not-make-financial-sense">When Retail Does Not Make Financial Sense</h2>
 
@@ -317,7 +332,7 @@ export default function Page() {
 
           <p>The better move might be specialty retail first. Or regional accounts. Or one hero SKU instead of the full line. Or a retailer-specific pack architecture that protects margin.</p>
 
-          <p>Our <a href="/guides/first-90-days-in-retail">First 90 Days in Retail guide</a> explains how to test retail execution after the account launches.</p>
+          <p>Our <Link href="/guides/first-90-days-in-retail">First 90 Days in Retail guide</Link> explains how to test retail execution after the account launches.</p>
 
           <h3>The Hybrid Model: DTC Plus Selective Retail</h3>
 
@@ -365,35 +380,13 @@ export default function Page() {
 
           <p>Retail is easier to fix before the first PO ships than after the first deduction cycle starts.</p>
 
-          <h2 id="faq" className="b-faq-h">FAQ</h2>
-
-          <h3>What is the difference between DTC and wholesale margins?</h3>
-
-          <p>DTC margins are based on selling directly to the customer at full retail price. Wholesale margins are based on selling to a retailer at a lower wholesale price, often 40-60% below MSRP depending on the retailer&apos;s margin requirements.</p>
-
-          <h3>Why do DTC brands lose margin when they enter retail?</h3>
-
-          <p>DTC brands lose margin in retail because the retailer needs margin, payment terms are longer, freight and compliance costs change, and chargebacks, deductions, trade spend, or distributor fees may apply.</p>
-
-          <h3>What wholesale margin should a CPG brand target?</h3>
-
-          <p>The right wholesale margin depends on category, but many CPG brands need enough room to cover product cost, packaging, freight, 3PL handling, deductions, trade spend, and overhead while still protecting cash contribution. If the model does not work after a 2-5% deduction reserve, it is too tight.</p>
-
-          <h3>How do chargebacks affect retail margin?</h3>
-
-          <p>Chargebacks reduce the payment a brand receives from the retailer. A $20 wholesale item with a $0.60 deduction reserve has already lost 3 points of wholesale revenue before overhead.</p>
-
-          <h3>When does retail make sense for a DTC brand?</h3>
-
-          <p>Retail makes sense when the brand has stable COGS, enough inventory funding, packaging that works at shelf and in distribution, a compliance-ready 3PL, and a margin model that still works after freight, terms, deductions, and promotions.</p>
-
           <h2 id="the-bottom-line">The Bottom Line</h2>
 
           <p>Retail can be a strong channel for DTC brands. It can also expose weak economics fast.</p>
 
           <p>The brands that win do not chase every retail opportunity. They model the account, pressure-test the margin, and fix the operating system before the first PO lands.</p>
 
-          <p>If you&apos;re evaluating whether retail makes financial sense, <a href="/services">start a conversation with Logic Agency</a>. We&apos;ll help you pressure-test the economics before the channel gets expensive.</p>
+          <p>If you&apos;re evaluating whether retail makes financial sense, <Link href="/#services">start a conversation with Logic Agency</Link>. We&apos;ll help you pressure-test the economics before the channel gets expensive.</p>
 
         </div>
       </div>
@@ -410,8 +403,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Have an Operations<br /><em>Question?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

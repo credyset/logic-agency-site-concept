@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
@@ -10,6 +11,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -17,7 +19,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/edi-compliance-consumer-brands",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/edi-compliance-consumer-brands",
   "datePublished": "2026-06-17",
   "dateModified": "2026-06-17"
 };
@@ -26,9 +28,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "EDI Compliance for Consumer Brands: Maintaining Your Retailer Scorecard After Go-Live", "item": "https://www.logicagencyinc.com/blog/edi-compliance-consumer-brands" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "EDI Compliance for Consumer Brands: Maintaining Your Retailer Scorecard After Go-Live", "item": "https://credyset.github.io/logic-agency-site-concept/blog/edi-compliance-consumer-brands" }
   ]
 };
 
@@ -88,22 +90,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'EDI Compliance for Consumer Brands: Post-Launch Guide | Logic Agency',
+  title: 'EDI Compliance for Consumer Brands: Post-Launch Guide — Logic Agency Inc.',
   description: "EDI compliance doesn't end at setup. Learn the failure modes, monthly audit framework, and dispute process that protect your retail margins after go-live.",
   keywords: 'EDI compliance consumer brands, EDI chargeback prevention retail, EDI compliance audit CPG, retail vendor compliance scorecard, ASN compliance retail, EDI failure modes retail brands',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/edi-compliance-consumer-brands',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/edi-compliance-consumer-brands',
   },
   openGraph: {
     title: 'EDI Compliance for Consumer Brands: Maintaining Your Retailer Scorecard After Go-Live',
     description: "EDI compliance doesn't end at setup. Learn the failure modes, monthly audit framework, and dispute process that protect your retail margins after go-live.",
-    url: 'https://www.logicagencyinc.com/blog/edi-compliance-consumer-brands',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/edi-compliance-consumer-brands',
     type: 'article',
     publishedTime: '2026-06-17',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg'],
     title: 'EDI Compliance for Consumer Brands: Maintaining Your Retailer Scorecard After Go-Live',
     description: "EDI compliance doesn't end at setup. Learn the failure modes, monthly audit framework, and dispute process that protect your retail margins after go-live.",
   },
@@ -130,7 +134,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Retail Operations</span>
           <h1>EDI Compliance for Consumer Brands: Maintaining Your Retailer Scorecard After Go-Live</h1>
@@ -146,7 +150,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-retail.jpg" alt="EDI compliance scorecard management for consumer brands after retail go-live" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-retail.jpg" alt="EDI compliance scorecard management for consumer brands after retail go-live" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -379,8 +383,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>EDI Compliance Costing<br /><em>More Than It Should?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll map your compliance gaps and tell you exactly where the chargebacks are coming from &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll map your compliance gaps and tell you exactly where the chargebacks are coming from &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -9,15 +10,16 @@ const articleSchema = {
   "headline": "The Operator's Guide to AI That Actually Works for CPG Operations",
   "description": "A practical guide for CPG operators on using LLMs and AI agents for supply chain, inventory, sourcing, and operations — with a prompt library, hallucination warnings, and guidance on when AI isn't enough.",
   "author": {
-    "@type": "Organization",
-    "name": "Logic Agency Inc.",
+    "@type": "Person",
+    "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Logic Agency Inc."
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/guides/ai-for-cpg-operations",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/guides/ai-for-cpg-operations",
   "datePublished": "2025-03-01",
   "dateModified": "2026-05-26"
 };
@@ -60,10 +62,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "What is a fractional operations team and how much does it cost?",
+        "name": "How can an embedded operations team complement AI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A fractional operations team is an outsourced group of specialists who manage your packaging, supply chain, and operations on a retainer basis — typically monthly with no long-term contract. Instead of hiring a VP of Operations ($200-250K+/year), a supply chain manager ($120-150K), and a packaging engineer ($100-130K), you get access to all of those capabilities starting at $2,500-3,000 per month for advisory and sourcing, $5,000-7,000 per month for full program management, or $10,000+ per month for embedded operations with custom systems and tools."
+        "text": "AI can handle analysis, modeling, and documentation, while an embedded operations team supplies the judgment, relationships, and accountability required to act on that work. Together they can connect packaging, sourcing, manufacturing, quality, inventory, and retail operations without asking one internal hire to cover every discipline."
       }
     },
     {
@@ -82,19 +84,22 @@ export const metadata = {
   description: 'Landed cost models, safety stock, RFQs, tech packs. Here\'s what AI can actually do for CPG operations today, where it fails, and where you still need a human.',
   keywords: 'how to use AI for operations, ChatGPT for supply chain, AI tools for CPG brands, outsourced operations CPG, fractional ops team, do I need a VP of operations, AI prompts for inventory management, Claude for business operations, AI agents for CPG, LLM for supply chain',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/guides/ai-for-cpg-operations',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/ai-for-cpg-operations',
   },
   openGraph: {
+    type: 'article',
+    publishedTime: '2025-03-01',
+    authors: ['Jordan Harper'],
     title: 'The Operator\'s Guide to AI That Actually Works',
     description: 'Landed cost models, safety stock, RFQs, tech packs. Here\'s what AI can actually do for CPG operations today, where it fails, and where you still need a human.',
-    url: 'https://www.logicagencyinc.com/guides/ai-for-cpg-operations',
-    images: [{ url: 'https://www.logicagencyinc.com/images/og-ai-for-cpg-operations.jpg', width: 1200, height: 630 }],
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/ai-for-cpg-operations',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-ai-for-cpg-operations.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The Operator\'s Guide to AI That Actually Works',
     description: 'Landed cost models, safety stock, RFQs, tech packs. Here\'s what AI can actually do for CPG operations today, where it fails, and where you still need a human.',
-    images: ['https://www.logicagencyinc.com/images/og-ai-for-cpg-operations.jpg'],
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-ai-for-cpg-operations.jpg'],
   },
 };
 
@@ -106,19 +111,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Logic Agency",
-      "item": "https://www.logicagencyinc.com"
+      "item": "https://credyset.github.io/logic-agency-site-concept"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Guides",
-      "item": "https://www.logicagencyinc.com/guides"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "The Operator's Guide to AI for CPG Operations",
-      "item": "https://www.logicagencyinc.com/guides/ai-for-cpg-operations"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides/ai-for-cpg-operations"
     }
   ]
 };
@@ -132,7 +137,7 @@ export default function OpsTeamWithoutHiring() {
       {/* HERO */}
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
           <h1>The Operator&apos;s Guide to AI <span className="o">That Actually Works</span></h1>
           <p className="a-lede">There are things you can do in 90 seconds today that took half a day last year. Landed cost comparisons. Safety stock calculations. Supplier RFQs. Tech packs. Not because AI is magic. Because these tools are genuinely good at the boring analytical work that eats your week. This guide shows you exactly what works, what doesn&apos;t, and where you still need a human.</p>
           <div className="a-meta">
@@ -658,16 +663,16 @@ Be specific and cite sources where possible. Flag any information that may be ou
             <div className="hvb-row">
               <div>Benefits, software, recruiting</div>
               <div className="r">$100-150K/yr</div>
-              <div className="g">Included in retainer</div>
+              <div className="g">Shared across the embedded team</div>
             </div>
             <div className="hvb-row">
               <div>Total annual cost</div>
               <div className="r">$600K-830K</div>
-              <div className="b">$30-120K (retainer + AI tools)</div>
+              <div className="b">Variable support matched to the operating need</div>
             </div>
           </div>
 
-          <p>That&apos;s not a rounding error. It&apos;s a 5-10x difference. And the gap isn&apos;t because the modern alternative is worse &mdash; it&apos;s because AI tools have eliminated the need for a full-time human to do analytical work that used to consume 60-70% of an ops team&apos;s time.</p>
+          <p>The structures are fundamentally different. An in-house function carries permanent roles and overhead; the modern alternative combines AI-enabled analysis with experienced operators who apply judgment and carry decisions into execution.</p>
           <p>The question isn&apos;t &ldquo;should I hire an ops team?&rdquo; The question is &ldquo;what parts of operations require a human, and what parts can be handled by AI tools paired with fractional expertise?&rdquo;</p>
 
           <div className="callout">
@@ -682,7 +687,7 @@ Be specific and cite sources where possible. Flag any information that may be ou
       <section className="guide-faq-section">
         <div className="guide-faq-inner">
           <h2>Frequently Asked Questions</h2>
-          <GuideFaqAccordion items={[{ q: 'How can I use AI for CPG supply chain operations?', a: 'AI tools like Claude and ChatGPT can handle demand forecasting analysis, supplier communication drafting, cost modeling, inventory reorder calculations, freight rate comparisons, packaging spec documentation, and retail compliance research. The key is treating AI as an operational analyst — give it your real data and specific context, and it produces analysis that would take a human hours. Start with tasks that are data-heavy and repetitive, like landed cost calculations or safety stock modeling, then expand to more complex analysis as you learn what the tools can and can\'t do reliably.' }, { q: 'What are the best AI prompts for inventory management?', a: 'Effective inventory prompts include: \'Calculate safety stock for a product with average weekly sales of X units, maximum weekly sales of Y units, average lead time of Z weeks, and maximum lead time of W weeks. Show the formula and explain the result.\' For reorder points: \'Given my safety stock of X units, average weekly demand of Y units, and lead time of Z weeks, what should my reorder point be and when should I place my next order if current inventory is W units?\' Always provide your actual numbers rather than asking for general advice — LLMs perform dramatically better with specific data.' }, { q: 'Can AI replace a VP of Operations for a CPG brand?', a: 'AI can replace many of the analytical and administrative tasks a VP of Operations performs — cost modeling, data analysis, documentation, vendor communication drafting, compliance research, and forecasting calculations. What AI cannot replace is judgment, relationships, and accountability. AI won\'t negotiate with a supplier who knows you\'re desperate. It won\'t walk a factory floor and notice a quality issue. It won\'t make the call to air-freight product at 4x cost because it knows the retail relationship is worth it. The modern alternative to a $250K VP of Operations hire is AI tools for the analytical work plus a fractional operations partner for the judgment and execution.' }, { q: 'How do I avoid AI hallucinations in business operations?', a: 'AI hallucinations in operations are dangerous because they look like real analysis. Three rules: never trust AI-generated numbers without verifying the math yourself or asking it to show its calculations step by step. Never use AI for real-time data like current freight rates, tariff percentages, or supplier pricing without cross-referencing against actual quotes. And always provide your own data rather than asking the AI to estimate — a landed cost calculation with your real numbers is useful, an AI estimate of what shipping \'probably costs\' is fiction. Use AI as a calculator and analyst, not as a source of facts.' }, { q: 'What is a fractional operations team and how much does it cost?', a: 'A fractional operations team is an outsourced group of specialists who manage your packaging, supply chain, and operations on a retainer basis — typically monthly with no long-term contract. Instead of hiring a VP of Operations ($200-250K+/year), a supply chain manager ($120-150K), and a packaging engineer ($100-130K), you get access to all of those capabilities starting at $2,500-3,000 per month for advisory and sourcing, $5,000-7,000 per month for full program management, or $10,000+ per month for embedded operations with custom systems and tools.' }, { q: 'What is Claude Cowork and how can CPG brands use it?', a: 'Claude Cowork is an AI agent from Anthropic that can work with your files, documents, and data directly on your desktop. For CPG operators, this means you can feed it your inventory spreadsheets and ask it to calculate reorder points, give it supplier quotes and ask it to build a landed cost comparison, have it draft RFQ emails to potential manufacturers based on your specs, or have it analyze your sales data to identify seasonal patterns. It works on your actual files rather than requiring you to copy-paste data into a chat window, which makes it significantly more practical for real operational work.' }]} />
+          <GuideFaqAccordion items={[{ q: 'How can I use AI for CPG supply chain operations?', a: 'AI tools like Claude and ChatGPT can handle demand forecasting analysis, supplier communication drafting, cost modeling, inventory reorder calculations, freight rate comparisons, packaging spec documentation, and retail compliance research. The key is treating AI as an operational analyst — give it your real data and specific context, and it produces analysis that would take a human hours. Start with tasks that are data-heavy and repetitive, like landed cost calculations or safety stock modeling, then expand to more complex analysis as you learn what the tools can and can\'t do reliably.' }, { q: 'What are the best AI prompts for inventory management?', a: 'Effective inventory prompts include: \'Calculate safety stock for a product with average weekly sales of X units, maximum weekly sales of Y units, average lead time of Z weeks, and maximum lead time of W weeks. Show the formula and explain the result.\' For reorder points: \'Given my safety stock of X units, average weekly demand of Y units, and lead time of Z weeks, what should my reorder point be and when should I place my next order if current inventory is W units?\' Always provide your actual numbers rather than asking for general advice — LLMs perform dramatically better with specific data.' }, { q: 'Can AI replace a VP of Operations for a CPG brand?', a: 'AI can replace many of the analytical and administrative tasks a VP of Operations performs — cost modeling, data analysis, documentation, vendor communication drafting, compliance research, and forecasting calculations. What AI cannot replace is judgment, relationships, and accountability. AI won\'t negotiate with a supplier who knows you\'re desperate. It won\'t walk a factory floor and notice a quality issue. It won\'t make the call to air-freight product at 4x cost because it knows the retail relationship is worth it. The modern alternative to a $250K VP of Operations hire is AI tools for the analytical work plus a fractional operations partner for the judgment and execution.' }, { q: 'How do I avoid AI hallucinations in business operations?', a: 'AI hallucinations in operations are dangerous because they look like real analysis. Three rules: never trust AI-generated numbers without verifying the math yourself or asking it to show its calculations step by step. Never use AI for real-time data like current freight rates, tariff percentages, or supplier pricing without cross-referencing against actual quotes. And always provide your own data rather than asking the AI to estimate — a landed cost calculation with your real numbers is useful, an AI estimate of what shipping \'probably costs\' is fiction. Use AI as a calculator and analyst, not as a source of facts.' }, { q: 'How can an embedded operations team complement AI?', a: 'AI can handle analysis, modeling, and documentation, while an embedded operations team supplies the judgment, relationships, and accountability required to act on that work. Together they can connect packaging, sourcing, manufacturing, quality, inventory, and retail operations without asking one internal hire to cover every discipline.' }, { q: 'What is Claude Cowork and how can CPG brands use it?', a: 'Claude Cowork is an AI agent from Anthropic that can work with your files, documents, and data directly on your desktop. For CPG operators, this means you can feed it your inventory spreadsheets and ask it to calculate reorder points, give it supplier quotes and ask it to build a landed cost comparison, have it draft RFQ emails to potential manufacturers based on your specs, or have it analyze your sales data to identify seasonal patterns. It works on your actual files rather than requiring you to copy-paste data into a chat window, which makes it significantly more practical for real operational work.' }]} />
         </div>
       </section>
       {/* CTA */}
@@ -692,10 +697,10 @@ Be specific and cite sources where possible. Flag any information that may be ou
           <p>Your operations can run leaner and faster without building a massive team. We build the systems, manage the vendors, and execute the playbook. AI tools are part of how we do it. Whether you need a full fractional operations team or a partner to get your ops stack dialed in, we&apos;ll be honest about what you actually need.</p>
           <div className="cta-btns">
             <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Start a Conversation &rarr;</a>
-            <a href="/#pricing" className="bt bw">See Plans &amp; Pricing</a>
+            <Link href="/how-we-work" className="bt bw">See How Logic Works</Link>
           </div>
-          <a href="/guides/retail-readiness-scorecard" className="cta-dl">Download the free 40-Point Readiness Scorecard &rarr;</a>
-          <span className="cta-sub">Logic Agency Inc. &middot; Packaging, Supply Chain &amp; Operations on a Monthly Retainer</span>
+          <Link href="/guides/retail-readiness-scorecard" className="cta-dl">Use the free 40-Point Retail-Readiness Scorecard &rarr;</Link>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -704,14 +709,14 @@ Be specific and cite sources where possible. Flag any information that may be ou
         <div className="related-inner">
           <h3>Go Deeper</h3>
           <div className="related-links">
-            <a href="/guides/packaging-sourcing" className="related-link">
+            <Link href="/guides/packaging-sourcing" className="related-link">
               <h4>How to Source Packaging Without Getting Burned</h4>
               <p>The real decision framework for domestic vs. international sourcing, vetting suppliers, and avoiding costly mistakes.</p>
-            </a>
-            <a href="/guides/packaging-cost-reduction" className="related-link">
+            </Link>
+            <Link href="/guides/packaging-cost-reduction" className="related-link">
               <h4>Packaging Cost Reduction Without Sacrificing Brand</h4>
               <p>The five hidden cost drivers and where brands typically save 15-30%.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -6,18 +7,19 @@ import GuideFaqAccordion from '@/components/GuideFaqAccordion';
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Fractional COO vs. Full-Time Hire: A Real Cost Comparison",
-  "description": "Fractional COO vs full-time hire: real cost ranges, what each covers, hidden costs founders miss, and a decision framework for scaling CPG brands.",
+  "headline": "Fractional COO vs. Full-Time Hire: A Practical Comparison",
+  "description": "Fractional COO vs full-time hire: operating coverage, organizational tradeoffs, hidden costs founders miss, and a decision framework for scaling CPG brands.",
   "author": {
-    "@type": "Organization",
-    "name": "Logic Agency Inc.",
+    "@type": "Person",
+    "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Logic Agency Inc."
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/guides/fractional-coo-vs-full-time-hire",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/guides/fractional-coo-vs-full-time-hire",
   "datePublished": "2026-06-15",
   "dateModified": "2026-06-15"
 };
@@ -28,10 +30,10 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How much does a fractional COO cost for a CPG brand?",
+      "name": "How should a CPG brand compare fractional and full-time operations support?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A fractional COO or fractional operations team typically costs $30,000-$120,000 per year. The range depends on whether the work is advisory, active management, or embedded execution."
+        "text": "Compare the operating problems that need ownership, the range of capabilities required, speed to impact, and whether the work is stable enough to fit one permanent role."
       }
     },    {
       "@type": "Question",
@@ -67,20 +69,25 @@ const faqSchema = {
 
 export const metadata = {
   title: 'Fractional COO vs Full-Time Hire for CPG Brands — Logic Agency Inc.',
-  description: 'Fractional COO vs full-time hire: real cost ranges, what each covers, hidden costs founders miss, and a decision framework for scaling CPG brands.',
-  keywords: 'fractional COO CPG brands, supply chain consultant vs full-time hire, operations team cost CPG, when to hire VP operations, outsourced supply chain management',
+  description: 'Fractional COO vs full-time hire: operating coverage, organizational tradeoffs, hidden costs founders miss, and a decision framework for scaling CPG brands.',
+  keywords: 'fractional COO CPG brands, supply chain consultant vs full-time hire, when to hire VP operations, outsourced supply chain management',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/guides/fractional-coo-vs-full-time-hire',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/fractional-coo-vs-full-time-hire',
   },
   openGraph: {
+    type: 'article',
+    publishedTime: '2026-06-15',
+    authors: ['Jordan Harper'],
     title: 'Fractional COO vs Full-Time Hire for CPG Brands',
-    description: 'Fractional COO vs full-time hire: real cost ranges, what each covers, hidden costs founders miss, and a decision framework for scaling CPG brands.',
-    url: 'https://www.logicagencyinc.com/guides/fractional-coo-vs-full-time-hire',
+    description: 'Fractional COO vs full-time hire: operating coverage, organizational tradeoffs, hidden costs founders miss, and a decision framework for scaling CPG brands.',
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/fractional-coo-vs-full-time-hire',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-fractional-coo-vs-full-time-hire.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-fractional-coo-vs-full-time-hire.jpg'],
     title: 'Fractional COO vs Full-Time Hire for CPG Brands',
-    description: 'Fractional COO vs full-time hire: real cost ranges, what each covers, hidden costs founders miss, and a decision framework for scaling CPG brands.',
+    description: 'Fractional COO vs full-time hire: operating coverage, organizational tradeoffs, hidden costs founders miss, and a decision framework for scaling CPG brands.',
   },
 };
 
@@ -92,19 +99,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Logic Agency",
-      "item": "https://www.logicagencyinc.com"
+      "item": "https://credyset.github.io/logic-agency-site-concept"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Guides",
-      "item": "https://www.logicagencyinc.com/guides"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Fractional COO vs. Full-Time Hire: A Real Cost Comparison",
-      "item": "https://www.logicagencyinc.com/guides/fractional-coo-vs-full-time-hire"
+      "name": "Fractional COO vs. Full-Time Hire: A Practical Comparison",
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides/fractional-coo-vs-full-time-hire"
     }
   ]
 };
@@ -129,9 +136,9 @@ export default function Page() {
       {/* HERO */}
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
-          <h1>Fractional COO vs. Full-Time Hire: A Real <span className="o">Cost Comparison</span></h1>
-          <p className="a-lede">A fractional COO for CPG brands typically costs $30,000–$120,000 per year. A full in-house operations function can cost $600,000–$830,000+. Here is the real comparison—including the hidden costs most brands miss when making this decision.</p>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
+          <h1>Fractional COO vs. Full-Time Hire: A Practical <span className="o">Operating Comparison</span></h1>
+          <p className="a-lede">The right choice depends on the work that needs ownership, how many operating disciplines it crosses, and whether the role is stable enough to hire for. Here is the practical comparison—including the hidden organizational costs most brands miss.</p>
           <div className="a-meta">
             <span><strong>Jordan Harper, Logic Agency Inc.</strong></span>
             <span>Updated Jun 2026</span>
@@ -160,14 +167,14 @@ export default function Page() {
             </tbody>
           </table>
           <div className="callout"><p><strong>The gap:</strong> A $40M brand may need that structure. A $7M brand entering its first retail accounts usually does not. It needs the capability, but not the fixed overhead.</p></div>
-          <h2>Side-by-Side Cost Comparison</h2>
+          <h2>Side-by-Side Operating Model Comparison</h2>
           <table>
             <thead><tr><th>Category</th><th>Full-Time COO / VP Ops</th><th>Fractional Operations Team</th></tr></thead>
             <tbody>
-              <tr><td>Annual cost</td><td>$220K&ndash;$350K (one hire); $600K&ndash;$830K+ (full function)</td><td>$30K&ndash;$120K depending on scope</td></tr>
+              <tr><td>Cost structure</td><td>Permanent salary, benefits, recruiting, tools, and supporting roles</td><td>Outside operating capacity aligned to the problems that need ownership</td></tr>
               <tr><td>Ramp time</td><td>3&ndash;6 months to recruit, onboard, and learn systems</td><td>Usually active within 2&ndash;4 weeks</td></tr>
               <tr><td>Coverage</td><td>Strong where the hire is strong; weak outside their background</td><td>Multi-function coverage across sourcing, packaging, logistics, inventory, and retail</td></tr>
-              <tr><td>Flexibility</td><td>Fixed cost, hard to scale down</td><td>Month-to-month or scope-adjusted</td></tr>
+              <tr><td>Flexibility</td><td>Fixed role and long-term organizational commitment</td><td>Coverage can adjust as operating needs change</td></tr>
               <tr><td>Risk</td><td>Bad hire can set the company back 6&ndash;12 months</td><td>Lower commitment, easier to adjust</td></tr>
               <tr><td>Best fit</td><td>Stable, permanent, clearly defined role</td><td>Fast-changing operations needs before org chart is mature</td></tr>
             </tbody>
@@ -188,7 +195,7 @@ export default function Page() {
           <div className="callout"><p><strong>The hybrid path:</strong> Use fractional support to build the operating system first, define the role, stabilize vendors, document workflows. Then hire into a cleaner role. The eventual hire starts with a system instead of cleanup&mdash;and that is a better use of senior talent.</p></div>
         </div>
       
-          <p className="pac-xlink">When fractional operations covers packaging specifically — sourcing, engineering, and retail-compliance — <a href="https://www.logic-pac.com/capabilities">Logic Pac&apos;s packaging capabilities</a> integrate directly with the Agency ops retainer.</p>
+          <p className="pac-xlink">When fractional operations covers packaging specifically — sourcing, engineering, and retail compliance — <a href="https://www.logic-pac.com/capabilities">Logic Pac&apos;s packaging capabilities</a> connect directly with the Agency&apos;s operating work.</p>
 </div>
 
       
@@ -196,20 +203,20 @@ export default function Page() {
       <section className="guide-faq-section">
         <div className="guide-faq-inner">
           <h2>Frequently Asked Questions</h2>
-          <GuideFaqAccordion items={[{ q: 'How much does a fractional COO cost for a CPG brand?', a: 'A fractional COO or fractional operations team typically costs $30,000-$120,000 per year. The range depends on whether the work is advisory, active management, or embedded execution.' }, { q: 'How much does a full-time VP of Operations cost?', a: 'A senior VP of Operations can cost $220,000-$350,000 all-in. A full operations function with supporting roles can reach $600,000-$830,000+ per year.' }, { q: 'Is a fractional COO the same as a consultant?', a: 'No. A consultant usually diagnoses and recommends. A fractional COO or operations team should own execution, manage vendors, build systems, and stay accountable to outcomes.' }, { q: 'When should a brand hire full-time instead of fractional?', a: 'Hire full-time when the role is permanent, clearly defined, and large enough for one person to own every day. Use fractional support when the scope is cross-functional or still changing.' }, { q: 'Can a fractional team help us hire a full-time operations leader later?', a: 'Yes. A fractional team can define the role, document systems, and stabilize the operating environment so the eventual hire starts with structure instead of cleanup.' }]} />
+          <GuideFaqAccordion items={[{ q: 'How should a CPG brand compare fractional and full-time operations support?', a: 'Compare the operating problems that need ownership, the range of capabilities required, speed to impact, and whether the work is stable enough to fit one permanent role.' }, { q: 'How much does a full-time VP of Operations cost?', a: 'A senior VP of Operations can cost $220,000-$350,000 all-in. A full operations function with supporting roles can reach $600,000-$830,000+ per year.' }, { q: 'Is a fractional COO the same as a consultant?', a: 'No. A consultant usually diagnoses and recommends. A fractional COO or operations team should own execution, manage vendors, build systems, and stay accountable to outcomes.' }, { q: 'When should a brand hire full-time instead of fractional?', a: 'Hire full-time when the role is permanent, clearly defined, and large enough for one person to own every day. Use fractional support when the scope is cross-functional or still changing.' }, { q: 'Can a fractional team help us hire a full-time operations leader later?', a: 'Yes. A fractional team can define the role, document systems, and stabilize the operating environment so the eventual hire starts with structure instead of cleanup.' }]} />
         </div>
       </section>
       {/* CTA */}
       <section className="cta-band gd">
         <div className="cta-inner">
           <h2>Ready to talk about <span className="o">your supply chain?</span></h2>
-          <p>Every retainer starts with a conversation about what&apos;s actually breaking. Tell us where the gaps are.</p>
+          <p>Every useful working relationship starts with a conversation about what&apos;s actually breaking. Tell us where the gaps are.</p>
           <div className="cta-btns">
             <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Start a Conversation &rarr;</a>
-            <a href="/#pricing" className="bt bw">See Plans &amp; Pricing</a>
+            <Link href="/how-we-work" className="bt bw">See How Logic Works</Link>
           </div>
-          <a href="/guides/retail-readiness-scorecard" className="cta-dl">Download the free 40-Point Readiness Scorecard &rarr;</a>
-          <span className="cta-sub">Logic Agency Inc. &middot; Packaging &amp; Supply Chain Ops on a Monthly Retainer</span>
+          <Link href="/guides/retail-readiness-scorecard" className="cta-dl">Use the free 40-Point Retail-Readiness Scorecard &rarr;</Link>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -218,18 +225,18 @@ export default function Page() {
         <div className="related-inner">
           <h3>More Guides</h3>
           <div className="related-links">
-            <a href="/guides/fractional-supply-chain-operations" className="related-link">
+            <Link href="/guides/fractional-supply-chain-operations" className="related-link">
               <h4>Fractional Supply Chain Operations</h4>
-              <p>The embedded model explained: what the team owns, what it costs, and when it beats a full-time hire.</p>
-            </a>
-            <a href="/guides/retail-readiness" className="related-link">
+              <p>The embedded model explained: what the team owns, how it works, and when it fits better than a full-time hire.</p>
+            </Link>
+            <Link href="/guides/retail-readiness" className="related-link">
               <h4>The Retail Readiness Bible</h4>
               <p>The compliance, packaging, logistics, and documentation requirements for entering retail.</p>
-            </a>
-            <a href="/guides/packaging-cost-reduction" className="related-link">
+            </Link>
+            <Link href="/guides/packaging-cost-reduction" className="related-link">
               <h4>Packaging Cost Reduction</h4>
               <p>Where packaging margin leaks and how to recover it without downgrading quality.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

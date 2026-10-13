@@ -1,64 +1,110 @@
 'use client';
-import { useState } from 'react';
 
-export default function Nav({ variant = 'guide' }) {
-  const isHome = variant === 'home';
-  const [open, setOpen] = useState(false);
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useId, useRef, useState } from 'react';
 
-  const close = () => setOpen(false);
+const insightLinks = [
+  { href: '/guides', label: 'Guide Library', note: '25 practical operating playbooks' },
+  { href: '/blog', label: 'Field Notes', note: 'Packaging and supply-chain analysis' },
+  { href: '/guides/retail-readiness-scorecard', label: 'Retail-Readiness Scorecard', note: 'Free 40-point diagnostic' },
+  { href: '/guides/packaging-cost-reduction', label: 'Packaging Cost Reduction', note: 'Find the cost hiding outside unit price' },
+];
 
-  const guidesDropdown = (
-    <div className="nav-dd">
-      <span className="nav-dd-label">Guides <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 5l3 3 3-3" /></svg></span>
-      <div className="dd-menu">
+export default function Nav() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [insightsOpen, setInsightsOpen] = useState(false);
+  const insightsMenuId = useId();
+  const navLinksId = useId();
+  const insightsButtonRef = useRef(null);
+  const hamburgerRef = useRef(null);
+  const rawPathname = usePathname() || '/';
+  const normalizedPathname = rawPathname.replace(/^\/logic-agency-site-concept(?=\/|$)/, '') || '/';
+
+  const isCurrent = (href) => normalizedPathname === href || (href !== '/' && normalizedPathname.startsWith(`${href}/`));
+  const insightsCurrent = isCurrent('/guides') || isCurrent('/blog');
+
+  const close = () => {
+    setMobileOpen(false);
+    setInsightsOpen(false);
+  };
+
+  const handleNavKeyDown = (event) => {
+    if (event.key !== 'Escape') return;
+    const wasMobileOpen = mobileOpen;
+    const wasInsightsOpen = insightsOpen;
+    if (!wasMobileOpen && !wasInsightsOpen) return;
+    event.preventDefault();
+    close();
+    requestAnimationFrame(() => {
+      if (wasMobileOpen) hamburgerRef.current?.focus();
+      else if (wasInsightsOpen) insightsButtonRef.current?.focus();
+    });
+  };
+
+  const insightsDropdown = (
+    <div
+      className={`nav-dd${insightsOpen ? ' nav-dd-open' : ''}${insightsCurrent ? ' nav-dd-current' : ''}`}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setInsightsOpen(false);
+      }}
+    >
+      <button
+        ref={insightsButtonRef}
+        type="button"
+        className="nav-dd-label"
+        aria-expanded={insightsOpen}
+        aria-controls={insightsMenuId}
+        onClick={() => setInsightsOpen((current) => !current)}
+      >
+        Insights
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+          <path d="M3 5l3 3 3-3" />
+        </svg>
+      </button>
+      <div className="dd-menu" id={insightsMenuId}>
         <div className="dd-panel">
-          <a href="/guides/retail-readiness" onClick={close}>The Retail Readiness Bible</a>
-          <a href="/guides/first-90-days-in-retail" onClick={close}>Your First 90 Days in Retail</a>
-          <a href="/guides/fractional-supply-chain-operations" onClick={close}>Fractional Supply Chain Operations</a>
-          <a href="/guides/dtc-to-retail-supply-chain" onClick={close}>DTC to Retail Supply Chain</a>
-          <a href="/guides/retail-chargebacks" onClick={close}>Retail Chargebacks Explained</a>
-          <a href="/guides/packaging-cost-reduction" onClick={close}>Packaging Cost Reduction</a>
-          <a href="/guides/3pl-selection-guide" onClick={close}>3PL Selection Guide</a>
-          <a href="/guides" onClick={close} style={{fontWeight:700,color:'var(--o)'}}>View all guides &rarr;</a>
+          {insightLinks.map((item) => (
+            <Link href={item.href} onClick={close} key={item.href}>
+              <strong>{item.label}</strong>
+              <small>{item.note}</small>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
   );
 
   return (
-    <nav>
-      <a href={isHome ? '#' : '/'} className="lo">
-        <svg viewBox="0 0 40 40" fill="none">
+    <nav aria-label="Primary navigation" onKeyDown={handleNavKeyDown}>
+      <Link href="/" className="lo" onClick={close} aria-label="Logic Agency home" aria-current={isCurrent('/') ? 'page' : undefined}>
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
           <circle cx="15" cy="20" r="12" stroke="#FF600A" strokeWidth="2.5" fill="none" />
           <circle cx="25" cy="20" r="12" stroke="#FF600A" strokeWidth="2.5" fill="none" />
         </svg>
         <span>Logic Agency Inc.</span>
-      </a>
-      <button className="ham" onClick={() => setOpen(!open)} aria-label="Menu">
+      </Link>
+      <button
+        ref={hamburgerRef}
+        className="ham"
+        type="button"
+        onClick={() => {
+          setMobileOpen((current) => !current);
+          setInsightsOpen(false);
+        }}
+        aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={mobileOpen}
+        aria-controls={navLinksId}
+      >
         <span /><span /><span />
       </button>
-      <div className={`nr${open ? ' nr-open' : ''}`}>
-        {isHome ? (
-          <>
-            <a href="#situations" onClick={close}>Who We Help</a>
-            <a href="#pricing" onClick={close}>Pricing</a>
-            <a href="#results" onClick={close}>Results</a>
-            {guidesDropdown}
-            <a href="/blog" onClick={close}>Blog</a>
-            <a href="#faq" onClick={close}>FAQ</a>
-            <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="nc" target="_blank" rel="noopener noreferrer">Book a Call</a>
-          </>
-        ) : (
-          <>
-            <a href="/" onClick={close}>Home</a>
-            <a href="/#pricing" onClick={close}>Pricing</a>
-            <a href="/#results" onClick={close}>Results</a>
-            {guidesDropdown}
-            <a href="/blog" onClick={close}>Blog</a>
-            <a href="/#faq" onClick={close}>FAQ</a>
-            <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="nc" target="_blank" rel="noopener noreferrer">Book a Call</a>
-          </>
-        )}
+      <div id={navLinksId} className={`nr${mobileOpen ? ' nr-open' : ''}`}>
+        <Link href="/services" onClick={close} aria-current={isCurrent('/services') ? 'page' : undefined}>What We Do</Link>
+        <Link href="/who-we-help" onClick={close} aria-current={isCurrent('/who-we-help') ? 'page' : undefined}>Who We Help</Link>
+        <Link href="/work" onClick={close} aria-current={isCurrent('/work') ? 'page' : undefined}>Work</Link>
+        <Link href="/how-we-work" onClick={close} aria-current={isCurrent('/how-we-work') ? 'page' : undefined}>How We Work</Link>
+        {insightsDropdown}
+        <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="nc" target="_blank" rel="noopener noreferrer" onClick={close}>Book a Call</a>
       </div>
     </nav>
   );

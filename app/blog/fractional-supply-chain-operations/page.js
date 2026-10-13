@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
 
-const pageUrl = 'https://www.logicagencyinc.com/blog/fractional-supply-chain-operations';
+const pageUrl = 'https://credyset.github.io/logic-agency-site-concept/blog/fractional-supply-chain-operations';
 const title = 'What Happens in the First 30 Days of Fractional Ops';
 const description = 'The first 30 days of fractional supply chain operations should create visibility, stabilize vendors, find cost leaks, and define ownership.';
 
@@ -41,8 +42,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Logic Agency', item: 'https://www.logicagencyinc.com' },
-    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.logicagencyinc.com/blog' },
+    { '@type': 'ListItem', position: 1, name: 'Logic Agency', item: 'https://credyset.github.io/logic-agency-site-concept' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://credyset.github.io/logic-agency-site-concept/blog' },
     { '@type': 'ListItem', position: 3, name: 'First 30 Days of Fractional Ops', item: pageUrl },
   ],
 };
@@ -58,7 +59,7 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'First 30 Days of Fractional Ops | Logic Agency',
+  title: 'First 30 Days of Fractional Ops — Logic Agency Inc.',
   description,
   keywords: 'first 30 days fractional operations, fractional supply chain operations audit, embedded ops team CPG, fractional operations onboarding',
   alternates: { canonical: pageUrl },
@@ -70,9 +71,11 @@ export const metadata = {
     publishedTime: '2026-06-17',
     modifiedTime: '2026-06-22',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg'],
     title,
     description,
   },
@@ -89,9 +92,9 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
-          <span className="b-tag">Embedded Operations</span>
+          <span className="b-tag">Operating Model</span>
           <h1>What Happens in the First 30 Days of Fractional Ops</h1>
           <p className="b-lede">The first month of fractional supply chain operations should not be a discovery theater exercise. It should make the operating system visible, show where margin is leaking, and clarify who owns the next move.</p>
           <div className="b-meta">
@@ -104,7 +107,7 @@ export default function Page() {
 
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-sourcing.jpg" alt="First 30 days of fractional supply chain operations for CPG brands" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-sourcing.jpg" alt="First 30 days of fractional supply chain operations for CPG brands" className="b-feat-img" />
       </div>
 
       <div className="article gl">
@@ -146,7 +149,7 @@ export default function Page() {
           <p>The team can see the system. Then it can improve the system.</p>
 
           <h2>What Bad Looks Like</h2>
-          <p>Bad fractional operations looks like consulting with a retainer. Lots of meetings. Lots of language. Very little movement.</p>
+          <p>Bad fractional operations looks like consulting without ownership. Lots of meetings. Lots of language. Very little movement.</p>
           <p>If the first 30 days produce only observations, the model is too passive. The work should move from audit to execution quickly.</p>
 
           <h2>The Point</h2>
@@ -173,8 +176,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Have an Operations<br /><em>Question?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

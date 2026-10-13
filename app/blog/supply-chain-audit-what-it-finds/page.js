@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
@@ -10,6 +11,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -17,7 +19,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/supply-chain-audit-what-it-finds",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/supply-chain-audit-what-it-finds",
   "datePublished": "2026-06-17",
   "dateModified": "2026-06-17"
 };
@@ -26,9 +28,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "What a Supply Chain Audit Actually Finds", "item": "https://www.logicagencyinc.com/blog/supply-chain-audit-what-it-finds" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "What a Supply Chain Audit Actually Finds", "item": "https://credyset.github.io/logic-agency-site-concept/blog/supply-chain-audit-what-it-finds" }
   ]
 };
 
@@ -80,22 +82,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'What a Supply Chain Audit Finds | Logic Agency',
+  title: 'What a Supply Chain Audit Finds — Logic Agency Inc.',
   description: 'A practical supply chain audit guide for CPG brands: landed cost gaps, supplier risk, freight waste, inventory issues, packaging cost leaks, and next steps.',
   keywords: 'supply chain audit CPG brands, CPG supply chain audit, supply chain cost audit, packaging cost audit, landed cost audit, operational audit consumer brands',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/supply-chain-audit-what-it-finds',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/supply-chain-audit-what-it-finds',
   },
   openGraph: {
     title: 'What a Supply Chain Audit Actually Finds',
     description: 'A practical supply chain audit guide for CPG brands: landed cost gaps, supplier risk, freight waste, inventory issues, packaging cost leaks, and next steps.',
-    url: 'https://www.logicagencyinc.com/blog/supply-chain-audit-what-it-finds',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/supply-chain-audit-what-it-finds',
     type: 'article',
     publishedTime: '2026-06-17',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg'],
     title: 'What a Supply Chain Audit Actually Finds',
     description: 'A practical supply chain audit guide for CPG brands: landed cost gaps, supplier risk, freight waste, inventory issues, packaging cost leaks, and next steps.',
   },
@@ -122,7 +126,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Supply Chain Operations</span>
           <h1>What a Supply Chain Audit Actually Finds</h1>
@@ -138,7 +142,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-launch.jpg" alt="Supply chain audit findings for a scaling CPG brand covering landed cost, freight, and inventory" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-launch.jpg" alt="Supply chain audit findings for a scaling CPG brand covering landed cost, freight, and inventory" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -383,8 +387,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Where Is Your Supply Chain<br /><em>Leaking Growth?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll review your supply chain and find the constraints blocking your next stage.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll review your supply chain and find the constraints blocking your next stage.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

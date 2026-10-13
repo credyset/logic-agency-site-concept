@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
 
-const pageUrl = 'https://www.logicagencyinc.com/blog/fractional-coo-vs-full-time-hire';
+const pageUrl = 'https://credyset.github.io/logic-agency-site-concept/blog/fractional-coo-vs-full-time-hire';
 const title = 'The Hidden Cost of Hiring Ops Too Early';
 const description = 'Hiring a VP of Operations too early can create six months of cleanup, wrong-level scope, and fixed cost before a CPG brand knows the role.';
 
@@ -41,8 +42,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Logic Agency', item: 'https://www.logicagencyinc.com' },
-    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.logicagencyinc.com/blog' },
+    { '@type': 'ListItem', position: 1, name: 'Logic Agency', item: 'https://credyset.github.io/logic-agency-site-concept' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://credyset.github.io/logic-agency-site-concept/blog' },
     { '@type': 'ListItem', position: 3, name: 'Hiring Ops Too Early', item: pageUrl },
   ],
 };
@@ -58,7 +59,7 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'Hiring Ops Too Early | Logic Agency',
+  title: 'Hiring Ops Too Early — Logic Agency Inc.',
   description,
   keywords: 'hiring VP of Operations too early, fractional COO timing, operations hire CPG brand, when to hire VP operations startup',
   alternates: { canonical: pageUrl },
@@ -70,9 +71,11 @@ export const metadata = {
     publishedTime: '2026-06-17',
     modifiedTime: '2026-06-22',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg'],
     title,
     description,
   },
@@ -89,7 +92,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Founder Decision</span>
           <h1>The Hidden Cost of Hiring Ops Too Early</h1>
@@ -104,7 +107,7 @@ export default function Page() {
 
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-us-retail.jpg" alt="Founder evaluating when to hire operations leadership" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-us-retail.jpg" alt="Founder evaluating when to hire operations leadership" className="b-feat-img" />
       </div>
 
       <div className="article gl">
@@ -174,8 +177,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Have an Operations<br /><em>Question?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

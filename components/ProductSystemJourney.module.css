@@ -1,0 +1,495 @@
+.journey {
+  --ink: #20201f;
+  --paper: #f3f3f0;
+  --orange: #ff600a;
+  --orangeText: #b83f00;
+  position: relative;
+  margin-top: 60px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #181817;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.24);
+}
+
+.journey::before {
+  content: '';
+  position: absolute;
+  top: -96px;
+  right: -96px;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(255, 96, 10, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 34px rgba(255, 96, 10, 0.035), 0 0 0 68px rgba(255, 96, 10, 0.02);
+  pointer-events: none;
+}
+
+.meta {
+  min-height: 48px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.55px;
+}
+
+.stageNav {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.track {
+  position: absolute;
+  z-index: 0;
+  top: 41px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.16);
+  pointer-events: none;
+}
+
+.track span {
+  display: block;
+  width: var(--journey-progress);
+  height: 100%;
+  background: var(--orange);
+  transition: width 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stageButton {
+  min-width: 0;
+  min-height: 154px;
+  padding: 22px 22px 18px;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  gap: 14px;
+  align-content: start;
+  border: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.stageButton:last-child {
+  border-right: 0;
+}
+
+.stageButton:hover,
+.stageButton.isActive {
+  color: #fff;
+  background: rgba(255, 96, 10, 0.07);
+}
+
+.stageButton.isActive {
+  border-bottom-color: var(--orange);
+}
+
+.stageButton:focus-visible {
+  z-index: 2;
+  outline: 3px solid #70a4ff;
+  outline-offset: -5px;
+}
+
+.stageNumber {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 50%;
+  background: #181817;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  transition: color 260ms ease, background-color 260ms ease, border-color 260ms ease, box-shadow 260ms ease, transform 260ms ease;
+}
+
+.isActive .stageNumber {
+  transform: scale(1.09);
+  border-color: var(--orange);
+  background: var(--orange);
+  color: var(--ink);
+  box-shadow: 0 0 0 7px rgba(255, 96, 10, 0.1), 0 10px 28px rgba(255, 96, 10, 0.2);
+}
+
+.stageLabel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-self: center;
+}
+
+.stageLabel strong {
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.65px;
+}
+
+.stageLabel small {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.stageStatus {
+  grid-column: 1 / -1;
+  align-self: end;
+  color: var(--orange);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.panel {
+  min-height: 430px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+  background: var(--paper);
+  color: var(--ink);
+  animation: panelIn 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.panelCopy {
+  padding: clamp(46px, 5.5vw, 76px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.panelEyebrow,
+.visualLabel {
+  margin: 0;
+  color: var(--orange);
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 1.45px;
+  text-transform: uppercase;
+}
+
+.panelEyebrow {
+  color: var(--orangeText);
+}
+
+.panelCopy h3 {
+  max-width: 580px;
+  margin: 16px 0 0;
+  font-size: clamp(30px, 3.4vw, 47px);
+  line-height: 1.04;
+  letter-spacing: -2px;
+}
+
+.panelDescription {
+  max-width: 620px;
+  margin: 20px 0 0;
+  color: #575751;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.signalList {
+  margin: 28px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.signalList li {
+  padding: 8px 10px;
+  border: 1px solid rgba(32, 32, 31, 0.18);
+  background: rgba(255, 255, 255, 0.54);
+  color: #4b4b47;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.visual {
+  min-width: 0;
+  padding: 34px clamp(28px, 4vw, 58px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid rgba(32, 32, 31, 0.14);
+  background-color: #ecece8;
+  background-image:
+    linear-gradient(rgba(32, 32, 31, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32, 32, 31, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.visualLabel {
+  align-self: flex-end;
+  margin-bottom: 18px;
+  color: #6b6b65;
+}
+
+.schematic {
+  width: 100%;
+  height: auto;
+  max-height: 290px;
+  overflow: visible;
+}
+
+.schematic g {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.muted {
+  stroke: rgba(32, 32, 31, 0.28);
+  stroke-width: 1.5;
+}
+
+.active {
+  stroke: var(--orange);
+  stroke-width: 2.2;
+}
+
+.core {
+  fill: var(--orange);
+}
+
+.copy,
+.coreCopy {
+  stroke: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.05px;
+}
+
+.copy {
+  fill: rgba(32, 32, 31, 0.7);
+}
+
+.coreCopy {
+  fill: #fff;
+  font-size: 7px;
+  letter-spacing: 0.8px;
+}
+
+.schematic [data-draw='true'] {
+  stroke-dasharray: 620;
+  stroke-dashoffset: 620;
+  animation: drawPath 920ms 100ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: signalPulse 1.9s 600ms ease-out infinite;
+}
+
+.boundary {
+  min-height: 86px;
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 174px 1fr;
+  gap: 26px;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(255, 96, 10, 0.08);
+}
+
+.boundary > span {
+  color: var(--orange);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.35px;
+  text-transform: uppercase;
+}
+
+.boundary p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.boundary strong {
+  color: #fff;
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drawPath {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes signalPulse {
+  0% { opacity: 1; transform: scale(1); }
+  65%, 100% { opacity: 0.2; transform: scale(2.1); }
+}
+
+@media (max-width: 980px) {
+  .stageButton {
+    padding-inline: 16px;
+  }
+
+  .stageLabel strong {
+    font-size: 18px;
+  }
+
+  .panel {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    min-height: 360px;
+    border-top: 1px solid rgba(32, 32, 31, 0.14);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .journey {
+    margin-top: 44px;
+  }
+
+  .meta {
+    min-height: 58px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    font-size: 10px;
+  }
+
+  .stageNav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .track {
+    display: none;
+  }
+
+  .stageButton {
+    min-height: 132px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .stageButton:nth-of-type(2n) {
+    border-right: 0;
+  }
+
+  .stageButton.isActive {
+    box-shadow: inset 0 -3px var(--orange);
+  }
+
+  .stageLabel small,
+  .stageStatus,
+  .panelEyebrow,
+  .visualLabel,
+  .boundary > span {
+    font-size: 11px;
+  }
+
+  .panelCopy {
+    padding: 46px 28px;
+  }
+
+  .panelDescription {
+    font-size: 15px;
+  }
+
+  .signalList li {
+    font-size: 10px;
+  }
+
+  .visual {
+    min-height: 300px;
+    padding: 28px 20px;
+  }
+
+  .boundary {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .boundary p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stageNav {
+    grid-template-columns: 1fr;
+  }
+
+  .stageButton,
+  .stageButton:nth-of-type(2n) {
+    min-height: 106px;
+    grid-template-columns: 50px minmax(0, 1fr) auto;
+    grid-template-rows: 1fr;
+    align-items: center;
+    border-right: 0;
+  }
+
+  .stageStatus {
+    max-width: 90px;
+    grid-column: auto;
+    align-self: center;
+    text-align: right;
+  }
+
+  .panelCopy h3 {
+    font-size: 34px;
+    letter-spacing: -1.5px;
+  }
+
+  .visual {
+    min-height: 260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track span,
+  .stageButton,
+  .stageNumber {
+    transition: none;
+  }
+
+  .panel,
+  .schematic [data-draw='true'],
+  .pulse {
+    animation: none;
+  }
+
+  .schematic [data-draw='true'] {
+    stroke-dashoffset: 0;
+  }
+}

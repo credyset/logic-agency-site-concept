@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import EmailButton from '@/components/EmailButton';
@@ -9,15 +10,16 @@ const articleSchema = {
   "headline": "The CPG Working Capital Playbook",
   "description": "How CPG brands fund growth without dilution: the diagnostic question (loss vs. working capital), the 90-180 day cash conversion cycle, gross-to-net deduction math, revolving credit lines, PO/AR financing, and when equity IS the right tool.",
   "author": {
-    "@type": "Organization",
-    "name": "Logic Agency Inc.",
-    "url": "https://logicagencyinc.com"
+    "@type": "Person",
+    "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
+    "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Logic Agency Inc."
   },
-  "mainEntityOfPage": "https://logicagencyinc.com/guides/cpg-working-capital-playbook",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/guides/cpg-working-capital-playbook",
   "datePublished": "2026-07-27",
   "dateModified": "2026-07-27"
 };
@@ -74,19 +76,19 @@ export const metadata = {
   description: 'How to fund CPG growth without dilution: the 90-180 day cash conversion cycle, gross-to-net deduction math, revolving credit lines, PO/AR financing, and when equity IS the right tool.',
   keywords: 'CPG working capital, working capital vs equity CPG, cash conversion cycle CPG, fund CPG growth without dilution, CPG cash gap, revolving credit line CPG, PO financing CPG, trade spend deductions',
   alternates: {
-    canonical: 'https://logicagencyinc.com/guides/cpg-working-capital-playbook',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/guides/cpg-working-capital-playbook',
   },
   openGraph: {
     title: 'The CPG Working Capital Playbook',
     description: 'How to fund CPG growth without dilution: the 90-180 day cash conversion cycle, gross-to-net deduction math, revolving credit lines, PO/AR financing, and when equity IS the right tool.',
-    url: 'https://logicagencyinc.com/guides/cpg-working-capital-playbook',
-    images: [{ url: 'https://logicagencyinc.com/images/og-cpg-working-capital-playbook.jpg', width: 1200, height: 630 }],
+    url: 'https://credyset.github.io/logic-agency-site-concept/guides/cpg-working-capital-playbook',
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-cpg-working-capital-playbook.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The CPG Working Capital Playbook',
     description: 'How to fund CPG growth without dilution: the 90-180 day cash conversion cycle, gross-to-net deduction math, revolving credit lines, PO/AR financing, and when equity IS the right tool.',
-    images: ['https://logicagencyinc.com/images/og-cpg-working-capital-playbook.jpg'],
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-cpg-working-capital-playbook.jpg'],
   },
 };
 
@@ -98,19 +100,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Logic Agency",
-      "item": "https://logicagencyinc.com"
+      "item": "https://credyset.github.io/logic-agency-site-concept"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Guides",
-      "item": "https://logicagencyinc.com/guides"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "The CPG Working Capital Playbook",
-      "item": "https://logicagencyinc.com/guides/cpg-working-capital-playbook"
+      "item": "https://credyset.github.io/logic-agency-site-concept/guides/cpg-working-capital-playbook"
     }
   ]
 };
@@ -135,7 +137,7 @@ export default function Page() {
       {/* HERO */}
       <section className="a-hero gl">
         <div className="a-hero-inner">
-          <div className="breadcrumb"><a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/guides">Guides</a></div>
+          <div className="breadcrumb"><Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/guides">Guides</Link></div>
           <h1>The CPG Working Capital <span className="o">Playbook</span></h1>
           <p className="a-lede">Most CPG founders raise equity to solve what is actually a working capital timing problem. The cash gap between paying suppliers and collecting from retailers runs 90&ndash;180 days&mdash;and retailers deduct 30&ndash;40% off the top before you see a dollar. Here is how to diagnose the real problem and fund growth without giving away the company.</p>
           <div className="a-meta">
@@ -246,7 +248,7 @@ export default function Page() {
             <div className="cd-card">
               <div className="cd-num">5&ndash;15%</div>
               <h3>Chargebacks</h3>
-              <p>Compliance penalties for shipping violations, ASN errors, pallet non-compliance, and routing guide failures. Chargebacks run 5&ndash;15% of gross for most CPG brands, with first-year brands typically skewing toward the higher end (Inmar Intelligence, 2024). See our <a href="/guides/retail-chargebacks">retail chargebacks guide</a> for the full breakdown.</p>
+              <p>Compliance penalties for shipping violations, ASN errors, pallet non-compliance, and routing guide failures. Chargebacks run 5&ndash;15% of gross for most CPG brands, with first-year brands typically skewing toward the higher end (Inmar Intelligence, 2024). See our <Link href="/guides/retail-chargebacks">retail chargebacks guide</Link> for the full breakdown.</p>
             </div>
             <div className="cd-card">
               <div className="cd-num">2&ndash;5%</div>
@@ -354,13 +356,13 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-inner">
           <h2>Running out of cash before your <span className="o">retailers pay?</span></h2>
-          <p>Working capital management is built into every retainer. Whether it&apos;s structuring PO financing, optimizing cash conversion cycles, or building the ops infrastructure that lenders want to see&mdash;we&apos;ve done it before.</p>
+          <p>Working capital decisions belong inside the operating system. Whether it&apos;s structuring PO financing, optimizing cash conversion cycles, or building the ops infrastructure that lenders want to see&mdash;we&apos;ve done it before.</p>
           <div className="cta-btns">
             <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Start a Conversation &rarr;</a>
-            <a href="/#pricing" className="bt bw">See Plans &amp; Pricing</a>
+            <Link href="/how-we-work" className="bt bw">See How Logic Works</Link>
           </div>
-          <a href="/Logic-Agency-Readiness-Scorecard.pdf" className="cta-dl" target="_blank" rel="noopener noreferrer">Download the free 40-Point Readiness Scorecard &rarr;</a>
-          <span className="cta-sub">Logic Agency Inc. &middot; Packaging &amp; Supply Chain Ops on a Monthly Retainer</span>
+          <Link href="/guides/retail-readiness-scorecard" className="cta-dl">Use the free 40-Point Readiness Scorecard &rarr;</Link>
+          <span className="cta-sub">Logic Agency Inc. &middot; Embedded Packaging &middot; Supply Chain &middot; Operations</span>
         </div>
       </section>
 
@@ -369,18 +371,18 @@ export default function Page() {
         <div className="related-inner">
           <h3>More Guides</h3>
           <div className="related-links">
-            <a href="/guides/first-90-days-in-retail" className="related-link">
+            <Link href="/guides/first-90-days-in-retail" className="related-link">
               <h4>First 90 Days in Retail</h4>
               <p>What changes once a brand moves from DTC into retailer systems&mdash;including the cash cycle reality.</p>
-            </a>
-            <a href="/guides/packaging-cost-reduction" className="related-link">
+            </Link>
+            <Link href="/guides/packaging-cost-reduction" className="related-link">
               <h4>Packaging Cost Reduction Without Sacrificing Brand</h4>
               <p>Where packaging margin leaks&mdash;and how reducing cost improves your working capital position.</p>
-            </a>
-            <a href="/guides/retail-chargebacks" className="related-link">
+            </Link>
+            <Link href="/guides/retail-chargebacks" className="related-link">
               <h4>Retail Chargebacks Explained</h4>
               <p>The deduction math that strips 5&ndash;15% of gross revenue before it reaches your bank account.</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

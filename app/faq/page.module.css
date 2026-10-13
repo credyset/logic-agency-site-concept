@@ -1,0 +1,446 @@
+.page {
+  --ink: #212121;
+  --graphite: #2a2a2a;
+  --orange: #ff600a;
+  --paper: #f3f3f3;
+  --line: #dadada;
+  --muted: #585858;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.skipLink {
+  position: fixed;
+  top: 10px;
+  left: 12px;
+  z-index: 2000;
+  padding: 10px 16px;
+  background: #fff;
+  color: #212121;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-160%);
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+.hero {
+  padding: 150px 60px 0;
+  background-color: var(--graphite);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: #fff;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, .6fr);
+  gap: clamp(50px, 8vw, 130px);
+  align-items: end;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--orange);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 900px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(48px, 6vw, 82px);
+  font-weight: 800;
+  letter-spacing: -4.2px;
+  line-height: .98;
+}
+
+.heroAside {
+  padding: 0 0 8px 25px;
+  border-left: 2px solid var(--orange);
+}
+
+.heroAside p {
+  margin: 0 0 20px;
+  color: rgba(255, 255, 255, .82);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.heroAside a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.jumpNav {
+  position: static;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1280px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  backdrop-filter: none;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.jumpNav a {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 22px 24px;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  border-right: 1px solid rgba(255, 255, 255, .12);
+  color: rgba(255, 255, 255, .76);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .2s ease, color .2s ease;
+}
+
+.jumpNav a:first-child {
+  border-left: 1px solid rgba(255, 255, 255, .12);
+}
+
+.jumpNav a span {
+  color: var(--orange);
+}
+
+.jumpNav a:hover {
+  background: rgba(255, 255, 255, .05);
+  color: #fff;
+}
+
+.heroAside a:focus-visible,
+.jumpNav a:focus-visible,
+.pathCard:focus-visible,
+.faqItem summary:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 4px;
+}
+
+.faqShell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 110px 60px 30px;
+}
+
+.faqGroup {
+  display: grid;
+  grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr);
+  gap: clamp(60px, 9vw, 130px);
+  padding: 84px 0;
+  scroll-margin-top: 90px;
+  border-bottom: 1px solid var(--line);
+}
+
+.faqGroup:first-child {
+  padding-top: 0;
+}
+
+.groupHeader {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 20px;
+  align-self: start;
+}
+
+.groupNumber {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.groupHeader h2 {
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-size: clamp(30px, 3vw, 43px);
+  font-weight: 800;
+  letter-spacing: -1.8px;
+  line-height: 1.05;
+}
+
+.groupHeader > div > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.accordion {
+  border-top: 1px solid var(--ink);
+}
+
+.faqItem {
+  border-bottom: 1px solid var(--line);
+}
+
+.faqItem summary {
+  display: grid;
+  grid-template-columns: 1fr 32px;
+  gap: 20px;
+  align-items: center;
+  padding: 25px 0;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -.2px;
+  list-style: none;
+}
+
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqItem summary svg {
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+  border: 1px solid var(--line);
+  stroke: var(--orange);
+  stroke-width: 1.8;
+  transition: transform .25s ease, background .25s ease;
+}
+
+.faqItem[open] summary svg {
+  transform: rotate(45deg);
+  background: rgba(255, 96, 10, .08);
+}
+
+.answer {
+  padding: 0 66px 26px 0;
+}
+
+.answer p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.nextStep {
+  padding: 110px 60px;
+  background: #fff;
+}
+
+.nextStepIntro,
+.pathGrid {
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.nextStepIntro {
+  display: grid;
+  grid-template-columns: .45fr 1.55fr;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.nextStepIntro h2 {
+  max-width: 780px;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 800;
+  letter-spacing: -2.4px;
+  line-height: 1.06;
+}
+
+.pathGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.pathCard {
+  position: relative;
+  display: flex;
+  min-height: 310px;
+  flex-direction: column;
+  padding: 30px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.pathCard:hover {
+  z-index: 1;
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .08);
+}
+
+.pathCard > span {
+  margin-bottom: auto;
+  color: var(--orange);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.pathCard strong {
+  display: block;
+  margin: 55px 0 12px;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -.8px;
+  line-height: 1.2;
+}
+
+.pathCard p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.pathCard i {
+  position: absolute;
+  right: 26px;
+  bottom: 24px;
+  color: var(--orange);
+  font-size: 20px;
+  font-style: normal;
+}
+
+.pathCardOrange {
+  background: var(--orange);
+}
+
+.pathCardOrange > span,
+.pathCardOrange i {
+  color: var(--ink);
+}
+
+.pathCardOrange p {
+  color: var(--ink);
+}
+
+@media (max-width: 940px) {
+  .heroInner,
+  .faqGroup {
+    grid-template-columns: 1fr;
+  }
+
+  .heroAside {
+    max-width: 620px;
+  }
+
+  .pathGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pathCard:last-child { grid-column: 1 / -1; }
+
+  .jumpNav a {
+    border-left: 1px solid rgba(255, 255, 255, .12);
+  }
+
+  .faqGroup {
+    gap: 44px;
+  }
+
+  .groupHeader {
+    max-width: 660px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero,
+  .faqShell,
+  .nextStep {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .hero {
+    padding-top: 120px;
+  }
+
+  .heroInner {
+    padding-bottom: 55px;
+  }
+
+  .hero h1 {
+    font-size: clamp(43px, 13vw, 60px);
+    letter-spacing: -3px;
+  }
+
+  .eyebrow,
+  .heroAside a,
+  .jumpNav a,
+  .groupNumber,
+  .pathCard > span { font-size: 12px; }
+
+  .heroAside p,
+  .groupHeader > div > p:last-child,
+  .answer p,
+  .pathCard p { font-size: 15px; }
+
+  .faqShell {
+    padding-top: 80px;
+  }
+
+  .faqGroup {
+    padding: 70px 0;
+  }
+
+  .groupHeader {
+    grid-template-columns: 1fr;
+  }
+
+  .nextStepIntro {
+    grid-template-columns: 1fr;
+  }
+
+  .jumpNav,
+  .pathGrid { grid-template-columns: 1fr; }
+  .pathCard:last-child { grid-column: auto; }
+}
+
+@media (max-width: 460px) {
+  .answer {
+    padding-right: 0;
+  }
+
+  .faqItem summary {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jumpNav a,
+  .faqItem summary svg,
+  .pathCard {
+    transition: none;
+  }
+}

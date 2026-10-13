@@ -1,37 +1,40 @@
+import Link from 'next/link';
+
 export default function FooterHome() {
   return (
     <footer>
       <div className="fti">
         <div className="fbr">
-          <a href="/" className="lo">
-            <svg viewBox="0 0 40 40" fill="none" width="32" height="32">
+          <Link href="/" className="lo" aria-label="Logic Agency home">
+            <svg viewBox="0 0 40 40" fill="none" width="32" height="32" aria-hidden="true">
               <circle cx="15" cy="20" r="12" stroke="#FF600A" strokeWidth="2.5" fill="none" />
               <circle cx="25" cy="20" r="12" stroke="#FF600A" strokeWidth="2.5" fill="none" />
             </svg>
             <span>Logic Agency Inc.</span>
-          </a>
-          <p>Your outsourced packaging, supply chain, and operations team. Monthly retainers for brands in beauty, wellness, CPG, and tech wearables.</p>
+          </Link>
+          <p>Your embedded packaging, supply-chain, and operations team for scaling product brands.</p>
         </div>
         <div className="fc">
-          <h4>Services</h4>
-          <a href="/guides/packaging-sourcing">Packaging Sourcing</a>
-          <a href="/guides/retail-ready-packaging">Retail Packaging</a>
-          <a href="/guides/packaging-system-that-scales">Supply Chain Ops</a>
-          <a href="/guides/packaging-cost-reduction">Cost Optimization</a>
-          <a href="/guides/retail-readiness">Retail Readiness</a>
+          <h4>Explore</h4>
+          <Link href="/services">What We Do</Link>
+          <Link href="/who-we-help">Who We Help</Link>
+          <Link href="/how-we-work">How We Work</Link>
+          <Link href="/how-we-work#continuity">Implementation &amp; Accountability</Link>
         </div>
         <div className="fc">
           <h4>Company</h4>
-          <a href="/#results">Client Work</a>
-          <a href="/#pillars">What We Do</a>
-          <a href="/#cta">Contact</a>
+          <Link href="/work">Work</Link>
+          <Link href="/why-logic">Why Logic</Link>
+          <Link href="/faq">FAQ</Link>
+          <Link href="/guides">Guides</Link>
+          <Link href="/blog">Field Notes</Link>
         </div>
         <div className="fc">
           <h4>Contact</h4>
           <a href="mailto:jordan@logicagencyinc.com">jordan@logicagencyinc.com</a>
-          <a href="tel:+18018996836">+1 (801) 899-6836</a>
-          <a href="#">Orange County, CA</a>
-          <a href="#">Salt Lake City, UT</a>
+          <a href="tel:+13853686837">+1 (385) 368-6837</a>
+          <span className="footer-location">Orange County, CA</span>
+          <span className="footer-location">Salt Lake City, UT</span>
         </div>
       </div>
       <div className="fbt">

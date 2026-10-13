@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
@@ -10,6 +11,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -17,7 +19,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/reduce-packaging-costs-without-sacrificing-quality",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/reduce-packaging-costs-without-sacrificing-quality",
   "datePublished": "2026-06-17",
   "dateModified": "2026-06-17"
 };
@@ -26,9 +28,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "How to Reduce Packaging Costs Without Sacrificing Brand Quality", "item": "https://www.logicagencyinc.com/blog/reduce-packaging-costs-without-sacrificing-quality" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "How to Reduce Packaging Costs Without Sacrificing Brand Quality", "item": "https://credyset.github.io/logic-agency-site-concept/blog/reduce-packaging-costs-without-sacrificing-quality" }
   ]
 };
 
@@ -88,22 +90,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'Reduce Packaging Costs Without Sacrificing Quality | Logic Agency',
+  title: 'Reduce Packaging Costs Without Sacrificing Quality — Logic Agency Inc.',
   description: 'Seven proven levers for reducing CPG packaging costs without downgrading brand experience — DIM weight, finish engineering, and vendor consolidation.',
   keywords: 'reduce packaging costs CPG brand, packaging cost reduction strategies, cutting packaging costs without quality loss, packaging cost optimization CPG, DIM weight packaging savings, packaging spend CPG brand',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/reduce-packaging-costs-without-sacrificing-quality',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/reduce-packaging-costs-without-sacrificing-quality',
   },
   openGraph: {
     title: 'How to Reduce Packaging Costs Without Sacrificing Brand Quality',
     description: 'Seven proven levers for reducing CPG packaging costs without downgrading brand experience — DIM weight, finish engineering, and vendor consolidation.',
-    url: 'https://www.logicagencyinc.com/blog/reduce-packaging-costs-without-sacrificing-quality',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/reduce-packaging-costs-without-sacrificing-quality',
     type: 'article',
     publishedTime: '2026-06-17',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg'],
     title: 'How to Reduce Packaging Costs Without Sacrificing Brand Quality',
     description: 'Seven proven levers for reducing CPG packaging costs without downgrading brand experience — DIM weight, finish engineering, and vendor consolidation.',
   },
@@ -130,7 +134,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Packaging Operations</span>
           <h1>How to Reduce Packaging Costs Without Sacrificing Brand Quality</h1>
@@ -146,7 +150,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-skincare.jpg" alt="Reducing CPG packaging costs without sacrificing brand quality" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-skincare.jpg" alt="Reducing CPG packaging costs without sacrificing brand quality" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -353,8 +357,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Packaging Costs Higher<br /><em>Than They Should Be?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll walk through your current packaging cost structure and identify which of the seven levers apply &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll walk through your current packaging cost structure and identify which of the seven levers apply &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

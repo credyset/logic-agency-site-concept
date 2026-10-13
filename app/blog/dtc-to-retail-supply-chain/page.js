@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
 
-const pageUrl = 'https://www.logicagencyinc.com/blog/dtc-to-retail-supply-chain';
+const pageUrl = 'https://credyset.github.io/logic-agency-site-concept/blog/dtc-to-retail-supply-chain';
 const title = 'Retail 3PL Readiness: The DTC-to-Retail Failure Point';
 const description = 'Most DTC-to-retail supply chain failures start with the 3PL. Learn the retail fulfillment checks to run before signing a first PO.';
 
@@ -41,8 +42,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Logic Agency', item: 'https://www.logicagencyinc.com' },
-    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.logicagencyinc.com/blog' },
+    { '@type': 'ListItem', position: 1, name: 'Logic Agency', item: 'https://credyset.github.io/logic-agency-site-concept' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://credyset.github.io/logic-agency-site-concept/blog' },
     { '@type': 'ListItem', position: 3, name: 'Retail 3PL Readiness', item: pageUrl },
   ],
 };
@@ -58,7 +59,7 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'Retail 3PL Readiness for DTC Brands | Logic Agency',
+  title: 'Retail 3PL Readiness for DTC Brands — Logic Agency Inc.',
   description,
   keywords: 'retail 3PL readiness, DTC to retail 3PL, retail fulfillment checklist, 3PL routing guide compliance, retail ASN 3PL',
   alternates: { canonical: pageUrl },
@@ -70,9 +71,11 @@ export const metadata = {
     publishedTime: '2026-06-17',
     modifiedTime: '2026-06-22',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg'],
     title,
     description,
   },
@@ -89,7 +92,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Retail Fulfillment</span>
           <h1>Retail 3PL Readiness: The DTC-to-Retail Failure Point</h1>
@@ -104,7 +107,7 @@ export default function Page() {
 
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-launch.jpg" alt="Retail 3PL readiness checklist for DTC brands entering retail" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-launch.jpg" alt="Retail 3PL readiness checklist for DTC brands entering retail" className="b-feat-img" />
       </div>
 
       <div className="article gl">
@@ -175,8 +178,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Have an Operations<br /><em>Question?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll give you a straight answer &mdash; no sales pitch.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

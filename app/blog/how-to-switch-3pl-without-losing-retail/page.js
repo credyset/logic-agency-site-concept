@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import GuideFaqAccordion from '@/components/GuideFaqAccordion';
@@ -10,6 +11,7 @@ const articleSchema = {
   "author": {
     "@type": "Person",
     "name": "Jordan Harper",
+    "jobTitle": "Founder & CEO",
     "url": "https://www.logicagencyinc.com"
   },
   "publisher": {
@@ -17,7 +19,7 @@ const articleSchema = {
     "name": "Logic Agency Inc.",
     "url": "https://www.logicagencyinc.com"
   },
-  "mainEntityOfPage": "https://www.logicagencyinc.com/blog/how-to-switch-3pl-without-losing-retail",
+  "mainEntityOfPage": "https://credyset.github.io/logic-agency-site-concept/blog/how-to-switch-3pl-without-losing-retail",
   "datePublished": "2026-06-17",
   "dateModified": "2026-06-17"
 };
@@ -26,9 +28,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://www.logicagencyinc.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.logicagencyinc.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "How to Switch 3PLs Without Losing a Retail Account", "item": "https://www.logicagencyinc.com/blog/how-to-switch-3pl-without-losing-retail" }
+    { "@type": "ListItem", "position": 1, "name": "Logic Agency", "item": "https://credyset.github.io/logic-agency-site-concept" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://credyset.github.io/logic-agency-site-concept/blog" },
+    { "@type": "ListItem", "position": 3, "name": "How to Switch 3PLs Without Losing a Retail Account", "item": "https://credyset.github.io/logic-agency-site-concept/blog/how-to-switch-3pl-without-losing-retail" }
   ]
 };
 
@@ -80,22 +82,24 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: 'How to Switch 3PLs Without Losing Retail | Logic Agency',
+  title: 'How to Switch 3PLs Without Losing Retail — Logic Agency Inc.',
   description: 'A practical 3PL switching guide for CPG brands: when to leave, how to parallel-run the transition, protect retail POs, and avoid fulfillment disruption.',
   keywords: 'how to switch 3PL, switching 3PL providers, 3PL transition plan, retail fulfillment transition, change warehouse provider, 3PL migration CPG',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/blog/how-to-switch-3pl-without-losing-retail',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/blog/how-to-switch-3pl-without-losing-retail',
   },
   openGraph: {
     title: 'How to Switch 3PLs Without Losing a Retail Account',
     description: 'A practical 3PL switching guide for CPG brands: when to leave, how to parallel-run the transition, protect retail POs, and avoid fulfillment disruption.',
-    url: 'https://www.logicagencyinc.com/blog/how-to-switch-3pl-without-losing-retail',
+    url: 'https://credyset.github.io/logic-agency-site-concept/blog/how-to-switch-3pl-without-losing-retail',
     type: 'article',
     publishedTime: '2026-06-17',
     authors: ['Jordan Harper'],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/og-blog-default.jpg'],
     title: 'How to Switch 3PLs Without Losing a Retail Account',
     description: 'A practical 3PL switching guide for CPG brands: when to leave, how to parallel-run the transition, protect retail POs, and avoid fulfillment disruption.',
   },
@@ -122,7 +126,7 @@ export default function Page() {
       <section className="b-hero gd">
         <div className="b-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/blog">Blog</a>
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/blog">Blog</Link>
           </div>
           <span className="b-tag">Supply Chain Operations</span>
           <h1>How to Switch 3PLs Without Losing a Retail Account</h1>
@@ -138,7 +142,7 @@ export default function Page() {
       {/* FEATURED IMAGE */}
       <div className="b-feat">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/port-us-retail.jpg" alt="CPG brand managing a 3PL transition without disrupting retail accounts" className="b-feat-img" />
+        <img src="/logic-agency-site-concept/images/port-us-retail.jpg" alt="CPG brand managing a 3PL transition without disrupting retail accounts" className="b-feat-img" />
       </div>
 
       {/* ARTICLE */}
@@ -418,8 +422,8 @@ export default function Page() {
       <section className="cta-band gd">
         <div className="cta-band-inner">
           <h2>Planning a<br /><em>3PL Transition?</em></h2>
-          <p>Book a 30-minute call. We&apos;ll help you evaluate 3PL fit and protect your retail accounts during the move.</p>
-          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
+          <p>Book a 15-minute call. We&apos;ll help you evaluate 3PL fit and protect your retail accounts during the move.</p>
+          <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
         </div>
       </section>
 

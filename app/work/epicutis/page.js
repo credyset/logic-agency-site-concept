@@ -1,6 +1,8 @@
 import Nav from '@/components/Nav';
 import FooterHome from '@/components/FooterHome';
 import CaseStudyFaqAccordion from '@/components/CaseStudyFaqAccordion';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const faqs = [
   {
@@ -30,9 +32,9 @@ const caseStudySchema = {
   '@type': 'Article',
   headline: 'How Logic Helped Epicutis Build the Packaging System Behind a Larger Growth Plan',
   description: 'Epicutis came to Logic with a narrow packaging need. Over time, the relationship expanded into packaging development, managed inventory, warehouse operations, and logistics normalization.',
-  author: { '@type': 'Organization', name: 'Logic Agency Inc.', url: 'https://www.logicagencyinc.com' },
+  author: { '@type': 'Person', name: 'Jordan Harper', jobTitle: 'Founder & CEO', url: 'https://www.logicagencyinc.com' },
   publisher: { '@type': 'Organization', name: 'Logic Agency Inc.', url: 'https://www.logicagencyinc.com' },
-  mainEntityOfPage: 'https://www.logicagencyinc.com/work/epicutis',
+  mainEntityOfPage: 'https://credyset.github.io/logic-agency-site-concept/work/epicutis',
   datePublished: '2026-06-16',
   dateModified: '2026-06-22',
   keywords: ['packaging operations', 'managed inventory', 'fractional supply chain', 'CPG scaling', 'logistics normalization'],
@@ -52,34 +54,34 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Logic Agency', item: 'https://www.logicagencyinc.com' },
-    { '@type': 'ListItem', position: 2, name: 'Client Work', item: 'https://www.logicagencyinc.com/#results' },
-    { '@type': 'ListItem', position: 3, name: 'Epicutis', item: 'https://www.logicagencyinc.com/work/epicutis' },
+    { '@type': 'ListItem', position: 1, name: 'Logic Agency', item: 'https://credyset.github.io/logic-agency-site-concept' },
+    { '@type': 'ListItem', position: 2, name: 'Client Work', item: 'https://credyset.github.io/logic-agency-site-concept/work/' },
+    { '@type': 'ListItem', position: 3, name: 'Epicutis', item: 'https://credyset.github.io/logic-agency-site-concept/work/epicutis' },
   ],
 };
 
 export const metadata = {
-  title: 'Epicutis Case Study | Logic Agency',
+  title: 'Epicutis Case Study — Logic Agency Inc.',
   description: 'How Logic Agency helped Epicutis build the packaging system behind a multi-year growth plan: managed inventory, normalized logistics, and operational lift across 3 to 21+ SKUs.',
   keywords: 'Epicutis case study, packaging operations management, managed inventory program, CPG packaging supply chain, fractional supply chain operations',
   alternates: {
-    canonical: 'https://www.logicagencyinc.com/work/epicutis',
+    canonical: 'https://credyset.github.io/logic-agency-site-concept/work/epicutis',
   },
   openGraph: {
     title: 'How Logic Helped Epicutis Build the Packaging System Behind a Larger Growth Plan',
     description: 'Epicutis came to Logic with a box. The relationship expanded into managed inventory, logistics normalization, and a packaging system that helped the brand grow from 3 to 21+ SKUs without adding headcount.',
-    url: 'https://www.logicagencyinc.com/work/epicutis',
+    url: 'https://credyset.github.io/logic-agency-site-concept/work/epicutis',
     type: 'article',
     publishedTime: '2026-06-16',
     modifiedTime: '2026-06-22',
     authors: ['Jordan Harper'],
-    images: [{ url: 'https://www.logicagencyinc.com/images/work/epicutis/epicutis-kits-group-grey.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://credyset.github.io/logic-agency-site-concept/images/work/epicutis/epicutis-kits-group-grey.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'How Logic Helped Epicutis Build the Packaging System Behind a Larger Growth Plan',
     description: 'Epicutis came to Logic with a box. The relationship expanded into managed inventory, logistics normalization, and a packaging system that helped the brand grow from 3 to 21+ SKUs.',
-    images: ['https://www.logicagencyinc.com/images/work/epicutis/epicutis-kits-group-grey.jpg'],
+    images: ['https://credyset.github.io/logic-agency-site-concept/images/work/epicutis/epicutis-kits-group-grey.jpg'],
   },
 };
 
@@ -94,7 +96,7 @@ export default function EpicutisCaseStudy() {
       <section className="cs-hero">
         <div className="cs-hero-inner">
           <div className="breadcrumb">
-            <a href="/">Logic Agency</a> &nbsp;/&nbsp; <a href="/#results">Work</a> &nbsp;/&nbsp; Epicutis
+            <Link href="/">Logic Agency</Link> &nbsp;/&nbsp; <Link href="/work">Work</Link> &nbsp;/&nbsp; Epicutis
           </div>
           <div className="cs-eyebrow">Case Study &middot; Packaging &amp; Operations</div>
           <h1>How Logic Helped Epicutis Build the Packaging System Behind <span>a Larger Growth Plan</span></h1>
@@ -107,7 +109,14 @@ export default function EpicutisCaseStudy() {
             <div className="cs-meta-pill">Multi-Year Partnership</div>
           </div>
           <div className="cs-hero-img cs-photo">
-            <img src="/images/work/epicutis/epicutis-kits-group-grey.jpg" alt="Epicutis skincare packaging system supported by Logic Agency" />
+            <Image
+              src="/logic-agency-site-concept/images/work/epicutis/epicutis-kits-group-grey.jpg"
+              alt="Epicutis skincare packaging system supported by Logic Agency"
+              width={2500}
+              height={1875}
+              sizes="(max-width: 900px) 100vw, 1120px"
+              priority
+            />
             <div className="cs-hero-img-badge">Epicutis</div>
           </div>
         </div>
@@ -145,7 +154,13 @@ export default function EpicutisCaseStudy() {
           </div>
 
           <div className="case-photo">
-            <img src="/images/work/epicutis/epicutis-gradient.jpg" alt="Epicutis packaging range across skincare SKUs" />
+            <Image
+              src="/logic-agency-site-concept/images/work/epicutis/epicutis-gradient.jpg"
+              alt="Epicutis packaging range across skincare SKUs"
+              width={2500}
+              height={1875}
+              sizes="(max-width: 900px) 100vw, 860px"
+            />
           </div>
 
           <h2>What Logic Did</h2>
@@ -155,28 +170,28 @@ export default function EpicutisCaseStudy() {
             <div className="step">
               <div className="step-n">1</div>
               <div>
-                <h4>Packaging Development</h4>
+                <h3>Packaging Development</h3>
                 <p>Packaging design and sourcing across new SKUs, displays, primary packaging, and secondary packaging, executed through Logic&apos;s global supplier network and managed through a consistent quality and timeline framework.</p>
               </div>
             </div>
             <div className="step">
               <div className="step-n">2</div>
               <div>
-                <h4>Managed Inventory Program</h4>
+                <h3>Managed Inventory Program</h3>
                 <p>Logic created a managed inventory program out of its Salt Lake City warehouse. Logic purchased packaging, landed it, held it, and released it as the business needed, so Epicutis could pull inventory within days rather than triggering a new procurement cycle each time.</p>
               </div>
             </div>
             <div className="step">
               <div className="step-n">3</div>
               <div>
-                <h4>Landed Cost Clarity</h4>
+                <h3>Landed Cost Clarity</h3>
                 <p>As SKU count grew, Finance had increasing difficulty tracking which packaging costs belonged to which items. Logic helped create cleaner landed-cost visibility across the packaging portfolio, reducing allocation confusion and improving cost accountability.</p>
               </div>
             </div>
             <div className="step">
               <div className="step-n">4</div>
               <div>
-                <h4>Logistics Normalization</h4>
+                <h3>Logistics Normalization</h3>
                 <p>Logic supported a normalized packaging ordering cycle that reduced dependence on urgent air shipments driven by planning constraints. Packaging moved through a predictable logistics model instead of urgent freight becoming the fallback when inventory tightened.</p>
               </div>
             </div>
@@ -225,7 +240,13 @@ export default function EpicutisCaseStudy() {
           <p>The managed inventory program removed the planning friction that had been driving urgent air freight and replenishment gaps. The normalized ordering cycle gave the business more predictable logistics. The landed cost structure gave Finance cleaner data as the SKU portfolio grew.</p>
 
           <div className="case-photo">
-            <img src="/images/work/epicutis/recovery-care-set.jpg" alt="Epicutis recovery care set packaging and product presentation" />
+            <Image
+              src="/logic-agency-site-concept/images/work/epicutis/recovery-care-set.jpg"
+              alt="Epicutis recovery care set packaging and product presentation"
+              width={1721}
+              height={2048}
+              sizes="(max-width: 900px) 100vw, 860px"
+            />
           </div>
 
           <div className="callout">
@@ -246,8 +267,8 @@ export default function EpicutisCaseStudy() {
           <h2>Is your packaging system <span>ready for the next stage?</span></h2>
           <p>Most brands find out it isn&apos;t during a launch or a retail PO. Tell us where the friction is and we&apos;ll be honest about what it takes to fix it.</p>
           <div className="cta-btns">
-            <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a>
-            <a href="/guides/packaging-system-that-scales" className="bt bw">Read the Scaling Guide</a>
+            <a href="https://calendly.com/jordan-harper-packaging/logic-agency-readiness" className="bt bo" target="_blank" rel="noopener noreferrer">Book a 15-Minute Call &rarr;</a>
+            <Link href="/guides/packaging-system-that-scales" className="bt bw">Read the Scaling Guide</Link>
           </div>
         </div>
       </section>
@@ -256,18 +277,18 @@ export default function EpicutisCaseStudy() {
         <div className="related-inner">
           <h3>Related Guides</h3>
           <div className="related-links">
-            <a href="/guides/packaging-system-that-scales" className="related-link">
+            <Link href="/guides/packaging-system-that-scales" className="related-link">
               <h4>Building a Packaging System That Scales</h4>
               <p>When one-off packaging decisions become a system problem and how to fix it.</p>
-            </a>
-            <a href="/guides/packaging-cost-reduction" className="related-link">
+            </Link>
+            <Link href="/guides/packaging-cost-reduction" className="related-link">
               <h4>Packaging Cost Reduction Without Sacrificing Brand</h4>
               <p>Where packaging margin silently leaks and how brands typically save 15-30%.</p>
-            </a>
-            <a href="/guides/fractional-supply-chain-operations" className="related-link">
+            </Link>
+            <Link href="/guides/fractional-supply-chain-operations" className="related-link">
               <h4>Fractional Supply Chain Operations</h4>
-              <p>What the fractional model actually costs and when it beats a full-time hire.</p>
-            </a>
+              <p>How an embedded operating partner creates visibility, ownership, and follow-through across connected work.</p>
+            </Link>
           </div>
         </div>
       </section>
